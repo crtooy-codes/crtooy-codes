@@ -21,9 +21,9 @@
 
 
   <!-- Títulos em negrito com emoji hacker -->
-<h2 align="center">🏆 𝐌𝐢𝐧𝐡𝐚𝐬 𝐂𝐨𝐧𝐪𝐮𝐢𝐬𝐭𝐚𝐬 𝐧𝐨 𝐆𝐢𝐭𝐇𝐮𝐛</h2>
+<h2 align="center"> 𝐌𝐢𝐧𝐡𝐚𝐬 𝐂𝐨𝐧𝐪𝐮𝐢𝐬𝐭𝐚𝐬 𝐧𝐨 𝐆𝐢𝐭𝐇𝐮𝐛 </h2>
 
-<!-- Centraliza e aplica estilo no visual -->
+
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=crtooy-codes&theme=dracula&row=2&column=4&no-bg=true&margin-w=15&margin-h=15" />
 </p>

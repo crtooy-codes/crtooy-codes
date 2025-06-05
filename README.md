@@ -82,8 +82,6 @@
 
   <br/>
 
-  ![Snake animation](https://github.com/crtooy-codes/crtooy-codes/blob/output/github-contribution-grid-snake.svg)
-
 
   <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=140&section=footer&text=&fontColor=ff0000&fontSize=45" />
 

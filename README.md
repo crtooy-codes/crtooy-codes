@@ -1,6 +1,6 @@
 <div align="center" style="max-width: 900px; margin: auto;">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=140&section=header&text=☠Hello%20friend☠&fontColor=ff0000&fontSize=45" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=140&section=header&text=☠Hello%20Friend☠&fontColor=ff0000&fontSize=45" />
 
   <br/>
 

@@ -8,11 +8,7 @@
 
   <br/>
 
-  <p align="center">
-    🎓 Estudante de Redes e apaixonado por Segurança da Informação.<br/>
-    💻 Atualmente aprendendo Linux, monitoramento e técnicas de redes.<br/>
-    🔐 Estudando Introdução ao Hacking e Pentest 2.0.
-  </p>
+  
 
   <br/>
 

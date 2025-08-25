@@ -1,10 +1,13 @@
 <div align="center" style="max-width: 900px; margin: auto;">
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=140&section=header&text=☠Hello%20Friend☠&fontColor=ff0000&fontSize=45" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=000000&height=140&section=header&text=☠Olá%20amigo☠&fontColor=ff0000&fontSize=45" />
 
   <br/>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=00ff00&size=35&center=true&vCenter=true&width=500&font=Orbitron&lines=OLA,+SOU+MR.CRTOOY;HACKER+E+SEGURANCA;BEM-VINDO!♛)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=00ff00&size=35&center=true&vCenter=true&width=500&font=Orbitron&lines=ESTUDANTE+DE+REDES!;MR.CRTOOY♛)](https://git.io/typing-svg)
+
+
+
 
 
   <br/>

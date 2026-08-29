@@ -1,0 +1,16 @@
+{
+  "github": "crtooy-codes",
+  "featuredRepositories": [
+    "crtooy",
+    "network-toolkit",
+    "Bodycam-FPS"
+  ],
+  "languages": [
+    "TypeScript",
+    "Kotlin",
+    "Java",
+    "Shell",
+    "Python"
+  ],
+  "telemetry": "Active public repository development and automated workflows"
+}

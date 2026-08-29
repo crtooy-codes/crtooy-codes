@@ -1,97 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140" width="100%" height="100%">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 150" width="100%" height="100%">
   <defs>
     <style>
       .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
       .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-      @keyframes pulseNode {
-        0%, 100% { fill: #0f62fe; r: 5; }
-        50% { fill: #00d2d3; r: 6.5; filter: drop-shadow(0 0 4px #00d2d3); }
+      @keyframes pulseNodeGlow {
+        0%, 100% { fill: #0f62fe; filter: drop-shadow(0 0 2px #0f62fe); }
+        50% { fill: #00d2d3; filter: drop-shadow(0 0 6px #00d2d3); }
       }
-      @keyframes dashMove {
-        to { stroke-dashoffset: -20; }
+      @keyframes busDashMove {
+        to { stroke-dashoffset: -32; }
       }
 
-      .pulsing-node { animation: pulseNode 3s ease-in-out infinite; }
-      .data-line { stroke-dasharray: 4 4; animation: dashMove 2.5s linear infinite; }
+      .pulsing-node { animation: pulseNodeGlow 3s ease-in-out infinite; }
+      .data-bus { stroke-dasharray: 6 6; animation: busDashMove 2s linear infinite; }
 
       @media (prefers-reduced-motion: reduce) {
-        .pulsing-node, .data-line { animation: none; }
+        .pulsing-node, .data-bus { animation: none; }
       }
     </style>
 
-    <linearGradient id="line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="bus-grad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0f62fe" />
-      <stop offset="100%" stop-color="#00d2d3" />
+      <stop offset="50%" stop-color="#00d2d3" />
+      <stop offset="100%" stop-color="#42be65" />
     </linearGradient>
   </defs>
 
   <!-- Container Box -->
-  <rect width="800" height="140" rx="10" fill="#080c14" stroke="#1c283f" stroke-width="1.2" />
+  <rect width="800" height="150" rx="10" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
 
-  <!-- Title Header -->
-  <text x="24" y="24" fill="#64748b" font-size="10.5" font-weight="700" class="font-mono" letter-spacing="1">SYSTEM ARCHITECTURE // SIGNAL MAP</text>
-  <text x="776" y="24" text-anchor="end" fill="#42be65" font-size="10" font-weight="600" class="font-mono">● LIVE NODES</text>
+  <!-- Header Bar -->
+  <rect width="800" height="28" rx="10" fill="#0d1527" />
+  <rect x="0" y="18" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="28" x2="800" y2="28" stroke="#1c283f" stroke-width="1" />
 
-  <!-- Connecting Lines from Central Root to Nodes -->
-  <!-- Root (400, 52) to Node 1 (90, 102) -->
-  <path d="M 400 56 L 400 70 L 90 70 L 90 88" fill="none" stroke="#1c283f" stroke-width="1.5" />
-  <path d="M 400 56 L 400 70 L 90 70 L 90 88" fill="none" stroke="url(#line-grad)" stroke-width="1.2" class="data-line" />
+  <text x="24" y="18" fill="#64748b" font-size="10.5" font-weight="700" class="font-mono" letter-spacing="1">SYSTEM ARCHITECTURE // NEURAL DATA-BUS</text>
+  <text x="776" y="18" text-anchor="end" fill="#42be65" font-size="10" font-weight="700" class="font-mono">● 5 SUBNETS SYNCHRONIZED</text>
 
-  <!-- Root (400, 52) to Node 2 (245, 102) -->
-  <path d="M 400 56 L 400 70 L 245 70 L 245 88" fill="none" stroke="#1c283f" stroke-width="1.5" />
-  <path d="M 400 56 L 400 70 L 245 70 L 245 88" fill="none" stroke="url(#line-grad)" stroke-width="1.2" class="data-line" />
+  <!-- Central Root Node: CRTOOY LABS -->
+  <!-- Base Connecting Lines -->
+  <path d="M 400 58 L 400 74 L 90 74 L 90 95" fill="none" stroke="#1c283f" stroke-width="1.8" />
+  <path d="M 400 58 L 400 74 L 90 74 L 90 95" fill="none" stroke="url(#bus-grad)" stroke-width="1.4" class="data-bus" />
 
-  <!-- Root (400, 52) to Node 3 (400, 102) -->
-  <path d="M 400 56 L 400 88" fill="none" stroke="#1c283f" stroke-width="1.5" />
-  <path d="M 400 56 L 400 88" fill="none" stroke="url(#line-grad)" stroke-width="1.2" class="data-line" />
+  <path d="M 400 58 L 400 74 L 245 74 L 245 95" fill="none" stroke="#1c283f" stroke-width="1.8" />
+  <path d="M 400 58 L 400 74 L 245 74 L 245 95" fill="none" stroke="url(#bus-grad)" stroke-width="1.4" class="data-bus" />
 
-  <!-- Root (400, 52) to Node 4 (555, 102) -->
-  <path d="M 400 56 L 400 70 L 555 70 L 555 88" fill="none" stroke="#1c283f" stroke-width="1.5" />
-  <path d="M 400 56 L 400 70 L 555 70 L 555 88" fill="none" stroke="url(#line-grad)" stroke-width="1.2" class="data-line" />
+  <path d="M 400 58 L 400 95" fill="none" stroke="#1c283f" stroke-width="1.8" />
+  <path d="M 400 58 L 400 95" fill="none" stroke="url(#bus-grad)" stroke-width="1.4" class="data-bus" />
 
-  <!-- Root (400, 52) to Node 5 (710, 102) -->
-  <path d="M 400 56 L 400 70 L 710 70 L 710 88" fill="none" stroke="#1c283f" stroke-width="1.5" />
-  <path d="M 400 56 L 400 70 L 710 70 L 710 88" fill="none" stroke="url(#line-grad)" stroke-width="1.2" class="data-line" />
+  <path d="M 400 58 L 400 74 L 555 74 L 555 95" fill="none" stroke="#1c283f" stroke-width="1.8" />
+  <path d="M 400 58 L 400 74 L 555 74 L 555 95" fill="none" stroke="url(#bus-grad)" stroke-width="1.4" class="data-bus" />
 
-  <!-- Central Root Node: CRTOOY -->
-  <g transform="translate(340, 36)">
-    <rect width="120" height="26" rx="5" fill="#0f62fe" fill-opacity="0.2" stroke="#0f62fe" stroke-width="1.5" />
-    <text x="60" y="17" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700" class="font-mono">CRTOOY LABS</text>
+  <path d="M 400 58 L 400 74 L 710 74 L 710 95" fill="none" stroke="#1c283f" stroke-width="1.8" />
+  <path d="M 400 58 L 400 74 L 710 74 L 710 95" fill="none" stroke="url(#bus-grad)" stroke-width="1.4" class="data-bus" />
+
+  <!-- Root Hub -->
+  <g transform="translate(325, 38)">
+    <rect width="150" height="28" rx="6" fill="#0f62fe" fill-opacity="0.2" stroke="#0f62fe" stroke-width="1.5" />
+    <text x="75" y="18" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="700" class="font-mono">⚡ CRTOOY KERNEL</text>
   </g>
 
-  <!-- Node 1: AI -->
-  <g transform="translate(30, 90)">
-    <rect width="120" height="28" rx="5" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-    <circle cx="16" cy="14" r="4" fill="#0f62fe" class="pulsing-node" />
-    <text x="68" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">🤖 Applied AI</text>
+  <!-- Subnet 1: Applied AI -->
+  <g transform="translate(25, 96)">
+    <rect width="130" height="34" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="17" r="4.5" fill="#0f62fe" class="pulsing-node" />
+    <text x="72" y="21" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">🤖 Applied AI</text>
   </g>
 
-  <!-- Node 2: Automation -->
-  <g transform="translate(185, 90)">
-    <rect width="120" height="28" rx="5" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-    <circle cx="16" cy="14" r="4" fill="#0f62fe" class="pulsing-node" style="animation-delay: 0.6s;" />
-    <text x="68" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">⚙️ Automation</text>
+  <!-- Subnet 2: Automation -->
+  <g transform="translate(180, 96)">
+    <rect width="130" height="34" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="17" r="4.5" fill="#0f62fe" class="pulsing-node" style="animation-delay: 0.6s;" />
+    <text x="72" y="21" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">⚙️ Automation</text>
   </g>
 
-  <!-- Node 3: Software -->
-  <g transform="translate(340, 90)">
-    <rect width="120" height="28" rx="5" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-    <circle cx="16" cy="14" r="4" fill="#0f62fe" class="pulsing-node" style="animation-delay: 1.2s;" />
-    <text x="68" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">💻 Software</text>
+  <!-- Subnet 3: Core Software -->
+  <g transform="translate(335, 96)">
+    <rect width="130" height="34" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="17" r="4.5" fill="#0f62fe" class="pulsing-node" style="animation-delay: 1.2s;" />
+    <text x="72" y="21" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">💻 Strict TS</text>
   </g>
 
-  <!-- Node 4: Systems -->
-  <g transform="translate(495, 90)">
-    <rect width="120" height="28" rx="5" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-    <circle cx="16" cy="14" r="4" fill="#0f62fe" class="pulsing-node" style="animation-delay: 1.8s;" />
-    <text x="68" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">🐧 Systems</text>
+  <!-- Subnet 4: SecOps & Linux -->
+  <g transform="translate(490, 96)">
+    <rect width="130" height="34" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="17" r="4.5" fill="#0f62fe" class="pulsing-node" style="animation-delay: 1.8s;" />
+    <text x="72" y="21" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">🛡️ SecOps</text>
   </g>
 
-  <!-- Node 5: Open Source -->
-  <g transform="translate(650, 90)">
-    <rect width="120" height="28" rx="5" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-    <circle cx="16" cy="14" r="4" fill="#0f62fe" class="pulsing-node" style="animation-delay: 2.4s;" />
-    <text x="68" y="18" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">🌐 Open Source</text>
+  <!-- Subnet 5: 3D & Audio -->
+  <g transform="translate(645, 96)">
+    <rect width="130" height="34" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="17" r="4.5" fill="#0f62fe" class="pulsing-node" style="animation-delay: 2.4s;" />
+    <text x="72" y="21" text-anchor="middle" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">🎮 3D WebGL</text>
   </g>
 </svg>

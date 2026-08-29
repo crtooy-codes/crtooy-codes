@@ -1,12 +1,12 @@
-{
+﻿{
   "flagship": {
     "id": "crtooy",
     "name": "CRTOOY Developer System",
-    "tagline": "Interactive Developer Operating System & Engineering Console",
+    "tagline": "Interactive Developer Operating System, Engineering Console & Terminal Interface",
     "repo": "https://github.com/crtooy-codes/crtooy",
     "live": "https://crtooy-codes.github.io/crtooy/",
     "cli": "npx crtooy",
-    "tech": ["TypeScript", "React 18", "Node.js", "Vite", "PWA", "Tailwind CSS"],
+    "tech": ["TypeScript Strict", "React 18", "Node.js 22", "Vite", "Web Audio API", "PWA", "Tailwind CSS"],
     "status": "ACTIVE",
     "license": "MIT"
   },
@@ -14,7 +14,7 @@
     {
       "id": "network-toolkit",
       "name": "OpenLPS Network Toolkit",
-      "tagline": "Open-source Android network diagnostics and security research toolkit for rooted environments.",
+      "tagline": "Open-source Android network diagnostics and defensive security research toolkit for rooted environments.",
       "repo": "https://github.com/crtooy-codes/network-toolkit",
       "live": "https://crtooy-codes.github.io/network-toolkit/",
       "tech": ["Kotlin", "Java", "Android Root", "Chroot", "Shell", "Nmap"],
@@ -24,7 +24,7 @@
     {
       "id": "bodycam-fps",
       "name": "Bodycam FPS Prototype",
-      "tagline": "Interactive 3D simulation exploring tactical bodycam distortion, Web Audio procedural synthesis, and WebGL physics.",
+      "tagline": "Interactive 3D simulation exploring tactical bodycam distortion, procedural Web Audio synthesis, and WebGL physics.",
       "repo": "https://github.com/crtooy-codes/Bodycam-FPS",
       "tech": ["TypeScript", "React 18", "Three.js", "WebGL", "Vite", "Tailwind CSS"],
       "status": "PROTOTYPE",

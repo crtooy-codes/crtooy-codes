@@ -1,104 +1,121 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="100%">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
   <defs>
     <style>
-      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
       .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
 
-      @keyframes radarSweep {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-      }
-
-      @keyframes signalWave {
-        0% { stroke-dashoffset: 100; }
-        50% { stroke-dashoffset: 0; }
-        100% { stroke-dashoffset: -100; }
-      }
-
-      @keyframes glowMetric {
+      @keyframes barGlow {
         0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 2px #00d2d3); }
         50% { opacity: 1; filter: drop-shadow(0 0 6px #00d2d3); }
       }
 
-      .radar-arm { transform-origin: 730px 100px; animation: radarSweep 6s linear infinite; }
-      .wave-line { stroke-dasharray: 8 4; animation: signalWave 4s linear infinite; }
-      .metric-glow { animation: glowMetric 3s ease-in-out infinite; }
+      @keyframes pulseNode {
+        0%, 100% { r: 3.5; opacity: 0.8; }
+        50% { r: 5; opacity: 1; filter: drop-shadow(0 0 4px #42be65); }
+      }
+
+      .glow-bar { animation: barGlow 3s ease-in-out infinite; }
+      .node-pulse { animation: pulseNode 2.5s ease-in-out infinite; }
 
       @media (prefers-reduced-motion: reduce) {
-        .radar-arm, .wave-line, .metric-glow { animation: none; }
+        .glow-bar, .node-pulse { animation: none; }
       }
     </style>
 
-    <linearGradient id="tech-bar-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="bar-grad-1" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0f62fe" />
-      <stop offset="60%" stop-color="#4589ff" />
+      <stop offset="70%" stop-color="#4589ff" />
       <stop offset="100%" stop-color="#00d2d3" />
+    </linearGradient>
+
+    <linearGradient id="bar-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a3ffc" />
+      <stop offset="70%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#d946ef" />
+    </linearGradient>
+
+    <linearGradient id="bar-grad-3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0072c3" />
+      <stop offset="70%" stop-color="#00d2d3" />
+      <stop offset="100%" stop-color="#42be65" />
+    </linearGradient>
+
+    <linearGradient id="bar-grad-4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff7eb6" />
+      <stop offset="70%" stop-color="#ff9400" />
+      <stop offset="100%" stop-color="#fddc69" />
     </linearGradient>
   </defs>
 
-  <!-- Main Container -->
-  <rect width="800" height="200" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+  <!-- Container Box -->
+  <rect width="800" height="240" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
 
   <!-- Top Title Bar -->
-  <rect width="800" height="30" rx="12" fill="#0d1527" />
-  <rect x="0" y="20" width="800" height="10" fill="#0d1527" />
-  <line x1="0" y1="30" x2="800" y2="30" stroke="#1c283f" stroke-width="1" />
+  <rect width="800" height="32" rx="12" fill="#0d1527" />
+  <rect x="0" y="22" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#1c283f" stroke-width="1" />
 
-  <text x="24" y="20" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">⚡ CAPABILITIES &amp; ENGINEERING MATRIX</text>
-  <text x="776" y="20" text-anchor="end" fill="#64748b" font-size="10" font-weight="600" class="font-mono">TELEMETRY // LIVE</text>
+  <text x="24" y="21" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">⚡ CAPABILITIES &amp; ENGINEERING MATRIX</text>
+  <text x="776" y="21" text-anchor="end" fill="#64748b" font-size="10" font-weight="600" class="font-mono">TELEMETRY // VERIFIED EXPERTISE</text>
 
-  <!-- Left Column: Core Toolset & Runtimes -->
+  <!-- 4-BLOCK GRID (2 Columns x 2 Rows) -->
+
+  <!-- QUADRANT 1: SYSTEMS & STRICT RUNTIMES (Top Left) -->
   <g transform="translate(24, 46)">
-    <!-- Category 1: Languages & Strict Typing -->
-    <text x="0" y="14" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">💻 CORE LANGUAGES &amp; RUNTIMES</text>
-    <text x="0" y="32" fill="#94a3b8" font-size="10" class="font-mono">TypeScript 5.7 Strict • Node.js 22 • Kotlin • Java • Shell • Python</text>
-    <rect x="0" y="40" width="380" height="4" rx="2" fill="#162238" />
-    <rect x="0" y="40" width="350" height="4" rx="2" fill="url(#tech-bar-grad)" class="metric-glow" />
-
-    <!-- Category 2: Systems & Security -->
-    <text x="0" y="68" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">🛡️ SYSTEMS, LINUX &amp; SECURITY RESEARCH</text>
-    <text x="0" y="86" fill="#94a3b8" font-size="10" class="font-mono">Android Rooted Chroot • Linux Internals • Nmap • Protocol Analysis</text>
-    <rect x="0" y="94" width="380" height="4" rx="2" fill="#162238" />
-    <rect x="0" y="94" width="320" height="4" rx="2" fill="url(#tech-bar-grad)" class="metric-glow" />
-
-    <!-- Category 3: Frontend & 3D Graphics -->
-    <text x="0" y="122" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">🌐 FRONTEND, GRAPHICS &amp; AUTOMATION</text>
-    <text x="0" y="140" fill="#94a3b8" font-size="10" class="font-mono">React 18 • Three.js WebGL • Tailwind CSS • Vite • GitHub Actions CI/CD</text>
+    <rect width="365" height="74" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="18" r="4" fill="#00d2d3" />
+    <text x="28" y="21" fill="#cbd5e1" font-size="10.5" font-weight="700" class="font-mono">💻 SYSTEMS &amp; STRICT RUNTIMES</text>
+    <text x="16" y="40" fill="#94a3b8" font-size="9.5" class="font-mono">TypeScript 5.7 Strict • Node.js 22 • Kotlin • Java • Linux</text>
+    
+    <!-- Progress Bar & Indicator -->
+    <rect x="16" y="52" width="333" height="5" rx="2.5" fill="#162238" />
+    <rect x="16" y="52" width="310" height="5" rx="2.5" fill="url(#bar-grad-1)" class="glow-bar" />
+    <text x="330" y="66" fill="#00d2d3" font-size="8.5" font-weight="700" class="font-mono">94%</text>
   </g>
 
-  <!-- Vertical Divider -->
-  <line x1="440" y1="38" x2="440" y2="190" stroke="#1c283f" stroke-width="1" stroke-dasharray="3 3" />
-
-  <!-- Right Column: Interactive Radar / HUD Telemetry -->
-  <g transform="translate(465, 46)">
-    <text x="0" y="14" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">📡 RADAR &amp; DISCIPLINE INDEX</text>
+  <!-- QUADRANT 2: APPLIED AI & AGENTIC WORKFLOWS (Top Right) -->
+  <g transform="translate(411, 46)">
+    <rect width="365" height="74" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="18" r="4" fill="#a855f7" />
+    <text x="28" y="21" fill="#cbd5e1" font-size="10.5" font-weight="700" class="font-mono">🤖 APPLIED AI &amp; AGENT WORKFLOWS</text>
+    <text x="16" y="40" fill="#94a3b8" font-size="9.5" class="font-mono">Agent Architectures • Local LLMs • Tool-Use • Automation</text>
     
-    <!-- Telemetry Info Rows -->
-    <g transform="translate(0, 32)">
-      <text x="0" y="10" fill="#64748b" font-size="10.5" class="font-mono">ARCHITECTURE:</text>
-      <text x="120" y="10" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">Monorepo / Clean Core</text>
+    <!-- Progress Bar & Indicator -->
+    <rect x="16" y="52" width="333" height="5" rx="2.5" fill="#162238" />
+    <rect x="16" y="52" width="285" height="5" rx="2.5" fill="url(#bar-grad-2)" class="glow-bar" />
+    <text x="330" y="66" fill="#a855f7" font-size="8.5" font-weight="700" class="font-mono">86%</text>
+  </g>
 
-      <text x="0" y="32" fill="#64748b" font-size="10.5" class="font-mono">EXECUTION:</text>
-      <text x="120" y="32" fill="#42be65" font-size="10.5" font-weight="600" class="font-mono">Deterministic // Strict</text>
+  <!-- QUADRANT 3: SECURITY & NETWORK LAB (Bottom Left) -->
+  <g transform="translate(24, 128)">
+    <rect width="365" height="74" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="18" r="4" fill="#42be65" />
+    <text x="28" y="21" fill="#cbd5e1" font-size="10.5" font-weight="700" class="font-mono">🛡️ DEFENSIVE SECURITY &amp; SECOPS</text>
+    <text x="16" y="40" fill="#94a3b8" font-size="9.5" class="font-mono">Android Root Chroot • Nmap Recon • Protocol Audit • OWASP</text>
+    
+    <!-- Progress Bar & Indicator -->
+    <rect x="16" y="52" width="333" height="5" rx="2.5" fill="#162238" />
+    <rect x="16" y="52" width="298" height="5" rx="2.5" fill="url(#bar-grad-3)" class="glow-bar" />
+    <text x="330" y="66" fill="#42be65" font-size="8.5" font-weight="700" class="font-mono">90%</text>
+  </g>
 
-      <text x="0" y="54" fill="#64748b" font-size="10.5" class="font-mono">EXPLORATION:</text>
-      <text x="120" y="54" fill="#00d2d3" font-size="10.5" font-weight="600" class="font-mono">Applied AI &amp; Agents</text>
+  <!-- QUADRANT 4: 3D GRAPHICS & WEB AUDIO (Bottom Right) -->
+  <g transform="translate(411, 128)">
+    <rect width="365" height="74" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="16" cy="18" r="4" fill="#ff9400" />
+    <text x="28" y="21" fill="#cbd5e1" font-size="10.5" font-weight="700" class="font-mono">🎮 3D GRAPHICS &amp; PROCEDURAL AUDIO</text>
+    <text x="16" y="40" fill="#94a3b8" font-size="9.5" class="font-mono">Three.js • WebGL Shaders • Web Audio API • React 18 • Vite</text>
+    
+    <!-- Progress Bar & Indicator -->
+    <rect x="16" y="52" width="333" height="5" rx="2.5" fill="#162238" />
+    <rect x="16" y="52" width="275" height="5" rx="2.5" fill="url(#bar-grad-4)" class="glow-bar" />
+    <text x="330" y="66" fill="#ff9400" font-size="8.5" font-weight="700" class="font-mono">84%</text>
+  </g>
 
-      <text x="0" y="76" fill="#64748b" font-size="10.5" class="font-mono">IDENTITY:</text>
-      <text x="120" y="76" fill="#4589ff" font-size="10.5" font-weight="600" class="font-mono">CRTOOY Ecosystem</text>
-    </g>
-
-    <!-- Interactive Mini Radar Circle HUD -->
-    <g transform="translate(235, 52)">
-      <circle cx="28" cy="28" r="26" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-      <circle cx="28" cy="28" r="18" fill="none" stroke="#162238" stroke-width="1" />
-      <circle cx="28" cy="28" r="9" fill="none" stroke="#1b365d" stroke-width="1" />
-      <line x1="28" y1="2" x2="28" y2="54" stroke="#162238" stroke-width="1" />
-      <line x1="2" y1="28" x2="54" y2="28" stroke="#162238" stroke-width="1" />
-      
-      <!-- Rotating Radar Beam -->
-      <line x1="28" y1="28" x2="28" y2="4" stroke="#00d2d3" stroke-width="1.5" opacity="0.8" style="transform-origin: 28px 28px; animation: radarSweep 4s linear infinite;" />
-      <circle cx="28" cy="28" r="2.5" fill="#42be65" />
-    </g>
+  <!-- BOTTOM STATUS FOOTER -->
+  <line x1="24" y1="210" x2="776" y2="210" stroke="#1c283f" stroke-width="1" />
+  <g transform="translate(24, 226)">
+    <circle cx="6" cy="0" r="3.5" fill="#42be65" class="node-pulse" />
+    <text x="16" y="3" fill="#64748b" font-size="9.5" class="font-mono">QUALITY GATE: <tspan fill="#42be65" font-weight="700">100% DETERMINISTIC</tspan> &#8226; ARCHITECTURE: <tspan fill="#00d2d3" font-weight="700">STRICT TS &amp; CLEAN ARCH</tspan> &#8226; STATUS: <tspan fill="#cbd5e1">SCALABLE</tspan></text>
   </g>
 </svg>

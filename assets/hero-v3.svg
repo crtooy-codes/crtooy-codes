@@ -1,129 +1,157 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" width="100%" height="100%">
   <defs>
     <!-- Background Grid Pattern -->
-    <pattern id="tech-grid" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#162238" stroke-width="0.8" stroke-opacity="0.4" />
+    <pattern id="quantum-grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#162238" stroke-width="0.8" stroke-opacity="0.5" />
     </pattern>
 
     <!-- Radial Corner Glows -->
-    <radialGradient id="glow-blue" cx="10%" cy="10%" r="50%">
-      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.18" />
+    <radialGradient id="glow-core" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.22" />
+      <stop offset="60%" stop-color="#00d2d3" stop-opacity="0.08" />
       <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
     </radialGradient>
-    <radialGradient id="glow-cyan" cx="90%" cy="90%" r="50%">
-      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.15" />
+    <radialGradient id="corner-glow-left" cx="0%" cy="0%" r="45%">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="corner-glow-right" cx="100%" cy="100%" r="50%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.2" />
       <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
     </radialGradient>
 
-    <!-- Linear Gradient for Accents -->
-    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Linear Gradients for Badges & Accents -->
+    <linearGradient id="neon-cyan-blue" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#0f62fe" />
       <stop offset="50%" stop-color="#4589ff" />
       <stop offset="100%" stop-color="#00d2d3" />
+    </linearGradient>
+
+    <linearGradient id="text-shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#70d6ff" />
+    </linearGradient>
+
+    <linearGradient id="ibm-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f62fe" />
+      <stop offset="100%" stop-color="#78a9ff" />
     </linearGradient>
 
     <style>
       .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
       .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
 
-      /* Animation: Smooth Boot Sequence */
+      /* Animation: Smooth Boot Reveal */
       @keyframes bootReveal {
-        0% { opacity: 0; transform: translateY(6px); }
+        0% { opacity: 0; transform: translateY(8px); }
         100% { opacity: 1; transform: translateY(0); }
       }
 
-      /* Animation: Slow Ambient Particles Drift */
-      @keyframes particleFloatA {
-        0% { transform: translate(0, 0); opacity: 0.2; }
-        50% { transform: translate(15px, -10px); opacity: 0.45; }
-        100% { transform: translate(0, 0); opacity: 0.2; }
-      }
-      @keyframes particleFloatB {
-        0% { transform: translate(0, 0); opacity: 0.15; }
-        50% { transform: translate(-12px, 8px); opacity: 0.35; }
-        100% { transform: translate(0, 0); opacity: 0.15; }
+      /* Animation: Ambient Radar Sweep */
+      @keyframes radarRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
 
-      /* Animation: Subtle Horizontal Scanline */
+      /* Animation: Scanline Sweep */
       @keyframes scanSweep {
-        0% { transform: translateY(-50px); opacity: 0; }
-        20% { opacity: 0.4; }
-        80% { opacity: 0.4; }
-        100% { transform: translateY(350px); opacity: 0; }
+        0% { transform: translateY(-20px); opacity: 0; }
+        15% { opacity: 0.5; }
+        85% { opacity: 0.5; }
+        100% { transform: translateY(340px); opacity: 0; }
       }
 
       /* Animation: Pulse Status Dot */
-      @keyframes pulseGlow {
+      @keyframes pulseGreen {
         0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #42be65); }
-        50% { opacity: 0.45; filter: drop-shadow(0 0 6px #42be65); }
+        50% { opacity: 0.4; filter: drop-shadow(0 0 8px #42be65); }
       }
 
-      /* Staggered Reveal Elements */
-      .anim-boot {
-        animation: bootReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-      }
+      /* Animation: Hologram Audio/Spectrum Equalizer Bars */
+      @keyframes eqBarA { 0%, 100% { height: 6px; y: 18px; } 50% { height: 20px; y: 4px; } }
+      @keyframes eqBarB { 0%, 100% { height: 16px; y: 8px; } 50% { height: 8px; y: 16px; } }
+      @keyframes eqBarC { 0%, 100% { height: 12px; y: 12px; } 50% { height: 22px; y: 2px; } }
+      @keyframes eqBarD { 0%, 100% { height: 22px; y: 2px; } 50% { height: 10px; y: 14px; } }
+      @keyframes eqBarE { 0%, 100% { height: 8px; y: 16px; } 50% { height: 18px; y: 6px; } }
+
+      /* Staggered Reveal */
+      .anim-boot { animation: bootReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       .delay-1 { animation-delay: 0.15s; opacity: 0; }
       .delay-2 { animation-delay: 0.35s; opacity: 0; }
       .delay-3 { animation-delay: 0.55s; opacity: 0; }
       .delay-4 { animation-delay: 0.75s; opacity: 0; }
 
-      .ambient-a { animation: particleFloatA 9s ease-in-out infinite; }
-      .ambient-b { animation: particleFloatB 12s ease-in-out infinite; }
-      .scan-line { animation: scanSweep 7s linear infinite; }
-      .pulse-dot { animation: pulseGlow 2.8s ease-in-out infinite; }
+      .radar-arm { transform-origin: 730px 65px; animation: radarRotate 8s linear infinite; }
+      .scan-line { animation: scanSweep 6.5s linear infinite; }
+      .pulse-dot { animation: pulseGreen 2.5s ease-in-out infinite; }
+
+      .eq-1 { animation: eqBarA 1.4s ease-in-out infinite; }
+      .eq-2 { animation: eqBarB 1.1s ease-in-out infinite; }
+      .eq-3 { animation: eqBarC 1.6s ease-in-out infinite; }
+      .eq-4 { animation: eqBarD 1.2s ease-in-out infinite; }
+      .eq-5 { animation: eqBarE 1.5s ease-in-out infinite; }
 
       @media (prefers-reduced-motion: reduce) {
         .anim-boot, .delay-1, .delay-2, .delay-3, .delay-4 { animation: none; opacity: 1; }
-        .ambient-a, .ambient-b, .scan-line, .pulse-dot { animation: none; }
+        .radar-arm, .scan-line, .pulse-dot, .eq-1, .eq-2, .eq-3, .eq-4, .eq-5 { animation: none; }
       }
     </style>
   </defs>
 
   <!-- Container Surface -->
-  <rect width="800" height="300" rx="14" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+  <rect width="800" height="320" rx="14" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
   
   <!-- Subtle Gradient Overlays -->
-  <rect width="800" height="300" rx="14" fill="url(#glow-blue)" />
-  <rect width="800" height="300" rx="14" fill="url(#glow-cyan)" />
-  <rect width="800" height="300" rx="14" fill="url(#tech-grid)" />
+  <rect width="800" height="320" rx="14" fill="url(#corner-glow-left)" />
+  <rect width="800" height="320" rx="14" fill="url(#corner-glow-right)" />
+  <rect width="800" height="320" rx="14" fill="url(#glow-core)" />
+  <rect width="800" height="320" rx="14" fill="url(#quantum-grid)" />
 
-  <!-- Ambient Floating Background Particles & Code Symbols -->
-  <g class="ambient-a">
-    <text x="75" y="65" fill="#4589ff" opacity="0.25" font-size="12" class="font-mono">{ }</text>
-    <text x="720" y="85" fill="#00d2d3" opacity="0.22" font-size="11" class="font-mono">&lt;/&gt;</text>
-    <text x="680" y="240" fill="#4589ff" opacity="0.25" font-size="12" class="font-mono">AI</text>
-    <circle cx="140" cy="220" r="1.5" fill="#00d2d3" opacity="0.3" />
-    <circle cx="650" cy="50" r="1.5" fill="#4589ff" opacity="0.3" />
-    <!-- Subtle Connected Node Line -->
-    <path d="M 60 210 L 140 220 L 200 250" fill="none" stroke="#1c283f" stroke-width="1" stroke-dasharray="3 3" opacity="0.4" />
+  <!-- Tactical Corner Bracket Accents -->
+  <path d="M 12 26 L 12 12 L 26 12" fill="none" stroke="#00d2d3" stroke-width="1.8" opacity="0.8" />
+  <path d="M 788 26 L 788 12 L 774 12" fill="none" stroke="#00d2d3" stroke-width="1.8" opacity="0.8" />
+  <path d="M 12 294 L 12 308 L 26 308" fill="none" stroke="#0f62fe" stroke-width="1.8" opacity="0.8" />
+  <path d="M 788 294 L 788 308 L 774 308" fill="none" stroke="#0f62fe" stroke-width="1.8" opacity="0.8" />
+
+  <!-- Ambient Radar Display (Top-Right) -->
+  <g opacity="0.45">
+    <circle cx="730" cy="65" r="28" fill="none" stroke="#1c283f" stroke-width="1" />
+    <circle cx="730" cy="65" r="18" fill="none" stroke="#1c283f" stroke-width="0.8" stroke-dasharray="2 2" />
+    <circle cx="730" cy="65" r="8" fill="none" stroke="#1c283f" stroke-width="0.8" />
+    <line x1="700" y1="65" x2="760" y2="65" stroke="#1c283f" stroke-width="0.8" />
+    <line x1="730" y1="35" x2="730" y2="95" stroke="#1c283f" stroke-width="0.8" />
+    <line x1="730" y1="65" x2="756" y2="45" stroke="#00d2d3" stroke-width="1.5" class="radar-arm" />
+    <circle cx="742" cy="55" r="2" fill="#00d2d3" />
   </g>
 
-  <g class="ambient-b">
-    <text x="110" y="160" fill="#94a3b8" opacity="0.2" font-size="11" class="font-mono">01</text>
-    <text x="640" y="170" fill="#00d2d3" opacity="0.2" font-size="14" class="font-mono">_</text>
-    <circle cx="690" cy="130" r="2" fill="#0f62fe" opacity="0.35" />
-    <circle cx="90" cy="90" r="1.5" fill="#42be65" opacity="0.3" />
-    <!-- Circuit Trace -->
-    <path d="M 680 70 L 720 85 L 750 85" fill="none" stroke="#1c283f" stroke-width="1" opacity="0.4" />
+  <!-- Ambient Equalizer Spectrum (Top-Left) -->
+  <g transform="translate(68, 65)" opacity="0.75">
+    <rect x="0" y="8" width="3.5" height="16" rx="1.5" fill="#00d2d3" class="eq-1" />
+    <rect x="7" y="4" width="3.5" height="20" rx="1.5" fill="#4589ff" class="eq-2" />
+    <rect x="14" y="12" width="3.5" height="12" rx="1.5" fill="#0f62fe" class="eq-3" />
+    <rect x="21" y="2" width="3.5" height="22" rx="1.5" fill="#42be65" class="eq-4" />
+    <rect x="28" y="10" width="3.5" height="14" rx="1.5" fill="#00d2d3" class="eq-5" />
+    <text x="38" y="20" fill="#64748b" font-size="9" font-weight="600" class="font-mono">AUDIO ENGINE // SYNTH</text>
   </g>
 
-  <!-- Animated Scanline -->
-  <line x1="10" y1="0" x2="790" y2="0" stroke="url(#accent-grad)" stroke-width="1" opacity="0.35" class="scan-line" />
+  <!-- Animated Laser Scanline -->
+  <line x1="12" y1="0" x2="788" y2="0" stroke="url(#neon-cyan-blue)" stroke-width="1.2" opacity="0.4" class="scan-line" />
 
   <!-- TOP HEADER STRIP -->
   <g class="anim-boot delay-1">
     <!-- Status Indicator Pill -->
-    <rect x="28" y="22" width="132" height="24" rx="12" fill="#0d1929" stroke="#1b365d" stroke-width="1" />
-    <circle cx="42" cy="34" r="4" fill="#42be65" class="pulse-dot" />
-    <text x="54" y="38" fill="#42be65" font-size="10.5" font-weight="700" class="font-mono" letter-spacing="0.8">SYSTEM ONLINE</text>
+    <rect x="28" y="20" width="168" height="26" rx="13" fill="#0d1929" stroke="#1b365d" stroke-width="1" />
+    <circle cx="42" cy="33" r="4" fill="#42be65" class="pulse-dot" />
+    <text x="54" y="37" fill="#42be65" font-size="10" font-weight="700" class="font-mono" letter-spacing="0.8">SYSTEM ONLINE // v4.0</text>
 
     <!-- Center IBM Trajectory Badge -->
-    <g transform="translate(306, 22)">
-      <rect x="0" y="0" width="188" height="24" rx="6" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
+    <g transform="translate(296, 20)">
+      <rect x="0" y="0" width="208" height="26" rx="6" fill="#0d1527" stroke="#1e293b" stroke-width="1" />
       
       <!-- Authentic Minimal 8-Bar IBM Vector -->
-      <g transform="translate(10, 5) scale(0.65)">
-        <g fill="#0f62fe">
+      <g transform="translate(10, 5.5) scale(0.7)">
+        <g fill="url(#ibm-gradient)">
           <!-- I -->
           <rect x="0" y="0" width="12" height="1.8"/>
           <rect x="0" y="2.8" width="12" height="1.8"/>
@@ -140,62 +168,62 @@
         </g>
       </g>
       
-      <text x="50" y="16" fill="#cbd5e1" font-size="10.5" font-weight="600" class="font-sans">Apprentice @ IBM Brasil</text>
+      <text x="56" y="17" fill="#cbd5e1" font-size="10.5" font-weight="600" class="font-sans">Apprentice @ IBM Brasil</text>
     </g>
 
-    <!-- Right Header Identifier -->
-    <text x="772" y="38" text-anchor="end" fill="#64748b" font-size="11" font-weight="600" class="font-mono" letter-spacing="1">CRTOOY // 2026</text>
+    <!-- Right Header Telemetry -->
+    <text x="772" y="37" text-anchor="end" fill="#64748b" font-size="10.5" font-weight="600" class="font-mono" letter-spacing="1">CRTOOY // CONTROL NEXUS</text>
   </g>
 
-  <!-- Horizontal Divider -->
-  <line x1="28" y1="58" x2="772" y2="58" stroke="#1c283f" stroke-width="1" />
+  <!-- Horizontal Divider Strip -->
+  <line x1="28" y1="56" x2="772" y2="56" stroke="#1c283f" stroke-width="1" />
 
   <!-- HERO CENTER IDENTITY -->
   <g class="anim-boot delay-2" text-anchor="middle">
-    <!-- Main Headline -->
-    <text x="400" y="112" fill="#ffffff" font-size="30" font-weight="800" class="font-sans" letter-spacing="3.5">GABRIEL SILVA</text>
+    <!-- Main Headline with Gradient Glow -->
+    <text x="400" y="118" fill="url(#text-shimmer)" font-size="34" font-weight="900" class="font-sans" letter-spacing="4.5">GABRIEL SILVA</text>
     
-    <!-- Subtitle Roles -->
-    <text x="400" y="142" fill="#00d2d3" font-size="13" font-weight="600" class="font-mono" letter-spacing="2">DEVELOPER • BUILDER • EXPLORER</text>
+    <!-- Subtitle Roles with Cyber Cyan Accent -->
+    <text x="400" y="150" fill="#00d2d3" font-size="13" font-weight="700" class="font-mono" letter-spacing="2.5">SOFTWARE BUILDER • SYSTEMS &amp; APPLIED AI</text>
     
     <!-- Tagline Motto -->
-    <text x="400" y="172" fill="#94a3b8" font-size="12" font-weight="500" class="font-sans" letter-spacing="1.5">BUILDING WHAT COMES NEXT</text>
+    <text x="400" y="180" fill="#94a3b8" font-size="12" font-weight="500" class="font-sans" letter-spacing="1.5">ENGINEERING DETERMINISTIC SYSTEMS &amp; NEXT-GEN RUNTIMES</text>
   </g>
 
-  <!-- Horizontal Divider -->
-  <line x1="80" y1="196" x2="720" y2="196" stroke="#162238" stroke-width="1" stroke-dasharray="4 4" />
+  <!-- Horizontal Center Divider -->
+  <line x1="80" y1="206" x2="720" y2="206" stroke="#162238" stroke-width="1" stroke-dasharray="4 4" />
 
   <!-- DOMAIN PILL BADGES (CENTERED) -->
   <g class="anim-boot delay-3">
-    <!-- [ 💻 SOFTWARE ] -->
-    <g transform="translate(130, 214)">
-      <rect width="120" height="30" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-      <text x="60" y="19" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">💻 SOFTWARE</text>
+    <!-- [ 💻 STRICT SYSTEMS ] -->
+    <g transform="translate(68, 224)">
+      <rect width="150" height="32" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="75" y="20.5" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">💻 STRICT SYSTEMS</text>
     </g>
 
     <!-- [ 🤖 APPLIED AI ] -->
-    <g transform="translate(262, 214)">
-      <rect width="128" height="30" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-      <text x="64" y="19" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">🤖 APPLIED AI</text>
+    <g transform="translate(230, 224)">
+      <rect width="160" height="32" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="80" y="20.5" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">🤖 APPLIED AI AGENTS</text>
     </g>
 
-    <!-- [ ⚙️ AUTOMATION ] -->
-    <g transform="translate(402, 214)">
-      <rect width="134" height="30" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-      <text x="67" y="19" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">⚙️ AUTOMATION</text>
+    <!-- [ 🛡️ SECOPS & LINUX ] -->
+    <g transform="translate(402, 224)">
+      <rect width="160" height="32" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="80" y="20.5" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">🛡️ SECOPS &amp; LINUX</text>
     </g>
 
-    <!-- [ 🧠 SYSTEMS ] -->
-    <g transform="translate(548, 214)">
-      <rect width="122" height="30" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
-      <text x="61" y="19" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">🧠 SYSTEMS</text>
+    <!-- [ 🎮 3D & WEB AUDIO ] -->
+    <g transform="translate(574, 224)">
+      <rect width="158" height="32" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="79" y="20.5" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="600" class="font-mono">🎮 3D &amp; WEB AUDIO</text>
     </g>
   </g>
 
   <!-- FOOTER STATUS BAR -->
   <g class="anim-boot delay-4">
-    <line x1="28" y1="262" x2="772" y2="262" stroke="#1c283f" stroke-width="1" />
-    <text x="32" y="282" fill="#64748b" font-size="10.5" font-weight="500" class="font-mono">CRTOOY CONTROL CENTER // v3.0</text>
-    <text x="768" y="282" text-anchor="end" fill="#00d2d3" font-size="10.5" font-weight="600" class="font-mono">OPEN SOURCE • DETERMINISTIC</text>
+    <line x1="28" y1="278" x2="772" y2="278" stroke="#1c283f" stroke-width="1" />
+    <text x="32" y="299" fill="#64748b" font-size="10.5" font-weight="500" class="font-mono">CRTOOY CONTROL NEXUS // v4.0.0-PROD</text>
+    <text x="768" y="299" text-anchor="end" fill="#00d2d3" font-size="10.5" font-weight="600" class="font-mono">OPEN SOURCE • DETERMINISTIC • LIVE</text>
   </g>
 </svg>

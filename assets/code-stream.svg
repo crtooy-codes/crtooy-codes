@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="100%">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140" width="100%" height="100%">
   <defs>
     <style>
       .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
 
       @keyframes codeLineFade {
-        0% { opacity: 0; transform: translateX(-4px); }
+        0% { opacity: 0; transform: translateX(-6px); }
         100% { opacity: 1; transform: translateX(0); }
       }
       @keyframes blinkCursor {
@@ -26,61 +26,86 @@
   </defs>
 
   <!-- Container Box -->
-  <rect width="800" height="120" rx="10" fill="#080c14" stroke="#1c283f" stroke-width="1.2" />
+  <rect width="800" height="140" rx="10" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
 
   <!-- Window Header Bar -->
-  <rect width="800" height="26" rx="10" fill="#0d1527" />
-  <circle cx="18" cy="13" r="3.5" fill="#ff5f56" />
-  <circle cx="28" cy="13" r="3.5" fill="#ffbd2e" />
-  <circle cx="38" cy="13" r="3.5" fill="#27c93f" />
-  <text x="50" y="16.5" fill="#64748b" font-size="10" font-weight="600" class="font-mono">stream.ts — crtooy runtime</text>
-  <text x="780" y="16.5" text-anchor="end" fill="#00d2d3" font-size="9.5" font-weight="600" class="font-mono">TYPESCRIPT STRICT</text>
+  <rect width="800" height="28" rx="10" fill="#0d1527" />
+  <rect x="0" y="18" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="28" x2="800" y2="28" stroke="#1c283f" stroke-width="1" />
 
-  <!-- Code Stream Content with Absolute Y Coordinates -->
+  <!-- Mac Window Dots -->
+  <circle cx="20" cy="14" r="3.8" fill="#ff5f56" />
+  <circle cx="32" cy="14" r="3.8" fill="#ffbd2e" />
+  <circle cx="44" cy="14" r="3.8" fill="#27c93f" />
+  
+  <text x="62" y="18" fill="#64748b" font-size="10.5" font-weight="600" class="font-mono">engine.ts — crtooy runtime kernel</text>
+  <text x="776" y="18" text-anchor="end" fill="#00d2d3" font-size="9.5" font-weight="700" class="font-mono">TYPESCRIPT 5.7 STRICT // ESM</text>
+
+  <!-- Code Stream Content with Absolute Coordinates -->
   <!-- Line 1 -->
   <g class="line-1">
-    <text x="24" y="48" font-size="11.5" class="font-mono">
+    <text x="24" y="52" font-size="11.5" class="font-mono">
       <tspan fill="#64748b">01  </tspan>
-      <tspan fill="#4589ff">const </tspan>
-      <tspan fill="#f8fafc">future </tspan>
-      <tspan fill="#4589ff">= </tspan>
-      <tspan fill="#00d2d3">build</tspan>
-      <tspan fill="#f8fafc">();</tspan>
+      <tspan fill="#4589ff">import </tspan>
+      <tspan fill="#f8fafc">{ </tspan>
+      <tspan fill="#00d2d3">AgentRuntime</tspan>
+      <tspan fill="#f8fafc">, </tspan>
+      <tspan fill="#00d2d3">AudioEngine</tspan>
+      <tspan fill="#f8fafc">, </tspan>
+      <tspan fill="#00d2d3">SecOpsLab</tspan>
+      <tspan fill="#f8fafc"> } </tspan>
+      <tspan fill="#4589ff">from </tspan>
+      <tspan fill="#42be65">&apos;@crtooy/core&apos;</tspan>
+      <tspan fill="#f8fafc">;</tspan>
     </text>
   </g>
 
   <!-- Line 2 -->
   <g class="line-2">
-    <text x="24" y="68" font-size="11.5" class="font-mono">
+    <text x="24" y="74" font-size="11.5" class="font-mono">
       <tspan fill="#64748b">02  </tspan>
-      <tspan fill="#00d2d3">deploy</tspan>
-      <tspan fill="#f8fafc">(</tspan>
-      <tspan fill="#42be65">&apos;crtooy.dev&apos;</tspan>
-      <tspan fill="#f8fafc">); </tspan>
-      <tspan fill="#00d2d3">learn</tspan>
-      <tspan fill="#f8fafc">(); </tspan>
-      <tspan fill="#00d2d3">iterate</tspan>
-      <tspan fill="#f8fafc">();</tspan>
+      <tspan fill="#4589ff">const </tspan>
+      <tspan fill="#f8fafc">system </tspan>
+      <tspan fill="#4589ff">= </tspan>
+      <tspan fill="#4589ff">await </tspan>
+      <tspan fill="#00d2d3">bootstrap</tspan>
+      <tspan fill="#f8fafc">({ </tspan>
+      <tspan fill="#94a3b8">builder: </tspan>
+      <tspan fill="#42be65">&apos;Gabriel Silva&apos;</tspan>
+      <tspan fill="#f8fafc">, </tspan>
+      <tspan fill="#94a3b8">trajectory: </tspan>
+      <tspan fill="#42be65">&apos;IBM Apprentice&apos;</tspan>
+      <tspan fill="#f8fafc">, </tspan>
+      <tspan fill="#94a3b8">mode: </tspan>
+      <tspan fill="#ff9400">&apos;BUILD_WHAT_COMES_NEXT&apos;</tspan>
+      <tspan fill="#f8fafc"> });</tspan>
     </text>
   </g>
 
-  <!-- Line 3 (Easter Egg) -->
+  <!-- Line 3 (Easter Egg & Logic) -->
   <g class="line-3">
-    <text x="24" y="88" font-size="11.5" class="font-mono">
+    <text x="24" y="96" font-size="11.5" class="font-mono">
       <tspan fill="#64748b">03  </tspan>
       <tspan fill="#4589ff">while </tspan>
-      <tspan fill="#f8fafc">(curious) { </tspan>
+      <tspan fill="#f8fafc">(system.</tspan>
+      <tspan fill="#00d2d3">isCurious</tspan>
+      <tspan fill="#f8fafc">()) { </tspan>
+      <tspan fill="#4589ff">await </tspan>
+      <tspan fill="#00d2d3">explore</tspan>
+      <tspan fill="#f8fafc">(); </tspan>
       <tspan fill="#00d2d3">build</tspan>
+      <tspan fill="#f8fafc">(); </tspan>
+      <tspan fill="#00d2d3">iterate</tspan>
       <tspan fill="#f8fafc">(); } </tspan>
-      <tspan fill="#64748b" font-style="italic">// there is always another version</tspan>
+      <tspan fill="#64748b" font-style="italic">// relentless engineering</tspan>
     </text>
   </g>
 
   <!-- Line 4 (Terminal Ready Prompt) -->
   <g class="line-4">
-    <text x="24" y="106" font-size="11" font-weight="700" class="font-mono">
-      <tspan fill="#42be65">● STATUS: </tspan>
-      <tspan fill="#cbd5e1">READY </tspan>
+    <text x="24" y="118" font-size="11" font-weight="700" class="font-mono">
+      <tspan fill="#42be65">● PROCESS RUNNING: </tspan>
+      <tspan fill="#cbd5e1">PID 2026 (ONLINE) &#8226; PORT 3000 &#8226; NPX CRTOOY </tspan>
       <tspan fill="#00d2d3" class="cursor">█</tspan>
     </text>
   </g>

@@ -1,81 +1,70 @@
-# CRTOOY PROFILE // VISUAL SYSTEM V3 — DESIGN BLUEPRINT
+﻿# CRTOOY PROFILE // QUANTUM VISUAL SYSTEM V4 — SPECIFICATION
 
-> Architectural and visual design specification for Gabriel Silva's GitHub Profile v3.
+> Visual architecture and engineering specification for Gabriel Silva's GitHub Profile Nexus.
 
 ---
 
-## 1. System Vision & Atmosphere
+## 1. System Vision & Architecture
 
-The **CRTOOY Visual System v3** bridges a **Developer Control Center**, **AI Laboratory**, and **Personal Operating System** into a cohesive, recognizable developer identity. It avoids generic templates and superficial decorations, prioritizing product-first engineering, disciplined visual typography, and genuine open-source utility.
+The **CRTOOY Visual System v4 (Quantum Nexus)** transforms the profile into an **interactive cyber-command telemetry hub**, blending:
+1. **Developer Operating System (CRTOOY OS & CLI)**
+2. **Defensive SecOps & Network Research Lab (OpenLPS)**
+3. **3D WebGL & Tactical Simulations (Bodycam FPS)**
+4. **Apprentice Trajectory at IBM Brasil**
+5. **Applied AI & Agentic Architectures**
 
 ```mermaid
 graph TD
-    Hero["Hero Control Center (assets/hero-v3.svg)"]
-    Flagship["Flagship Build Banner (CRTOOY Developer System)"]
-    About["Compact About & Philosophy"]
-    Exploring["Currently Exploring Matrix"]
-    Projects["Featured Builds & Products"]
-    SignalMap["System & Signal Map (assets/signal-map.svg)"]
-    CodeStream["Code Stream & Logic (assets/code-stream.svg)"]
-    Activity["Telemetry & Contribution Snake"]
-    Connect["Verified Connection Endpoints"]
+    Hero["Hero Control Nexus (assets/hero-v3.svg)"]
+    QuickLaunch["Quick Launch Station (Badges & npx crtooy)"]
+    Flagship["Flagship Build: CRTOOY OS (Web + CLI)"]
+    About["Trajectory (Apprentice @ IBM Brasil)"]
+    Radar["Tactical Radar & Active Recon (assets/tactical-radar.svg)"]
+    Matrix["Capabilities Matrix (assets/tech-matrix.svg)"]
+    SecOps["SecOps & Network Lab (assets/secops-hud.svg)"]
+    Featured["Featured Builds (OpenLPS & Bodycam FPS)"]
+    DataBus["Neural Data-Bus (assets/signal-map.svg)"]
+    CodeStream["Developer Logic Stream (assets/code-stream.svg)"]
+    Console["Quantum Command Console (assets/quantum-console.svg)"]
+    Telemetry["Quality Gate Telemetry (assets/telemetry-widget.svg)"]
+    Snake["GitHub Contribution Snake Matrix"]
+    Connect["Verified Endpoints"]
 
-    Hero --> Flagship
+    Hero --> QuickLaunch
+    QuickLaunch --> Flagship
     Flagship --> About
-    About --> Exploring
-    Exploring --> Projects
-    Projects --> SignalMap
-    SignalMap --> CodeStream
-    CodeStream --> Activity
-    Activity --> Connect
+    About --> Radar
+    Radar --> Matrix
+    Matrix --> SecOps
+    SecOps --> Featured
+    Featured --> DataBus
+    DataBus --> CodeStream
+    CodeStream --> Console
+    Console --> Telemetry
+    Telemetry --> Snake
+    Snake --> Connect
 ```
 
 ---
 
-## 2. Visual & Motion Design Rules
+## 2. Asset Matrix & Telemetry
 
-1. **Enterprise Dark Slate Palette:**
-   - Primary Background: `#080c14` (Deep Space Slate)
-   - Subtle Grid & Borders: `#162238` / `#1c283f`
-   - Primary Accent (IBM / Core): `#0f62fe` & `#4589ff`
-   - Telemetry Cyan: `#00d2d3`
-   - Active Green Status: `#42be65`
-   - Text Hierarchy: `#ffffff` (Headlines) / `#f8fafc` (Body) / `#94a3b8` (Muted)
-
-2. **Background Animation Constraints:**
-   - **Subtle particles & constellations:** Smooth drift (< 0.5px/sec) with low opacity (`0.15` - `0.3`).
-   - **Gentle pulse:** Nodes and indicator lights pulse on 3-4s cycles.
-   - **Horizontal scanline:** Slow vertical sweep with soft glow.
-   - **Code symbols:** Soft floating tokens (`{ }`, `</>`, `_`, `01`, `AI`) dispersed in background layers.
-   - **Zero Matrix Clutter:** No neon rain, no high-framerate flashes, no visual noise.
-
-3. **SVG Safety & GitHub Camo Proxy Compatibility:**
-   - **Absolute Coordinates:** Every `<text>` and `<tspan>` element uses explicit, independent `x` and `y` attributes.
-   - **Zero Text Overlap:** Animation transitions utilize distinct vertical coordinate baselines.
-   - **Static Readability Post-Boot:** The 2.5s bootstrap animation permanently settles into a fully legible, high-contrast dashboard.
-   - **Dark & Light Mode Contrast:** All SVG surfaces include an opaque base container (`#080c14` with subtle rounded border `#1c283f`), ensuring crisp rendering regardless of user theme.
-
----
-
-## 3. Asset Specifications
-
-| Asset File | Dimension (viewBox) | Purpose & Key Features |
+| Asset File | Dimensions | Purpose & Motion Features |
 | :--- | :--- | :--- |
-| `assets/hero-v3.svg` | `800 x 300` | Top control center, authentic IBM 8-bar badge, animated background grid, nodes, 2.5s boot sequence, status pill. |
-| `assets/signal-map.svg` | `800 x 140` | Architectural node tree linking CRTOOY to AI, Systems, Automation, and Open Source. |
-| `assets/code-stream.svg`| `800 x 120` | Minimalist execution stream with developer logic and discrete easter egg. |
-| `profile-data/*.json` | Structured Data | Machine-readable schemas for identity, projects, telemetry, and system metadata. |
+| `assets/hero-v3.svg` | `800 x 320` | Cyber-command header with IBM authentic 8-bar seal, rotating radar beacon, equalizer spectrum, and smooth boot sequence. |
+| `assets/tactical-radar.svg` | `800 x 240` | 360° Polar radar sweep with 4 target blips and live acquisition details. |
+| `assets/tech-matrix.svg` | `800 x 240` | 4 diagnostic quadrants (Systems, AI, SecOps, 3D Graphics) with glowing progress indicators. |
+| `assets/secops-hud.svg` | `800 x 220` | Defensive security lab with Shannon entropy analyzer and scanning beam. |
+| `assets/signal-map.svg` | `800 x 150` | Neural data-bus with animated flowing packets synchronizing 5 subnets. |
+| `assets/code-stream.svg` | `800 x 140` | Streaming IDE window with TypeScript 5.7 strict code and live process prompt. |
+| `assets/quantum-console.svg` | `800 x 200` | Simulated zsh terminal running `crtooy --system-status` with live blinking cursor. |
+| `assets/telemetry-widget.svg` | `800 x 130` | Real-time oscilloscope wave with Vitest and CI/CD quality gate readouts. |
 
 ---
 
-## 4. Section Structure
+## 3. Strict Compliance & Camo Proxy Safety
 
-1. **HERO V3:** `assets/hero-v3.svg`
-2. **FLAGSHIP PROJECT:** Dedicated product showcase for **CRTOOY Developer System** with direct launch & terminal badges.
-3. **👨‍💻 ABOUT:** 2-line executive summary (Apprentice @ IBM Brasil, systems & AI explorer).
-4. **🧠 CURRENTLY EXPLORING:** Clean categoric focus matrix (Applied AI, Automation, Linux/Systems, Software Foundations, Open Source).
-5. **🚀 FEATURED BUILDS:** Card grid for `CRTOOY`, `OpenLPS Network Toolkit`, and `Bodycam FPS`.
-6. **⚙️ SYSTEM SIGNAL MAP:** `assets/signal-map.svg`.
-7. **💻 CODE STREAM:** `assets/code-stream.svg`.
-8. **📡 GITHUB TELEMETRY & SNAKE:** Contribution animation `<picture>` (Dark/Light).
-9. **🌐 CONNECT:** Clean links to GitHub, LinkedIn, and Web Console.
+- **100% Strict XML**: Fully validated with zero undeclared HTML entities.
+- **Absolute Coordinate Layout**: Zero text overlap or jumping under variable font rendering.
+- **Opaque Base Container (`#080c14`)**: Crisp high-contrast appearance in GitHub Dark, Dark Dimmed, and Light themes.
+- **Reduced Motion Support**: All CSS keyframes gracefully fallback when `prefers-reduced-motion: reduce` is active.

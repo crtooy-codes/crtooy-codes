@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+
+      @keyframes codeLineFade {
+        0% { opacity: 0; transform: translateX(-4px); }
+        100% { opacity: 1; transform: translateX(0); }
+      }
+      @keyframes blinkCursor {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      .line-1 { animation: codeLineFade 0.4s ease forwards 0.2s; opacity: 0; }
+      .line-2 { animation: codeLineFade 0.4s ease forwards 0.5s; opacity: 0; }
+      .line-3 { animation: codeLineFade 0.4s ease forwards 0.8s; opacity: 0; }
+      .line-4 { animation: codeLineFade 0.4s ease forwards 1.1s; opacity: 0; }
+      .cursor { animation: blinkCursor 0.9s infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .line-1, .line-2, .line-3, .line-4 { animation: none; opacity: 1; }
+        .cursor { animation: none; opacity: 1; }
+      }
+    </style>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="120" rx="10" fill="#080c14" stroke="#1c283f" stroke-width="1.2" />
+
+  <!-- Window Header Bar -->
+  <rect width="800" height="26" rx="10" fill="#0d1527" />
+  <circle cx="18" cy="13" r="3.5" fill="#ff5f56" />
+  <circle cx="28" cy="13" r="3.5" fill="#ffbd2e" />
+  <circle cx="38" cy="13" r="3.5" fill="#27c93f" />
+  <text x="50" y="16.5" fill="#64748b" font-size="10" font-weight="600" class="font-mono">stream.ts — crtooy runtime</text>
+  <text x="780" y="16.5" text-anchor="end" fill="#00d2d3" font-size="9.5" font-weight="600" class="font-mono">TYPESCRIPT STRICT</text>
+
+  <!-- Code Stream Content with Absolute Y Coordinates -->
+  <!-- Line 1 -->
+  <g class="line-1">
+    <text x="24" y="48" font-size="11.5" class="font-mono">
+      <tspan fill="#64748b">01  </tspan>
+      <tspan fill="#4589ff">const </tspan>
+      <tspan fill="#f8fafc">future </tspan>
+      <tspan fill="#4589ff">= </tspan>
+      <tspan fill="#00d2d3">build</tspan>
+      <tspan fill="#f8fafc">();</tspan>
+    </text>
+  </g>
+
+  <!-- Line 2 -->
+  <g class="line-2">
+    <text x="24" y="68" font-size="11.5" class="font-mono">
+      <tspan fill="#64748b">02  </tspan>
+      <tspan fill="#00d2d3">deploy</tspan>
+      <tspan fill="#f8fafc">(</tspan>
+      <tspan fill="#42be65">&apos;crtooy.dev&apos;</tspan>
+      <tspan fill="#f8fafc">); </tspan>
+      <tspan fill="#00d2d3">learn</tspan>
+      <tspan fill="#f8fafc">(); </tspan>
+      <tspan fill="#00d2d3">iterate</tspan>
+      <tspan fill="#f8fafc">();</tspan>
+    </text>
+  </g>
+
+  <!-- Line 3 (Easter Egg) -->
+  <g class="line-3">
+    <text x="24" y="88" font-size="11.5" class="font-mono">
+      <tspan fill="#64748b">03  </tspan>
+      <tspan fill="#4589ff">while </tspan>
+      <tspan fill="#f8fafc">(curious) { </tspan>
+      <tspan fill="#00d2d3">build</tspan>
+      <tspan fill="#f8fafc">(); } </tspan>
+      <tspan fill="#64748b" font-style="italic">// there is always another version</tspan>
+    </text>
+  </g>
+
+  <!-- Line 4 (Terminal Ready Prompt) -->
+  <g class="line-4">
+    <text x="24" y="106" font-size="11" font-weight="700" class="font-mono">
+      <tspan fill="#42be65">● STATUS: </tspan>
+      <tspan fill="#cbd5e1">READY </tspan>
+      <tspan fill="#00d2d3" class="cursor">█</tspan>
+    </text>
+  </g>
+</svg>

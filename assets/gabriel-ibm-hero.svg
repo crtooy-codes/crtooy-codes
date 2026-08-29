@@ -1,0 +1,299 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 420" width="100%" height="100%">
+  <defs>
+    <!-- Dark Tech Gradients & Glows -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c14"/>
+      <stop offset="50%" stop-color="#0d1322"/>
+      <stop offset="100%" stop-color="#070a10"/>
+    </linearGradient>
+
+    <linearGradient id="ibmBlueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f62fe"/>
+      <stop offset="100%" stop-color="#4589ff"/>
+    </linearGradient>
+
+    <linearGradient id="cyanAccentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2d3"/>
+      <stop offset="100%" stop-color="#0f62fe"/>
+    </linearGradient>
+
+    <radialGradient id="blueGlow" cx="80%" cy="20%" r="50%">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="techGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#162238" stroke-width="0.75" opacity="0.6"/>
+      <circle cx="0" cy="0" r="1" fill="#203456" opacity="0.8"/>
+    </pattern>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Inter:wght@400;600;700;800&amp;display=swap');
+
+      .font-sans { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+      .font-mono { font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }
+
+      /* Animation Sequences */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(6px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateX(-15px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+
+      @keyframes revealBar {
+        0% { transform: scaleX(0); opacity: 0; }
+        60% { opacity: 0.8; }
+        100% { transform: scaleX(1); opacity: 1; }
+      }
+
+      @keyframes scanMotion {
+        0% { transform: translateY(-100px); opacity: 0; }
+        30% { opacity: 0.4; }
+        70% { opacity: 0.4; }
+        100% { transform: translateY(450px); opacity: 0; }
+      }
+
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      @keyframes subtlePulse {
+        0%, 100% { opacity: 0.9; }
+        50% { opacity: 0.4; }
+      }
+
+      /* Staggered Element Classes */
+      .scan-line {
+        animation: scanMotion 4s cubic-bezier(0.4, 0, 0.2, 1) 0.2s infinite;
+      }
+
+      .header-badge {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-out 0.2s forwards;
+      }
+
+      /* IBM 8-bar staggered reveal */
+      .bar-0 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.40s forwards; opacity: 0; }
+      .bar-1 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.46s forwards; opacity: 0; }
+      .bar-2 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.52s forwards; opacity: 0; }
+      .bar-3 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.58s forwards; opacity: 0; }
+      .bar-4 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.64s forwards; opacity: 0; }
+      .bar-5 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.70s forwards; opacity: 0; }
+      .bar-6 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.76s forwards; opacity: 0; }
+      .bar-7 { transform-origin: left; animation: revealBar 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.82s forwards; opacity: 0; }
+
+      .hero-name {
+        opacity: 0;
+        animation: slideIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+      }
+
+      .hero-role {
+        opacity: 0;
+        animation: fadeIn 0.6s ease-out 1.2s forwards;
+      }
+
+      .term-line-1 { opacity: 0; animation: fadeIn 0.4s ease-out 1.5s forwards; }
+      .term-line-2 { opacity: 0; animation: fadeIn 0.4s ease-out 1.9s forwards; }
+      .term-line-3 { opacity: 0; animation: fadeIn 0.4s ease-out 2.3s forwards; }
+      .term-line-4 { opacity: 0; animation: fadeIn 0.4s ease-out 2.7s forwards; }
+      .term-line-5 { opacity: 0; animation: fadeIn 0.4s ease-out 3.1s forwards; }
+      .term-line-6 { opacity: 0; animation: fadeIn 0.4s ease-out 3.5s forwards; }
+
+      .manifesto-box {
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 4.0s forwards;
+      }
+
+      .cursor {
+        animation: blink 1s infinite 3.8s;
+      }
+
+      .live-dot {
+        animation: subtlePulse 2.5s infinite ease-in-out;
+      }
+    </style>
+  </defs>
+
+  <!-- Base Card Background -->
+  <rect width="850" height="420" rx="14" fill="url(#bgGradient)"/>
+  <rect width="850" height="420" rx="14" fill="url(#blueGlow)"/>
+  <rect width="850" height="420" rx="14" fill="url(#techGrid)"/>
+  <rect width="848" height="418" x="1" y="1" rx="13" fill="none" stroke="#1d283f" stroke-width="1.2"/>
+
+  <!-- Scanning Beam Effect -->
+  <g clip-path="url(#cardClip)">
+    <clipPath id="cardClip">
+      <rect width="850" height="420" rx="14"/>
+    </clipPath>
+    <line x1="0" y1="0" x2="850" y2="0" stroke="url(#ibmBlueGrad)" stroke-width="2" class="scan-line" opacity="0.3"/>
+  </g>
+
+  <!-- TOP HEADER / STATUS BAR -->
+  <g class="header-badge" transform="translate(36, 38)">
+    <rect width="185" height="26" rx="13" fill="#10192d" stroke="#223556" stroke-width="1"/>
+    <circle cx="14" cy="13" r="4.5" fill="#42be65" class="live-dot"/>
+    <text x="26" y="17" fill="#8ba2c4" font-size="11" font-weight="600" class="font-mono" letter-spacing="1">SYSTEM ONLINE</text>
+    <text x="132" y="17" fill="#4589ff" font-size="10" font-weight="700" class="font-mono">// 2026</text>
+  </g>
+
+  <!-- OFFICIAL IBM 8-BAR VECTOR EMBLEM -->
+  <g id="ibm-logo" transform="translate(605, 34) scale(0.68)" fill="url(#ibmBlueGrad)">
+    <!-- Bar 0 (y=0) -->
+    <g class="bar-0">
+      <rect x="0" y="0" width="52" height="8" rx="1"/>
+      <rect x="70" y="0" width="70" height="8" rx="1"/>
+      <rect x="168" y="0" width="16" height="8"/>
+      <rect x="210" y="0" width="16" height="8" rx="1"/>
+      <rect x="252" y="0" width="16" height="8"/>
+    </g>
+
+    <!-- Bar 1 (y=16) -->
+    <g class="bar-1">
+      <rect x="18" y="16" width="16" height="8" rx="1"/>
+      <rect x="70" y="16" width="16" height="8"/>
+      <rect x="124" y="16" width="18" height="8" rx="1"/>
+      <rect x="168" y="16" width="16" height="8"/>
+      <rect x="200" y="16" width="14" height="8"/>
+      <rect x="222" y="16" width="14" height="8"/>
+      <rect x="252" y="16" width="16" height="8"/>
+    </g>
+
+    <!-- Bar 2 (y=32) -->
+    <g class="bar-2">
+      <rect x="18" y="32" width="16" height="8" rx="1"/>
+      <rect x="70" y="32" width="16" height="8"/>
+      <rect x="126" y="32" width="18" height="8" rx="1"/>
+      <rect x="168" y="32" width="16" height="8"/>
+      <rect x="194" y="32" width="14" height="8"/>
+      <rect x="228" y="32" width="14" height="8"/>
+      <rect x="252" y="32" width="16" height="8"/>
+    </g>
+
+    <!-- Bar 3 (y=48) -->
+    <g class="bar-3">
+      <rect x="18" y="48" width="16" height="8" rx="1"/>
+      <rect x="70" y="48" width="68" height="8" rx="1"/>
+      <rect x="168" y="48" width="16" height="8"/>
+      <rect x="211" y="48" width="14" height="8" rx="1"/>
+      <rect x="252" y="48" width="16" height="8"/>
+    </g>
+
+    <!-- Bar 4 (y=64) -->
+    <g class="bar-4">
+      <rect x="18" y="64" width="16" height="8" rx="1"/>
+      <rect x="70" y="64" width="16" height="8"/>
+      <rect x="128" y="64" width="20" height="8" rx="1"/>
+      <rect x="168" y="64" width="16" height="8"/>
+      <rect x="252" y="64" width="16" height="8"/>
+    </g>
+
+    <!-- Bar 5 (y=80) -->
+    <g class="bar-5">
+      <rect x="18" y="80" width="16" height="8" rx="1"/>
+      <rect x="70" y="80" width="16" height="8"/>
+      <rect x="130" y="80" width="20" height="8" rx="1"/>
+      <rect x="168" y="80" width="16" height="8"/>
+      <rect x="252" y="80" width="16" height="8"/>
+    </g>
+
+    <!-- Bar 6 (y=96) -->
+    <g class="bar-6">
+      <rect x="18" y="96" width="16" height="8" rx="1"/>
+      <rect x="70" y="96" width="16" height="8"/>
+      <rect x="126" y="96" width="20" height="8" rx="1"/>
+      <rect x="168" y="96" width="16" height="8"/>
+      <rect x="252" y="96" width="16" height="8"/>
+    </g>
+
+    <!-- Bar 7 (y=112) -->
+    <g class="bar-7">
+      <rect x="0" y="112" width="52" height="8" rx="1"/>
+      <rect x="70" y="112" width="74" height="8" rx="1"/>
+      <rect x="168" y="112" width="16" height="8"/>
+      <rect x="252" y="112" width="16" height="8"/>
+    </g>
+  </g>
+
+  <!-- GABRIEL SILVA & TITLE -->
+  <g transform="translate(36, 115)">
+    <text x="0" y="0" fill="#ffffff" font-size="34" font-weight="800" class="font-sans hero-name" letter-spacing="2">GABRIEL SILVA</text>
+    <g class="hero-role" transform="translate(0, 26)">
+      <rect width="188" height="24" rx="4" fill="#0f62fe" fill-opacity="0.15" stroke="#0f62fe" stroke-width="0.8"/>
+      <text x="10" y="16" fill="#78a9ff" font-size="12" font-weight="600" class="font-mono" letter-spacing="1">Apprentice @ IBM Brasil</text>
+    </g>
+  </g>
+
+  <!-- SYSTEM TERMINAL INITIALIZATION BLOCK -->
+  <g transform="translate(36, 182)">
+    <!-- Terminal Background Container -->
+    <rect width="778" height="152" rx="8" fill="#0a0e18" fill-opacity="0.85" stroke="#1a273f" stroke-width="1"/>
+    
+    <!-- Code Lines -->
+    <g class="font-mono" font-size="12.5" transform="translate(20, 26)">
+      <!-- Line 1 -->
+      <g class="term-line-1">
+        <text x="0" y="0" fill="#52688f">&gt;</text>
+        <text x="18" y="0" fill="#94a3b8">initializing profile environment...</text>
+      </g>
+
+      <!-- Line 2 -->
+      <g class="term-line-2" transform="translate(0, 21)">
+        <text x="0" y="0" fill="#52688f">&gt;</text>
+        <text x="18" y="0" fill="#94a3b8">loading technology stack...</text>
+      </g>
+
+      <!-- Line 3 -->
+      <g class="term-line-3" transform="translate(0, 42)">
+        <text x="0" y="0" fill="#52688f">&gt;</text>
+        <text x="18" y="0" fill="#cbd5e1">automation</text>
+        <text x="140" y="0" fill="#3b4d6e">......................................</text>
+        <text x="440" y="0" fill="#42be65" font-weight="600">[ READY ]</text>
+      </g>
+
+      <!-- Line 4 -->
+      <g class="term-line-4" transform="translate(0, 63)">
+        <text x="0" y="0" fill="#52688f">&gt;</text>
+        <text x="18" y="0" fill="#cbd5e1">artificial intelligence</text>
+        <text x="210" y="0" fill="#3b4d6e">..............................</text>
+        <text x="440" y="0" fill="#4589ff" font-weight="600">[ EXPLORING ]</text>
+      </g>
+
+      <!-- Line 5 -->
+      <g class="term-line-5" transform="translate(0, 84)">
+        <text x="0" y="0" fill="#52688f">&gt;</text>
+        <text x="18" y="0" fill="#cbd5e1">open source</text>
+        <text x="140" y="0" fill="#3b4d6e">......................................</text>
+        <text x="440" y="0" fill="#42be65" font-weight="600">[ CONNECTED ]</text>
+      </g>
+
+      <!-- Line 6 -->
+      <g class="term-line-6" transform="translate(0, 105)">
+        <text x="0" y="0" fill="#52688f">&gt;</text>
+        <text x="18" y="0" fill="#cbd5e1">future</text>
+        <text x="140" y="0" fill="#3b4d6e">......................................</text>
+        <text x="440" y="0" fill="#a6c8ff" font-weight="600">[ BUILDING ]</text>
+        <text x="548" y="0" fill="#4589ff" class="cursor" font-weight="700">_</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ACTION MANIFESTO FOOTER -->
+  <g class="manifesto-box" transform="translate(36, 375)">
+    <g class="font-mono" font-size="12" font-weight="700" letter-spacing="3">
+      <text x="0" y="0" fill="#ffffff">BUILD.</text>
+      <text x="75" y="0" fill="#4589ff">LEARN.</text>
+      <text x="155" y="0" fill="#00d2d3">CREATE.</text>
+    </g>
+    <line x1="0" y1="9" x2="235" y2="9" stroke="url(#cyanAccentGrad)" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <!-- Subtle bottom decorative indicator -->
+  <g transform="translate(730, 375)" opacity="0.6">
+    <text x="0" y="0" fill="#4a5f82" font-size="10" font-weight="600" class="font-mono" letter-spacing="1">GSO // v2.0</text>
+  </g>
+</svg>

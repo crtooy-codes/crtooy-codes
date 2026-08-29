@@ -1,16 +1,6 @@
-<p align="center">
-  <img src="assets/gabriel-ibm-hero.svg" alt="Gabriel Silva - IBM Hero" width="100%" />
-</p>
+# Gabriel Silva
 
-<p align="center">
-  <img src="assets/gabriel-terminal.svg" alt="Gabriel Silva - Terminal" width="100%" />
-</p>
-
-<p align="center">
-  <a href="https://github.com/crtooy-codes">
-    <img src="https://readme-typing-svg.herokuapp.com/?color=4589ff&size=20&center=true&vCenter=true&width=600&font=JetBrains+Mono&lines=Building.;Learning.;Automating.;Exploring+AI." alt="Typing Animation" />
-  </a>
-</p>
+> Building thoughtful solutions through technology, automation, and continuous learning.
 
 ---
 
@@ -18,7 +8,7 @@
 
 I am a technology enthusiast starting my professional journey as an **Apprentice at IBM Brasil**.
 
-My focus centers on developing a disciplined engineering mindset, exploring practical automation workflows, and deepening my understanding of modern computing systems and applied artificial intelligence.
+My focus centers on developing a disciplined engineering mindset, exploring practical automation workflows, and deepening my understanding of modern systems and applied artificial intelligence.
 
 I value clear architecture, open-source collaboration, and building reliable tools that solve real-world problems.
 

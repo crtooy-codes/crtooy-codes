@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 290" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 320" width="100%" height="100%">
   <defs>
-    <linearGradient id="termBg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="terminalBg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#070a12"/>
       <stop offset="50%" stop-color="#0a0f1b"/>
       <stop offset="100%" stop-color="#060910"/>
     </linearGradient>
 
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+    <linearGradient id="headerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#121a2c"/>
       <stop offset="100%" stop-color="#0e1524"/>
     </linearGradient>
@@ -14,104 +14,84 @@
     <style>
       .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
 
-      @keyframes termFadeIn {
-        from { opacity: 0; transform: translateY(4px); }
-        to { opacity: 1; transform: translateY(0); }
+      @keyframes showLine {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
 
-      @keyframes termBlink {
+      @keyframes blinkCursor {
         0%, 49% { opacity: 1; }
         50%, 100% { opacity: 0; }
       }
 
-      .t-cmd-1 { opacity: 0; animation: termFadeIn 0.3s ease-out 0.3s forwards; }
-      .t-out-1 { opacity: 0; animation: termFadeIn 0.3s ease-out 0.7s forwards; }
+      .line-1 { animation: showLine 0.3s ease-out 0.2s forwards; }
+      .line-2 { animation: showLine 0.3s ease-out 0.7s forwards; }
+      .line-3 { animation: showLine 0.3s ease-out 1.2s forwards; }
+      .line-4 { animation: showLine 0.3s ease-out 1.7s forwards; }
+      .line-5 { animation: showLine 0.3s ease-out 2.2s forwards; }
+      .line-6 { animation: showLine 0.3s ease-out 2.7s forwards; }
+      .line-7 { animation: showLine 0.3s ease-out 3.2s forwards; }
 
-      .t-cmd-2 { opacity: 0; animation: termFadeIn 0.3s ease-out 1.2s forwards; }
-      .t-out-2 { opacity: 0; animation: termFadeIn 0.3s ease-out 1.6s forwards; }
-
-      .t-cmd-3 { opacity: 0; animation: termFadeIn 0.3s ease-out 2.1s forwards; }
-      .t-out-3 { opacity: 0; animation: termFadeIn 0.3s ease-out 2.5s forwards; }
-
-      .t-cmd-4 { opacity: 0; animation: termFadeIn 0.3s ease-out 3.0s forwards; }
-      .t-out-4 { opacity: 0; animation: termFadeIn 0.3s ease-out 3.4s forwards; }
-
-      .t-cursor {
-        animation: termBlink 1s infinite 3.8s;
+      .cursor {
+        animation: blinkCursor 0.9s infinite;
       }
     </style>
   </defs>
 
   <!-- Terminal Window Container -->
-  <rect width="850" height="290" rx="12" fill="url(#termBg)"/>
-  <rect width="848" height="288" x="1" y="1" rx="11" fill="none" stroke="#1c283e" stroke-width="1.2"/>
+  <rect width="850" height="320" rx="12" fill="url(#terminalBg)"/>
+  <rect width="848" height="318" x="1" y="1" rx="11" fill="none" stroke="#1c283e" stroke-width="1.2"/>
 
   <!-- Window Header Bar -->
-  <path d="M 0 12 C 0 5.373 5.373 0 12 0 L 838 0 C 844.627 0 850 5.373 850 12 L 850 38 L 0 38 Z" fill="url(#headerGrad)"/>
+  <path d="M 0 12 C 0 5.373 5.373 0 12 0 L 838 0 C 844.627 0 850 5.373 850 12 L 850 38 L 0 38 Z" fill="url(#headerGradient)"/>
   <line x1="0" y1="38" x2="850" y2="38" stroke="#1c283e" stroke-width="1"/>
 
-  <!-- Window Action Buttons (macOS / Linux Style) -->
-  <g transform="translate(18, 14)">
-    <circle cx="0" cy="5" r="5.5" fill="#ff5f56"/>
-    <circle cx="18" cy="5" r="5.5" fill="#ffbd2e"/>
-    <circle cx="36" cy="5" r="5.5" fill="#27c93f"/>
+  <!-- macOS / Linux Style Controls -->
+  <circle cx="22" cy="19" r="5.5" fill="#ff5f56"/>
+  <circle cx="40" cy="19" r="5.5" fill="#ffbd2e"/>
+  <circle cx="58" cy="19" r="5.5" fill="#27c93f"/>
+
+  <!-- Window Title -->
+  <text x="425" y="24" text-anchor="middle" fill="#64748b" font-size="11.5" font-weight="500" class="mono">gabriel@ibm-workspace: ~ (zsh)</text>
+
+  <!-- ================= TERMINAL BODY ================= -->
+
+  <!-- Line 1: Command (y=78) -->
+  <g class="line-1" opacity="0">
+    <text x="28" y="78" fill="#38bdf8" font-size="13" font-weight="700" class="mono">gabriel@github:~$</text>
+    <text x="175" y="78" fill="#ffffff" font-size="13" font-weight="600" class="mono">whoami</text>
   </g>
 
-  <!-- Terminal Window Title -->
-  <g transform="translate(425, 23)">
-    <text text-anchor="middle" fill="#64748b" font-size="11.5" font-weight="500" class="mono">gabriel@ibm-workspace: ~ (zsh)</text>
+  <!-- Line 2: Output (y=106) -->
+  <g class="line-2" opacity="0">
+    <text x="28" y="106" fill="#e2e8f0" font-size="13" font-weight="500" class="mono">Gabriel Silva</text>
   </g>
 
-  <!-- Terminal Body Content -->
-  <g class="mono" font-size="13" transform="translate(28, 68)">
-    
-    <!-- Item 1: whoami -->
-    <g class="t-cmd-1">
-      <text x="0" y="0" fill="#38bdf8" font-weight="700">gabriel@github</text>
-      <text x="110" y="0" fill="#64748b">:</text>
-      <text x="120" y="0" fill="#a5b4fc">~</text>
-      <text x="130" y="0" fill="#64748b">$</text>
-      <text x="145" y="0" fill="#f8fafc" font-weight="600">whoami</text>
-    </g>
-    <g class="t-out-1" transform="translate(0, 22)">
-      <text x="0" y="0" fill="#e2e8f0" font-weight="500">Gabriel Silva</text>
-    </g>
+  <!-- Line 3: Command (y=146) -->
+  <g class="line-3" opacity="0">
+    <text x="28" y="146" fill="#38bdf8" font-size="13" font-weight="700" class="mono">gabriel@github:~$</text>
+    <text x="175" y="146" fill="#ffffff" font-size="13" font-weight="600" class="mono">role</text>
+  </g>
 
-    <!-- Item 2: company -->
-    <g class="t-cmd-2" transform="translate(0, 52)">
-      <text x="0" y="0" fill="#38bdf8" font-weight="700">gabriel@github</text>
-      <text x="110" y="0" fill="#64748b">:</text>
-      <text x="120" y="0" fill="#a5b4fc">~</text>
-      <text x="130" y="0" fill="#64748b">$</text>
-      <text x="145" y="0" fill="#f8fafc" font-weight="600">company</text>
-    </g>
-    <g class="t-out-2" transform="translate(0, 74)">
-      <text x="0" y="0" fill="#4589ff" font-weight="700">IBM Brasil</text>
-    </g>
+  <!-- Line 4: Output (y=174) -->
+  <g class="line-4" opacity="0">
+    <text x="28" y="174" fill="#4589ff" font-size="13" font-weight="700" class="mono">Apprentice @ IBM Brasil</text>
+  </g>
 
-    <!-- Item 3: role -->
-    <g class="t-cmd-3" transform="translate(0, 104)">
-      <text x="0" y="0" fill="#38bdf8" font-weight="700">gabriel@github</text>
-      <text x="110" y="0" fill="#64748b">:</text>
-      <text x="120" y="0" fill="#a5b4fc">~</text>
-      <text x="130" y="0" fill="#64748b">$</text>
-      <text x="145" y="0" fill="#f8fafc" font-weight="600">role</text>
-    </g>
-    <g class="t-out-3" transform="translate(0, 126)">
-      <text x="0" y="0" fill="#78a9ff" font-weight="500">Apprentice</text>
-    </g>
+  <!-- Line 5: Command (y=214) -->
+  <g class="line-5" opacity="0">
+    <text x="28" y="214" fill="#38bdf8" font-size="13" font-weight="700" class="mono">gabriel@github:~$</text>
+    <text x="175" y="214" fill="#ffffff" font-size="13" font-weight="600" class="mono">status</text>
+  </g>
 
-    <!-- Item 4: status -->
-    <g class="t-cmd-4" transform="translate(0, 156)">
-      <text x="0" y="0" fill="#38bdf8" font-weight="700">gabriel@github</text>
-      <text x="110" y="0" fill="#64748b">:</text>
-      <text x="120" y="0" fill="#a5b4fc">~</text>
-      <text x="130" y="0" fill="#64748b">$</text>
-      <text x="145" y="0" fill="#f8fafc" font-weight="600">status</text>
-    </g>
-    <g class="t-out-4" transform="translate(0, 178)">
-      <text x="0" y="0" fill="#42be65" font-weight="600">Building the next version of myself.</text>
-      <text x="290" y="0" fill="#38bdf8" class="t-cursor" font-weight="700">_</text>
-    </g>
+  <!-- Line 6: Output (y=242) -->
+  <g class="line-6" opacity="0">
+    <text x="28" y="242" fill="#42be65" font-size="13" font-weight="600" class="mono">Learning. Building. Improving.</text>
+  </g>
+
+  <!-- Line 7: Active Prompt & Blinking Cursor (y=282) -->
+  <g class="line-7" opacity="0">
+    <text x="28" y="282" fill="#38bdf8" font-size="13" font-weight="700" class="mono">gabriel@github:~$</text>
+    <text x="175" y="282" fill="#38bdf8" font-size="14" font-weight="700" class="mono cursor">▌</text>
   </g>
 </svg>

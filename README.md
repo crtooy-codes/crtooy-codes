@@ -30,6 +30,10 @@ Focused on developing a solid engineering foundation, exploring applied artifici
 
 ### 🚀 Featured Builds
 
+- **[CRTOOY Developer System](https://github.com/crtooy-codes/crtooy)** &nbsp; `[Flagship]`  
+  *Interactive developer operating system, engineering console, and terminal interface built with strict TypeScript & React.*  
+  👉 **[Launch System](https://crtooy-codes.github.io/crtooy/)** &bull; Run via terminal: `npx crtooy`
+
 - **[OpenLPS Network Toolkit](https://github.com/crtooy-codes/network-toolkit)**  
   *Open-source network diagnostics and security toolkit designed for authorized Android research.*
 

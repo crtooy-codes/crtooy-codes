@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      @keyframes radarSweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes signalWave {
+        0% { stroke-dashoffset: 100; }
+        50% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -100; }
+      }
+
+      @keyframes glowMetric {
+        0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 2px #00d2d3); }
+        50% { opacity: 1; filter: drop-shadow(0 0 6px #00d2d3); }
+      }
+
+      .radar-arm { transform-origin: 730px 100px; animation: radarSweep 6s linear infinite; }
+      .wave-line { stroke-dasharray: 8 4; animation: signalWave 4s linear infinite; }
+      .metric-glow { animation: glowMetric 3s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .radar-arm, .wave-line, .metric-glow { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="tech-bar-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f62fe" />
+      <stop offset="60%" stop-color="#4589ff" />
+      <stop offset="100%" stop-color="#00d2d3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Container -->
+  <rect width="800" height="200" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Bar -->
+  <rect width="800" height="30" rx="12" fill="#0d1527" />
+  <rect x="0" y="20" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="30" x2="800" y2="30" stroke="#1c283f" stroke-width="1" />
+
+  <text x="24" y="20" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">⚡ CAPABILITIES &amp; ENGINEERING MATRIX</text>
+  <text x="776" y="20" text-anchor="end" fill="#64748b" font-size="10" font-weight="600" class="font-mono">TELEMETRY // LIVE</text>
+
+  <!-- Left Column: Core Toolset & Runtimes -->
+  <g transform="translate(24, 46)">
+    <!-- Category 1: Languages & Strict Typing -->
+    <text x="0" y="14" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">💻 CORE LANGUAGES &amp; RUNTIMES</text>
+    <text x="0" y="32" fill="#94a3b8" font-size="10" class="font-mono">TypeScript 5.7 Strict • Node.js 22 • Kotlin • Java • Shell • Python</text>
+    <rect x="0" y="40" width="380" height="4" rx="2" fill="#162238" />
+    <rect x="0" y="40" width="350" height="4" rx="2" fill="url(#tech-bar-grad)" class="metric-glow" />
+
+    <!-- Category 2: Systems & Security -->
+    <text x="0" y="68" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">🛡️ SYSTEMS, LINUX &amp; SECURITY RESEARCH</text>
+    <text x="0" y="86" fill="#94a3b8" font-size="10" class="font-mono">Android Rooted Chroot • Linux Internals • Nmap • Protocol Analysis</text>
+    <rect x="0" y="94" width="380" height="4" rx="2" fill="#162238" />
+    <rect x="0" y="94" width="320" height="4" rx="2" fill="url(#tech-bar-grad)" class="metric-glow" />
+
+    <!-- Category 3: Frontend & 3D Graphics -->
+    <text x="0" y="122" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">🌐 FRONTEND, GRAPHICS &amp; AUTOMATION</text>
+    <text x="0" y="140" fill="#94a3b8" font-size="10" class="font-mono">React 18 • Three.js WebGL • Tailwind CSS • Vite • GitHub Actions CI/CD</text>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="440" y1="38" x2="440" y2="190" stroke="#1c283f" stroke-width="1" stroke-dasharray="3 3" />
+
+  <!-- Right Column: Interactive Radar / HUD Telemetry -->
+  <g transform="translate(465, 46)">
+    <text x="0" y="14" fill="#cbd5e1" font-size="11" font-weight="700" class="font-mono">📡 RADAR &amp; DISCIPLINE INDEX</text>
+    
+    <!-- Telemetry Info Rows -->
+    <g transform="translate(0, 32)">
+      <text x="0" y="10" fill="#64748b" font-size="10.5" class="font-mono">ARCHITECTURE:</text>
+      <text x="120" y="10" fill="#f8fafc" font-size="10.5" font-weight="600" class="font-mono">Monorepo / Clean Core</text>
+
+      <text x="0" y="32" fill="#64748b" font-size="10.5" class="font-mono">EXECUTION:</text>
+      <text x="120" y="32" fill="#42be65" font-size="10.5" font-weight="600" class="font-mono">Deterministic // Strict</text>
+
+      <text x="0" y="54" fill="#64748b" font-size="10.5" class="font-mono">EXPLORATION:</text>
+      <text x="120" y="54" fill="#00d2d3" font-size="10.5" font-weight="600" class="font-mono">Applied AI &amp; Agents</text>
+
+      <text x="0" y="76" fill="#64748b" font-size="10.5" class="font-mono">IDENTITY:</text>
+      <text x="120" y="76" fill="#4589ff" font-size="10.5" font-weight="600" class="font-mono">CRTOOY Ecosystem</text>
+    </g>
+
+    <!-- Interactive Mini Radar Circle HUD -->
+    <g transform="translate(235, 52)">
+      <circle cx="28" cy="28" r="26" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <circle cx="28" cy="28" r="18" fill="none" stroke="#162238" stroke-width="1" />
+      <circle cx="28" cy="28" r="9" fill="none" stroke="#1b365d" stroke-width="1" />
+      <line x1="28" y1="2" x2="28" y2="54" stroke="#162238" stroke-width="1" />
+      <line x1="2" y1="28" x2="54" y2="28" stroke="#162238" stroke-width="1" />
+      
+      <!-- Rotating Radar Beam -->
+      <line x1="28" y1="28" x2="28" y2="4" stroke="#00d2d3" stroke-width="1.5" opacity="0.8" style="transform-origin: 28px 28px; animation: radarSweep 4s linear infinite;" />
+      <circle cx="28" cy="28" r="2.5" fill="#42be65" />
+    </g>
+  </g>
+</svg>

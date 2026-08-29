@@ -32,6 +32,14 @@ Focused on developing a solid engineering mindset, building developer tooling, a
 
 ---
 
+### ⚡ Capabilities & Engineering Matrix
+
+<p align="center">
+  <img src="assets/tech-matrix.svg" alt="CRTOOY Capabilities Matrix" width="100%" />
+</p>
+
+---
+
 ### 🧠 Currently Exploring
 
 - 🤖 **Applied AI:** Intelligent agent workflows, local model integration, and developer productivity tools.
@@ -79,7 +87,15 @@ Focused on developing a solid engineering mindset, building developer tooling, a
 
 ---
 
-### 📡 Developer Activity & Contributions
+### 📡 Live Engineering Telemetry & Pulse
+
+<p align="center">
+  <img src="assets/telemetry-widget.svg" alt="CRTOOY Telemetry Widget" width="100%" />
+</p>
+
+---
+
+### 📊 GitHub Activity & Snake
 
 <p align="center">
   <picture>

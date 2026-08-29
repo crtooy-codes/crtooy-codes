@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 45" width="100%" height="100%">
+  <defs>
+    <style>
+      .typing-text {
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+        font-size: 19px;
+        font-weight: 600;
+        fill: #4589ff;
+        letter-spacing: 1.5px;
+        text-anchor: middle;
+      }
+
+      .cursor {
+        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+        font-size: 19px;
+        font-weight: 700;
+        fill: #00d2d3;
+        animation: blink 0.8s infinite;
+      }
+
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+
+      /* 12s infinite loop: 4 words, each 3s */
+      @keyframes word1 {
+        0%, 20% { opacity: 1; transform: translateY(0); }
+        25%, 100% { opacity: 0; transform: translateY(4px); }
+      }
+
+      @keyframes word2 {
+        0%, 25% { opacity: 0; transform: translateY(-4px); }
+        26%, 45% { opacity: 1; transform: translateY(0); }
+        50%, 100% { opacity: 0; transform: translateY(4px); }
+      }
+
+      @keyframes word3 {
+        0%, 50% { opacity: 0; transform: translateY(-4px); }
+        51%, 70% { opacity: 1; transform: translateY(0); }
+        75%, 100% { opacity: 0; transform: translateY(4px); }
+      }
+
+      @keyframes word4 {
+        0%, 75% { opacity: 0; transform: translateY(-4px); }
+        76%, 95% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(4px); }
+      }
+
+      .w1 { animation: word1 12s infinite ease-in-out; }
+      .w2 { animation: word2 12s infinite ease-in-out; }
+      .w3 { animation: word3 12s infinite ease-in-out; }
+      .w4 { animation: word4 12s infinite ease-in-out; }
+    </style>
+  </defs>
+
+  <g transform="translate(325, 28)">
+    <text class="typing-text w1">Building.<tspan class="cursor"> _</tspan></text>
+    <text class="typing-text w2">Learning.<tspan class="cursor"> _</tspan></text>
+    <text class="typing-text w3">Automating.<tspan class="cursor"> _</tspan></text>
+    <text class="typing-text w4">Exploring AI.<tspan class="cursor"> _</tspan></text>
+  </g>
+</svg>

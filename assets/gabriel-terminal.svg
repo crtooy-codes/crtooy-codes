@@ -12,9 +12,7 @@
     </linearGradient>
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
-
-      .mono { font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }
+      .mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
 
       @keyframes termFadeIn {
         from { opacity: 0; transform: translateY(4px); }

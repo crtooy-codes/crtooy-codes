@@ -3,50 +3,50 @@
 </p>
 
 <p align="center">
-  <img src="assets/gabriel-terminal.svg" alt="Gabriel Silva - Terminal" width="100%" />
+  <img src="assets/typing.svg" alt="Typing Animation" width="100%" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/crtooy-codes">
-    <img src="https://readme-typing-svg.herokuapp.com/?color=4589ff&size=20&center=true&vCenter=true&width=600&font=JetBrains+Mono&lines=Building.;Learning.;Automating.;Exploring+AI." alt="Typing Animation" />
-  </a>
+  <img src="assets/gabriel-terminal.svg" alt="Gabriel Silva - Terminal" width="100%" />
 </p>
 
 ---
 
 ### 👨‍💻 About
 
-I am a technology enthusiast starting my professional journey as an **Apprentice at IBM Brasil**.
-
-My focus centers on developing a disciplined engineering mindset, exploring practical automation workflows, and deepening my understanding of modern computing systems and applied artificial intelligence.
-
-I value clear architecture, open-source collaboration, and building reliable tools that solve real-world problems.
+I am a technology enthusiast beginning my professional journey as an **Apprentice at IBM Brasil**.  
+Focused on developing a solid engineering foundation, exploring applied artificial intelligence, and building efficient automation workflows with an open-source mindset.
 
 ---
 
-### 🎯 Areas of Focus & Study
+### 🎯 Currently Exploring
 
-- **Automation & Scripting:** Designing efficient CLI utilities, task automation, and reproducible environments.
-- **Applied Artificial Intelligence:** Exploring agentic workflows, local models, and developer productivity tooling.
-- **Software Foundations:** Algorithms, data structures, Linux ecosystems, and clean code practices.
-- **Networking & Infrastructure:** Protocol inspection, network architecture, and security fundamentals.
+- **Systems & Automation:** CLI tooling, reproducible development environments, and task automation.
+- **Applied Artificial Intelligence:** Intelligent agents, local model integration, and developer workflows.
+- **Software Foundations:** Algorithms, data structures, Linux architecture, and clean code practices.
+- **Networking & Infrastructure:** Protocol analysis, security research, and system telemetry.
 
 ---
 
-### 🚀 Featured Projects
+### 🚀 Featured Builds
 
 - **[OpenLPS Network Toolkit](https://github.com/crtooy-codes/network-toolkit)**  
-  *An open-source network security and diagnostics toolkit for rooted Android environments, focusing on authorized laboratory research.*
+  *Open-source network diagnostics and security toolkit designed for authorized Android research.*
 
 - **[Bodycam FPS Prototype](https://github.com/crtooy-codes/Bodycam-FPS)**  
-  *An interactive 3D web graphics and physics experiment built with modern web technologies.*
+  *Interactive 3D web graphics experiment exploring camera inertia, procedural audio synthesis, and WebGL physics.*
 
 ---
 
-### 📌 Roadmap & Future Initiatives
+### 📊 GitHub Activity
 
-- `[In Development]` **CLI Productivity Utilities** — Lightweight automation tools for developer workflows.
-- `[Planned]` **Data & Document Automation Engine** — Structured text analysis and markdown reporting pipelines.
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/crtooy-codes/crtooy-codes/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/crtooy-codes/crtooy-codes/output/github-contribution-grid-snake.svg" />
+    <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/crtooy-codes/crtooy-codes/output/github-contribution-grid-snake.svg" width="100%" />
+  </picture>
+</p>
 
 ---
 
@@ -58,5 +58,5 @@ I value clear architecture, open-source collaboration, and building reliable too
 ---
 
 <div align="center">
-  <sub>This is a personal GitHub profile. All projects, code, and opinions are independent and strictly my own.</sub>
+  <sub>Personal GitHub profile. Projects and opinions expressed here are independent and solely my own.</sub>
 </div>

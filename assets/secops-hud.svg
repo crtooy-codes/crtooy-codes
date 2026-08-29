@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      @keyframes securityShieldPulse {
+        0%, 100% { filter: drop-shadow(0 0 2px #00d2d3); }
+        50% { filter: drop-shadow(0 0 10px #00d2d3); }
+      }
+
+      @keyframes streamDrift {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-30px); }
+      }
+
+      @keyframes auditScan {
+        0% { transform: translateX(0); opacity: 0.2; }
+        50% { opacity: 0.9; }
+        100% { transform: translateX(330px); opacity: 0.2; }
+      }
+
+      .shield-glow { animation: securityShieldPulse 3.5s ease-in-out infinite; }
+      .stream-move { animation: streamDrift 6s linear infinite; }
+      .scanner-beam { animation: auditScan 3.5s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .shield-glow, .stream-move, .scanner-beam { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="sec-bar-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f62fe" />
+      <stop offset="50%" stop-color="#00d2d3" />
+      <stop offset="100%" stop-color="#42be65" />
+    </linearGradient>
+
+    <linearGradient id="scan-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00d2d3" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00d2d3" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="220" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Header -->
+  <rect width="800" height="32" rx="12" fill="#0d1527" />
+  <rect x="0" y="22" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#1c283f" stroke-width="1" />
+
+  <g transform="translate(24, 21)">
+    <circle cx="6" cy="0" r="4" fill="#00d2d3" class="shield-glow" />
+    <text x="18" y="4" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">🛡️ SECOPS &amp; NETWORK DIAGNOSTICS LAB</text>
+  </g>
+  <text x="776" y="21" text-anchor="end" fill="#42be65" font-size="10" font-weight="700" class="font-mono">DEFENSIVE SECURITY // ACTIVE</text>
+
+  <!-- Left Column: Educational Modules -->
+  <g transform="translate(24, 48)">
+    <!-- Module 1: Hardening & Headers -->
+    <g transform="translate(0, 0)">
+      <rect width="360" height="46" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="14" y="18" fill="#f8fafc" font-size="10.5" font-weight="700" class="font-mono">🔒 HTTP SECURITY HEADERS AUDITING</text>
+      <text x="14" y="34" fill="#94a3b8" font-size="9.5" class="font-mono">CSP • HSTS • X-Frame-Options • CORS Hardening</text>
+    </g>
+
+    <!-- Module 2: Network & Protocol Analysis -->
+    <g transform="translate(0, 54)">
+      <rect width="360" height="46" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="14" y="18" fill="#f8fafc" font-size="10.5" font-weight="700" class="font-mono">🌐 PROTOCOL INSPECTION &amp; PACKET TELEMETRY</text>
+      <text x="14" y="34" fill="#94a3b8" font-size="9.5" class="font-mono">TCP/IP • Subnet / CIDR Math • Port &amp; Service Mapping</text>
+    </g>
+
+    <!-- Module 3: OWASP & Threat Modeling -->
+    <g transform="translate(0, 108)">
+      <rect width="360" height="46" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="14" y="18" fill="#f8fafc" font-size="10.5" font-weight="700" class="font-mono">📚 OWASP TOP 10 DEFENSIVE BLUEPRINT</text>
+      <text x="14" y="34" fill="#94a3b8" font-size="9.5" class="font-mono">Authentication Hardening • Input Sanitization • Zero Trust</text>
+    </g>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="410" y1="44" x2="410" y2="208" stroke="#1c283f" stroke-width="1" stroke-dasharray="3 3" />
+
+  <!-- Right Column: Live Security Posture & Scanner HUD -->
+  <g transform="translate(435, 48)">
+    <!-- Scanner Card -->
+    <rect width="340" height="154" rx="8" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    
+    <text x="16" y="22" fill="#64748b" font-size="10" font-weight="700" class="font-mono">DIAGNOSTIC RADAR &amp; AUDIT SUITE</text>
+    
+    <!-- Animated Scanning Line across Card -->
+    <line x1="16" y1="36" x2="16" y2="136" stroke="url(#scan-grad)" stroke-width="2" class="scanner-beam" />
+
+    <!-- Telemetry Rows -->
+    <g transform="translate(16, 44)">
+      <text x="0" y="12" fill="#94a3b8" font-size="10" class="font-mono">INTEGRITY CHECK:</text>
+      <text x="150" y="12" fill="#42be65" font-size="10" font-weight="700" class="font-mono">✓ 100% VERIFIED</text>
+
+      <text x="0" y="34" fill="#94a3b8" font-size="10" class="font-mono">ENCRYPTED ENTROPY:</text>
+      <text x="150" y="34" fill="#00d2d3" font-size="10" font-weight="700" class="font-mono">SHANNON MATH (7.8+)</text>
+
+      <text x="0" y="56" fill="#94a3b8" font-size="10" class="font-mono">ISOLATED SANDBOX:</text>
+      <text x="150" y="56" fill="#4589ff" font-size="10" font-weight="700" class="font-mono">CHROOT ROOTED ENV</text>
+
+      <text x="0" y="78" fill="#94a3b8" font-size="10" class="font-mono">SECURITY ETHICS:</text>
+      <text x="150" y="78" fill="#f8fafc" font-size="10" font-weight="700" class="font-mono">AUTHORIZED ONLY</text>
+    </g>
+
+    <!-- Bottom Progress Gauge -->
+    <g transform="translate(16, 138)">
+      <rect width="308" height="4" rx="2" fill="#162238" />
+      <rect width="308" height="4" rx="2" fill="url(#sec-bar-grad)" />
+    </g>
+  </g>
+</svg>

@@ -10,9 +10,9 @@
   <tr>
     <td>
       <h3>⚡ <a href="https://github.com/crtooy-codes/crtooy">CRTOOY Developer System</a> &nbsp; <code>[ ACTIVE ]</code></h3>
-      <p>Interactive developer operating system, engineering console, and terminal interface built with strict TypeScript, React 18, and Node.js. Delivers genuine command execution, keyboard navigation, and offline PWA capability.</p>
+      <p>Interactive developer operating system, engineering console, and terminal interface built with strict TypeScript, React 18, and Node.js. Delivers genuine command execution, procedural Web Audio synthesis, interactive CRT optics, and offline PWA capability.</p>
       <p>
-        <b>Tech Stack:</b> <code>TypeScript Strict</code> &bull; <code>React 18</code> &bull; <code>Vite</code> &bull; <code>Node.js</code> &bull; <code>PWA</code> &bull; <code>Tailwind CSS</code>
+        <b>Tech Stack:</b> <code>TypeScript Strict</code> &bull; <code>React 18</code> &bull; <code>Vite</code> &bull; <code>Node.js</code> &bull; <code>Web Audio API</code> &bull; <code>PWA</code> &bull; <code>Tailwind CSS</code>
       </p>
       <p>
         👉 <b><a href="https://crtooy-codes.github.io/crtooy/">Launch Web Console</a></b> &nbsp;&bull;&nbsp; 
@@ -37,6 +37,17 @@ Focused on developing a solid engineering mindset, building developer tooling, a
 <p align="center">
   <img src="assets/tech-matrix.svg" alt="CRTOOY Capabilities Matrix" width="100%" />
 </p>
+
+---
+
+### 🛡️ SecOps & Network Diagnostics Lab
+
+<p align="center">
+  <img src="assets/secops-hud.svg" alt="CRTOOY SecOps and Network Diagnostics Lab" width="100%" />
+</p>
+
+* **Educational Security Runtimes:** HTTP Security Header Auditing (`CSP`, `HSTS`, `X-Frame-Options`), Shannon Entropy Analysis, Subnet/CIDR IPv4 Math, and OWASP Top 10 Mitigation Blueprints.
+* **Explore Live in Terminal:** Run `secops` inside the **[Web Console](https://crtooy-codes.github.io/crtooy/)** or via `npx crtooy secops`.
 
 ---
 

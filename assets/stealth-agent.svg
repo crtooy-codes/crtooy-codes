@@ -1,0 +1,315 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+
+      /* Overall Stage Timeline: 16s Seamless Loop */
+      /*
+        0% - 20%: Walk from X: -40 to X: 220
+        20% - 30%: Look around at terminal
+        30% - 35%: Laser alert! Dive and hide behind Server Box (X: 240)
+        35% - 50%: Laser sweeps over while hiding; Agent peeks head out
+        50% - 55%: Laser clears, emerge and jump up to Terminal (X: 420)
+        55% - 75%: Typing furiously on holo-keyboard [HACKING / DEPLOYING]
+        75% - 85%: Success celebration (jump and victory pose)
+        85% - 100%: Rocket jetpack boost off to the right (X: 850)
+      */
+
+      @keyframes agentMovement {
+        0% { transform: translateX(0px) translateY(0px); opacity: 0; }
+        3% { opacity: 1; }
+        20% { transform: translateX(200px) translateY(0px); }
+        28% { transform: translateX(200px) translateY(0px); }
+        /* Dive to hide behind server */
+        32% { transform: translateX(235px) translateY(8px) scale(0.9); }
+        /* Peek out slightly */
+        40% { transform: translateX(250px) translateY(4px) scale(0.9); }
+        48% { transform: translateX(235px) translateY(8px) scale(0.9); }
+        /* Emerge and jump onto terminal */
+        54% { transform: translateX(380px) translateY(0px) scale(1); }
+        74% { transform: translateX(380px) translateY(0px); }
+        /* Victory jump */
+        78% { transform: translateX(380px) translateY(-18px); }
+        82% { transform: translateX(380px) translateY(0px); }
+        /* Rocket boost away */
+        86% { transform: translateX(410px) translateY(-10px); }
+        100% { transform: translateX(840px) translateY(-40px); opacity: 1; }
+      }
+
+      /* Leg Walking Cycles */
+      @keyframes leftLegCycle {
+        0%, 100% { transform: rotate(0deg); }
+        10% { transform: rotate(28deg); }
+        20% { transform: rotate(-28deg); }
+        30%, 50% { transform: rotate(0deg); }
+        55% { transform: rotate(20deg); }
+        60%, 85% { transform: rotate(0deg); }
+        90%, 100% { transform: rotate(-15deg); }
+      }
+      @keyframes rightLegCycle {
+        0%, 100% { transform: rotate(0deg); }
+        10% { transform: rotate(-28deg); }
+        20% { transform: rotate(28deg); }
+        30%, 50% { transform: rotate(0deg); }
+        55% { transform: rotate(-20deg); }
+        60%, 85% { transform: rotate(0deg); }
+        90%, 100% { transform: rotate(15deg); }
+      }
+
+      /* Arm Typing and Jetpack Animations */
+      @keyframes leftArmAction {
+        0%, 28% { transform: rotate(0deg); }
+        55%, 74% { transform: rotate(-35deg) translateY(-2px); }
+        78% { transform: rotate(-120deg); } /* Victory wave */
+        86%, 100% { transform: rotate(45deg); }
+      }
+      @keyframes rightArmAction {
+        0%, 28% { transform: rotate(0deg); }
+        55%, 74% { transform: rotate(-45deg) translateY(2px); }
+        78% { transform: rotate(-120deg); } /* Victory wave */
+        86%, 100% { transform: rotate(45deg); }
+      }
+
+      /* Typing Hands Flutter */
+      @keyframes typingFingers {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+
+      /* Laser Sweep Beam */
+      @keyframes laserScan {
+        0%, 25% { transform: translateX(-50px); opacity: 0; }
+        30% { opacity: 0.9; }
+        45% { opacity: 0.9; }
+        50% { transform: translateX(850px); opacity: 0; }
+        100% { transform: translateX(850px); opacity: 0; }
+      }
+
+      /* Speech Bubbles Visibility */
+      @keyframes alertBubble {
+        0%, 26% { opacity: 0; transform: scale(0.5); }
+        28%, 34% { opacity: 1; transform: scale(1); }
+        36%, 100% { opacity: 0; transform: scale(0.5); }
+      }
+      @keyframes hackBubble {
+        0%, 54% { opacity: 0; transform: scale(0.5); }
+        56%, 74% { opacity: 1; transform: scale(1); }
+        76%, 100% { opacity: 0; transform: scale(0.5); }
+      }
+      @keyframes successBubble {
+        0%, 75% { opacity: 0; transform: scale(0.5); }
+        77%, 85% { opacity: 1; transform: scale(1.1); }
+        87%, 100% { opacity: 0; transform: scale(0.5); }
+      }
+
+      /* Jetpack Flame */
+      @keyframes flamePulse {
+        0%, 100% { opacity: 0; transform: scale(0.2); }
+        85% { opacity: 0.2; transform: scale(0.5); }
+        86%, 99% { opacity: 1; transform: scale(1.2) translateY(4px); }
+      }
+
+      .agent-container { animation: agentMovement 16s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .leg-left { transform-origin: 18px 48px; animation: leftLegCycle 16s ease-in-out infinite; }
+      .leg-right { transform-origin: 24px 48px; animation: rightLegCycle 16s ease-in-out infinite; }
+      .arm-left { transform-origin: 14px 28px; animation: leftArmAction 16s ease-in-out infinite; }
+      .arm-right { transform-origin: 26px 28px; animation: rightArmAction 16s ease-in-out infinite; }
+      .typing-hands { animation: typingFingers 0.15s ease-in-out infinite; }
+      
+      .laser-beam { animation: laserScan 16s linear infinite; }
+      .bubble-alert { transform-origin: 30px -10px; animation: alertBubble 16s ease-in-out infinite; }
+      .bubble-hack { transform-origin: 30px -10px; animation: hackBubble 16s ease-in-out infinite; }
+      .bubble-success { transform-origin: 30px -10px; animation: successBubble 16s ease-in-out infinite; }
+      .jet-flame { transform-origin: 6px 42px; animation: flamePulse 16s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .agent-container, .leg-left, .leg-right, .arm-left, .arm-right, .laser-beam, .jet-flame { animation: none; }
+      }
+    </style>
+
+    <!-- Linear Gradients -->
+    <linearGradient id="laser-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff3366" stop-opacity="0" />
+      <stop offset="50%" stop-color="#ff3366" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#ff3366" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="jet-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d2d3" />
+      <stop offset="50%" stop-color="#ff9400" />
+      <stop offset="100%" stop-color="#ff3366" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="holo-screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f62fe" stop-opacity="0.2" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="200" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Strip -->
+  <rect width="800" height="30" rx="12" fill="#0d1527" />
+  <rect x="0" y="20" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="30" x2="800" y2="30" stroke="#1c283f" stroke-width="1" />
+
+  <g transform="translate(24, 20)">
+    <circle cx="6" cy="0" r="4" fill="#00d2d3" />
+    <text x="18" y="4" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">🎮 LIVE CYBER INFILTRATOR // AUTONOMOUS OPERATIVE</text>
+  </g>
+  <text x="776" y="20" text-anchor="end" fill="#42be65" font-size="10" font-weight="700" class="font-mono">STATUS: SNEAK and INJECT RUNTIME</text>
+
+  <!-- STAGE SCENERY -->
+  <!-- Floor Grid -->
+  <line x1="20" y1="165" x2="780" y2="165" stroke="#1c283f" stroke-width="2" />
+  <line x1="20" y1="165" x2="780" y2="165" stroke="#00d2d3" stroke-width="0.8" stroke-dasharray="8 6" opacity="0.6" />
+
+  <!-- Scenery Object 1: Server Rack 1 (Left) -->
+  <g transform="translate(60, 65)">
+    <rect width="65" height="100" rx="4" fill="#0d1527" stroke="#1c283f" stroke-width="1.2" />
+    <line x1="10" y1="20" x2="55" y2="20" stroke="#162238" stroke-width="1" />
+    <line x1="10" y1="40" x2="55" y2="40" stroke="#162238" stroke-width="1" />
+    <line x1="10" y1="60" x2="55" y2="60" stroke="#162238" stroke-width="1" />
+    <line x1="10" y1="80" x2="55" y2="80" stroke="#162238" stroke-width="1" />
+    <circle cx="15" cy="12" r="2" fill="#42be65" />
+    <circle cx="23" cy="12" r="2" fill="#00d2d3" />
+    <circle cx="15" cy="32" r="2" fill="#42be65" />
+    <circle cx="15" cy="52" r="2" fill="#42be65" />
+    <text x="32" y="94" text-anchor="middle" fill="#64748b" font-size="7" class="font-mono">RACK-01</text>
+  </g>
+
+  <!-- Scenery Object 2: Server Rack 2 (The Hiding Spot: X: 270) -->
+  <g transform="translate(270, 55)">
+    <rect width="80" height="110" rx="5" fill="#0d1527" stroke="#1c283f" stroke-width="1.5" />
+    <rect x="6" y="8" width="68" height="18" rx="2" fill="#070b12" stroke="#162238" stroke-width="1" />
+    <rect x="6" y="32" width="68" height="18" rx="2" fill="#070b12" stroke="#162238" stroke-width="1" />
+    <rect x="6" y="56" width="68" height="18" rx="2" fill="#070b12" stroke="#162238" stroke-width="1" />
+    <rect x="6" y="80" width="68" height="18" rx="2" fill="#070b12" stroke="#162238" stroke-width="1" />
+    
+    <!-- LED Indicators -->
+    <circle cx="14" cy="17" r="2.5" fill="#42be65" />
+    <circle cx="22" cy="17" r="2.5" fill="#00d2d3" />
+    <circle cx="14" cy="41" r="2.5" fill="#4589ff" />
+    <circle cx="14" cy="65" r="2.5" fill="#42be65" />
+    <circle cx="22" cy="65" r="2.5" fill="#a855f7" />
+    <text x="40" y="103" text-anchor="middle" fill="#64748b" font-size="8" font-weight="700" class="font-mono">IBM NODE</text>
+  </g>
+
+  <!-- Scenery Object 3: Mainframe Terminal Desk (Target at X: 480) -->
+  <g transform="translate(480, 80)">
+    <rect width="130" height="85" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1.2" />
+    
+    <!-- Monitor Display Screen -->
+    <rect x="15" y="10" width="100" height="48" rx="4" fill="#05080e" stroke="#00d2d3" stroke-width="1" />
+    <!-- Screen Code Lines -->
+    <line x1="22" y1="20" x2="80" y2="20" stroke="#00d2d3" stroke-width="1.5" />
+    <line x1="22" y1="28" x2="105" y2="28" stroke="#42be65" stroke-width="1.2" />
+    <line x1="22" y1="36" x2="65" y2="36" stroke="#4589ff" stroke-width="1.2" />
+    <line x1="22" y1="44" x2="90" y2="44" stroke="#f8fafc" stroke-width="1.2" />
+    
+    <text x="65" y="74" text-anchor="middle" fill="#64748b" font-size="8" font-weight="700" class="font-mono">PROD GATEWAY</text>
+  </g>
+
+  <!-- Scenery Object 4: Warp Portal Exit (Right: X: 710) -->
+  <g transform="translate(710, 85)">
+    <ellipse cx="25" cy="40" rx="20" ry="42" fill="none" stroke="#00d2d3" stroke-width="2" stroke-dasharray="6 3" />
+    <ellipse cx="25" cy="40" rx="12" ry="28" fill="none" stroke="#0f62fe" stroke-width="1.5" />
+    <ellipse cx="25" cy="40" rx="5" ry="12" fill="#00d2d3" opacity="0.6" />
+    <text x="25" y="90" text-anchor="middle" fill="#00d2d3" font-size="7.5" font-weight="700" class="font-mono">WARP GATE</text>
+  </g>
+
+  <!-- SWEEPING SECURITY LASER SENSOR -->
+  <g class="laser-beam">
+    <polygon points="0,30 25,165 5,165" fill="url(#laser-grad)" />
+    <line x1="15" y1="30" x2="15" y2="165" stroke="#ff3366" stroke-width="1.8" />
+    <circle cx="15" cy="30" r="3" fill="#ff3366" />
+  </g>
+
+  <!-- THE MINI CYBER INFILTRATOR CHARACTER -->
+  <g class="agent-container" transform="translate(40, 105)">
+    
+    <!-- Speech Bubbles (Above Character) -->
+    <!-- Bubble 1: Alert [ ! ] -->
+    <g class="bubble-alert" transform="translate(0, -28)">
+      <rect x="-8" y="-14" width="48" height="18" rx="4" fill="#ff3366" />
+      <polygon points="12,4 18,4 14,9" fill="#ff3366" />
+      <text x="16" y="-1" text-anchor="middle" fill="#ffffff" font-size="9" font-weight="900" class="font-mono">! HIDE</text>
+    </g>
+
+    <!-- Bubble 2: Hack [ INJECT ] -->
+    <g class="bubble-hack" transform="translate(10, -32)">
+      <rect x="-10" y="-14" width="62" height="18" rx="4" fill="#0f62fe" stroke="#00d2d3" stroke-width="1" />
+      <polygon points="16,4 22,4 18,9" fill="#0f62fe" />
+      <text x="21" y="-1" text-anchor="middle" fill="#00d2d3" font-size="8.5" font-weight="700" class="font-mono">NPX CRTOOY</text>
+    </g>
+
+    <!-- Bubble 3: Success [ PUSHED! 🚀 ] -->
+    <g class="bubble-success" transform="translate(10, -32)">
+      <rect x="-12" y="-14" width="68" height="18" rx="4" fill="#42be65" />
+      <polygon points="18,4 24,4 20,9" fill="#42be65" />
+      <text x="22" y="-1" text-anchor="middle" fill="#080c14" font-size="8.5" font-weight="900" class="font-mono">DEPLOYED!</text>
+    </g>
+
+    <!-- Jetpack on Back (Left side) -->
+    <g transform="translate(2, 22)">
+      <rect width="8" height="18" rx="2" fill="#1e293b" stroke="#00d2d3" stroke-width="0.8" />
+      <!-- Jetpack Flame -->
+      <polygon points="1,18 7,18 4,32" fill="url(#jet-grad)" class="jet-flame" />
+    </g>
+
+    <!-- Legs -->
+    <!-- Left Leg -->
+    <g class="leg-left">
+      <rect x="15" y="44" width="5" height="16" rx="2" fill="#0f62fe" />
+      <rect x="14" y="56" width="9" height="5" rx="1.5" fill="#00d2d3" />
+    </g>
+    <!-- Right Leg -->
+    <g class="leg-right">
+      <rect x="22" y="44" width="5" height="16" rx="2" fill="#0052cc" />
+      <rect x="21" y="56" width="9" height="5" rx="1.5" fill="#00d2d3" />
+    </g>
+
+    <!-- Body Torso (Cyber Hoodie / Armor) -->
+    <rect x="10" y="22" width="22" height="24" rx="4" fill="#0d1527" stroke="#1c283f" stroke-width="1.2" />
+    <rect x="14" y="26" width="14" height="16" rx="2" fill="#162238" />
+    <!-- Torso Neon Core Stripe -->
+    <line x1="21" y1="26" x2="21" y2="40" stroke="#00d2d3" stroke-width="1.8" />
+
+    <!-- Left Arm -->
+    <g class="arm-left">
+      <rect x="6" y="24" width="5" height="14" rx="2" fill="#0f62fe" />
+      <circle cx="8" cy="38" r="2.5" fill="#00d2d3" />
+    </g>
+
+    <!-- Head and Cyber Visor -->
+    <g transform="translate(8, 2)">
+      <!-- Head Base (Hoodie) -->
+      <circle cx="13" cy="10" r="10" fill="#0d1527" stroke="#1c283f" stroke-width="1.2" />
+      <!-- Face Shadow -->
+      <ellipse cx="15" cy="11" rx="7" ry="6" fill="#080c14" />
+      <!-- Glowing Cyber Visor Glass -->
+      <rect x="10" y="8" width="12" height="5" rx="2.5" fill="#00d2d3" />
+      <rect x="11" y="9" width="4" height="1.8" rx="0.9" fill="#ffffff" />
+      <!-- Cyber Antennas / Audio Ear Piece -->
+      <rect x="5" y="7" width="2.5" height="6" rx="1" fill="#4589ff" />
+    </g>
+
+    <!-- Right Arm -->
+    <g class="arm-right">
+      <rect x="28" y="24" width="5" height="14" rx="2" fill="#0f62fe" />
+      <circle cx="30" cy="38" r="2.5" fill="#00d2d3" class="typing-hands" />
+    </g>
+
+    <!-- Holographic Portable Cyberdeck (Appears in front when hacking) -->
+    <g transform="translate(26, 26)">
+      <polygon points="4,2 18,-6 24,-4 10,4" fill="url(#holo-screen)" stroke="#00d2d3" stroke-width="0.8" opacity="0.85" />
+      <line x1="8" y1="0" x2="16" y2="-4" stroke="#42be65" stroke-width="0.8" />
+    </g>
+  </g>
+
+  <!-- Bottom Strip -->
+  <line x1="24" y1="184" x2="776" y2="184" stroke="#1c283f" stroke-width="1" />
+  <text x="28" y="195" fill="#64748b" font-size="8.5" class="font-mono">CRTOOY AUTONOMOUS BOT // INFILTRATING REPOSITORIES and#8226; DISPATCHING PASSING BUILDS</text>
+  <text x="772" y="195" text-anchor="end" fill="#00d2d3" font-size="8.5" font-weight="700" class="font-mono">LOOP: 16.0s SEAMLESS</text>
+</svg>

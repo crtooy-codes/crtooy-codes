@@ -11,6 +11,14 @@
 
 ---
 
+### 🎮 Live Cyber Infiltrator & Autonomous Bot
+
+<p align="center">
+  <img src="assets/stealth-agent.svg" alt="CRTOOY Autonomous Cyber Operative" width="100%" />
+</p>
+
+---
+
 ### 👁️ Neural-Link HUD & Biometric Verification
 
 <p align="center">

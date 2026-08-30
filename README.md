@@ -3,6 +3,10 @@
 </p>
 
 <p align="center">
+  <img src="assets/cyber-id-badge.svg" alt="CRTOOY Cyber-ID Passport - Gabriel Silva" width="100%" />
+</p>
+
+<p align="center">
   <a href="https://crtooy-codes.github.io/crtooy/"><img src="https://img.shields.io/badge/🚀_Launch_Web_OS-crtooy.dev-0f62fe?style=for-the-badge&logoColor=white" alt="Launch Web OS" /></a>
   <a href="https://www.npmjs.com/package/crtooy"><img src="https://img.shields.io/badge/💻_Run_CLI-npx_crtooy-00d2d3?style=for-the-badge&logoColor=black" alt="Run CLI" /></a>
   <a href="https://www.linkedin.com/in/gabriel-silva-de-oliveira-/"><img src="https://img.shields.io/badge/💼_LinkedIn-Gabriel_Silva-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
@@ -23,10 +27,26 @@
 
 ---
 
+### 🪐 3D Planetary Tech Ecosystem // Gravitational Orbits
+
+<p align="center">
+  <img src="assets/tech-orbit.svg" alt="CRTOOY 3D Planetary Tech Ecosystem" width="100%" />
+</p>
+
+---
+
 ### 🎮 Live Cyber Infiltrator & Autonomous Bot
 
 <p align="center">
   <img src="assets/stealth-agent.svg" alt="CRTOOY Autonomous Cyber Operative" width="100%" />
+</p>
+
+---
+
+### 🔧 Real-Time Runtime Debugger & Bug Fixer
+
+<p align="center">
+  <img src="assets/cyber-bug-fixer.svg" alt="CRTOOY Live Bug Fixer and Quality Conduit" width="100%" />
 </p>
 
 ---
@@ -167,6 +187,19 @@ Focused on architecting deterministic developer tooling, researching defensive n
 
 ---
 
+### 📊 Live Deep-Space GitHub Telemetry & Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=crtooy-codes&show_icons=true&bg_color=080c14&title_color=00d2d3&text_color=cbd5e1&icon_color=0f62fe&border_color=1c283f&border_radius=10" alt="Gabriel Silva GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=crtooy-codes&layout=compact&bg_color=080c14&title_color=00d2d3&text_color=cbd5e1&border_color=1c283f&border_radius=10" alt="Top Languages" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=crtooy-codes&background=080c14&border=1c283f&stroke=00d2d3&ring=00d2d3&fire=42be65&currStreakNum=00d2d3&sideNums=4589ff&currStreakLabel=cbd5e1&sideLabels=94a3b8&dates=64748b&border_radius=10" alt="GitHub Streak Stats" />
+</p>
+
+---
+
 ### 📂 Classified Cyberdeck Archives & Technical Blueprints
 
 <details>
@@ -174,7 +207,7 @@ Focused on architecting deterministic developer tooling, researching defensive n
 
 ```text
 ========================================================================================
-                      CRTOOY KERNEL ARCHITECTURE BLUEPRINT v4.0
+                      CRTOOY KERNEL ARCHITECTURE BLUEPRINT v4.5
 ========================================================================================
 
   [ USER INTERFACES ]

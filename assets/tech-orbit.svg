@@ -1,0 +1,153 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Elliptical 3D Planetary Orbit Rotations */
+      @keyframes orbitInner {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      @keyframes orbitMiddle {
+        0% { transform: rotate(60deg); }
+        100% { transform: rotate(420deg); }
+      }
+
+      @keyframes orbitOuter {
+        0% { transform: rotate(120deg); }
+        100% { transform: rotate(480deg); }
+      }
+
+      @keyframes coreGlowPulsing {
+        0%, 100% { r: 24; opacity: 0.85; filter: drop-shadow(0 0 8px #00d2d3); }
+        50% { r: 28; opacity: 1; filter: drop-shadow(0 0 20px #0f62fe); }
+      }
+
+      @keyframes planetHover {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-3px); }
+      }
+
+      .inner-orbit-plane { transform-origin: 400px 135px; animation: orbitInner 10s linear infinite; }
+      .middle-orbit-plane { transform-origin: 400px 135px; animation: orbitMiddle 16s linear infinite; }
+      .outer-orbit-plane { transform-origin: 400px 135px; animation: orbitOuter 24s linear infinite; }
+      .core-pulse { animation: coreGlowPulsing 3s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .inner-orbit-plane, .middle-orbit-plane, .outer-orbit-plane, .core-pulse { animation: none; }
+      }
+    </style>
+
+    <!-- Core Gradients -->
+    <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#00d2d3" />
+      <stop offset="80%" stop-color="#0f62fe" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="ambient-space" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="260" rx="12" fill="#070b12" stroke="#1c283f" stroke-width="1.5" />
+  <rect width="800" height="260" rx="12" fill="url(#ambient-space)" />
+
+  <!-- Top Title Strip -->
+  <rect width="800" height="32" rx="12" fill="#0d1527" />
+  <rect x="0" y="22" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#1c283f" stroke-width="1" />
+
+  <g transform="translate(24, 21)">
+    <circle cx="6" cy="0" r="4" fill="#00d2d3" />
+    <text x="18" y="4" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">🪐 3D PLANETARY TECH ECOSYSTEM // GRAVITATIONAL ORBITS</text>
+  </g>
+  <text x="776" y="21" text-anchor="end" fill="#42be65" font-size="10" font-weight="700" class="font-mono">7 RUNTIME PLANETS SYNCHRONIZED</text>
+
+  <!-- 3D ORBITAL ELLIPSES (CENTER: 400, 135) -->
+  <g>
+    <!-- Orbit Ring 1 (Inner) -->
+    <ellipse cx="400" cy="135" rx="130" ry="50" fill="none" stroke="#1c283f" stroke-width="1" stroke-dasharray="4 3" />
+    <!-- Orbit Ring 2 (Middle) -->
+    <ellipse cx="400" cy="135" rx="220" ry="75" fill="none" stroke="#1c283f" stroke-width="1.2" stroke-dasharray="6 4" />
+    <!-- Orbit Ring 3 (Outer) -->
+    <ellipse cx="400" cy="135" rx="310" ry="98" fill="none" stroke="#1c283f" stroke-width="1" stroke-dasharray="8 4" opacity="0.7" />
+  </g>
+
+  <!-- CENTRAL SUN: CRTOOY KERNEL (400, 135) -->
+  <g transform="translate(400, 135)">
+    <circle cx="0" cy="0" r="32" fill="url(#sun-glow)" />
+    <circle cx="0" cy="0" r="22" fill="#0f62fe" class="core-pulse" />
+    <circle cx="0" cy="0" r="8" fill="#ffffff" />
+    <text x="0" y="4" text-anchor="middle" fill="#ffffff" font-size="8" font-weight="900" class="font-mono">CRTOOY</text>
+    <text x="0" y="38" text-anchor="middle" fill="#00d2d3" font-size="8" font-weight="700" class="font-mono">KERNEL CORE</text>
+  </g>
+
+  <!-- ROTATING INNER ORBIT (Planets: TypeScript and React) -->
+  <g class="inner-orbit-plane">
+    <!-- Planet 1: TypeScript (Angle 0 deg: X: 530, Y: 135) -->
+    <g transform="translate(530, 135)">
+      <circle cx="0" cy="0" r="10" fill="#0d1527" stroke="#00d2d3" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="4" fill="#00d2d3" />
+      <text x="14" y="4" fill="#f8fafc" font-size="8" font-weight="700" class="font-mono">TypeScript 5.7</text>
+    </g>
+
+    <!-- Planet 2: React 18 / Vite (Angle 180 deg: X: 270, Y: 135) -->
+    <g transform="translate(270, 135)">
+      <circle cx="0" cy="0" r="10" fill="#0d1527" stroke="#4589ff" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="4" fill="#4589ff" />
+      <text x="-14" y="4" text-anchor="end" fill="#f8fafc" font-size="8" font-weight="700" class="font-mono">React 18 / Vite</text>
+    </g>
+  </g>
+
+  <!-- ROTATING MIDDLE ORBIT (Planets: Node.js, Kotlin, Three.js) -->
+  <g class="middle-orbit-plane">
+    <!-- Planet 3: Node.js 22 (Angle 0: X: 620, Y: 135) -->
+    <g transform="translate(620, 135)">
+      <circle cx="0" cy="0" r="11" fill="#0d1527" stroke="#42be65" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="5" fill="#42be65" />
+      <text x="14" y="4" fill="#f8fafc" font-size="8" font-weight="700" class="font-mono">Node.js 22 ESM</text>
+    </g>
+
+    <!-- Planet 4: Kotlin / Android (Angle 120) -->
+    <g transform="translate(290, 80)">
+      <circle cx="0" cy="0" r="10" fill="#0d1527" stroke="#ff9400" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="4" fill="#ff9400" />
+      <text x="-14" y="4" text-anchor="end" fill="#f8fafc" font-size="8" font-weight="700" class="font-mono">Kotlin / Android</text>
+    </g>
+
+    <!-- Planet 5: Three.js WebGL (Angle 240) -->
+    <g transform="translate(290, 190)">
+      <circle cx="0" cy="0" r="10" fill="#0d1527" stroke="#ff7eb6" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="4" fill="#ff7eb6" />
+      <text x="-14" y="4" text-anchor="end" fill="#f8fafc" font-size="8" font-weight="700" class="font-mono">Three.js WebGL</text>
+    </g>
+  </g>
+
+  <!-- ROTATING OUTER ORBIT (Planets: Web Audio DSP and Applied AI) -->
+  <g class="outer-orbit-plane">
+    <!-- Planet 6: Web Audio DSP (Angle 0: X: 710, Y: 135) -->
+    <g transform="translate(710, 135)">
+      <circle cx="0" cy="0" r="11" fill="#0d1527" stroke="#fddc69" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="5" fill="#fddc69" />
+      <text x="14" y="4" fill="#f8fafc" font-size="8" font-weight="700" class="font-mono">Web Audio DSP</text>
+    </g>
+
+    <!-- Planet 7: Applied AI Agents (Angle 180: X: 90, Y: 135) -->
+    <g transform="translate(90, 135)">
+      <circle cx="0" cy="0" r="11" fill="#0d1527" stroke="#a855f7" stroke-width="1.5" />
+      <circle cx="0" cy="0" r="5" fill="#a855f7" />
+      <text x="-14" y="4" text-anchor="end" fill="#f8fafc" font-size="8" font-weight="700" class="font-mono">Applied AI Agents</text>
+    </g>
+  </g>
+
+  <!-- Bottom Line -->
+  <line x1="24" y1="240" x2="776" y2="240" stroke="#1c283f" stroke-width="1" />
+  <text x="28" y="252" fill="#64748b" font-size="8" class="font-mono">GRAVITATIONAL RUNTIME: PURE TYPESCRIPT KERNEL &#8226; CONTINUOUS HARMONIC MOTION</text>
+  <text x="772" y="252" text-anchor="end" fill="#00d2d3" font-size="8" font-weight="700" class="font-mono">STATUS: 100% STABLE SYSTEM</text>
+</svg>

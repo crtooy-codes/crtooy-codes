@@ -1,6 +1,6 @@
 ﻿{
   "system": "CRTOOY Profile Nexus",
-  "version": "4.5.0",
+  "version": "5.0.0",
   "profileState": "ONLINE",
   "buildState": "PASSING",
   "matrix": {
@@ -11,7 +11,9 @@
     "graphics3D": "THREEJS_WEBGL",
     "audioDSP": "WEB_AUDIO_PROCEDURAL_SYNTH",
     "quantumCore": "ISOMETRIC_CHASSIS_3D",
-    "neuralHUD": "BIOMETRIC_RETINA_VERIFIED",
+    "planetaryOrbit": "GRAVITATIONAL_TECH_ORBIT",
+    "cyberID": "VERIFIED_OPERATOR_PASSPORT",
+    "runtimeDebugger": "AUTOMATED_BUG_DEFUSER",
     "openSource": "CONTINUOUS_DEPLOY"
   }
 }

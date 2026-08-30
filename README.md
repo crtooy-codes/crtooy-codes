@@ -27,6 +27,38 @@
 
 ---
 
+### 🌐 Global Orbital Relay // São Paulo to Global Nodes
+
+<p align="center">
+  <img src="assets/global-orbital-link.svg" alt="CRTOOY Global Orbital Link" width="100%" />
+</p>
+
+---
+
+### 💻 Quantum Decryption Matrix // Streaming Digital Rain
+
+<p align="center">
+  <img src="assets/matrix-rain-core.svg" alt="CRTOOY Matrix Rain Decryption" width="100%" />
+</p>
+
+---
+
+### ⚔️ RPG Character Attributes // S-Tier Systems Architect
+
+<p align="center">
+  <img src="assets/rpg-skill-tree.svg" alt="CRTOOY RPG Character Attributes" width="100%" />
+</p>
+
+---
+
+### 🕹️ Arcade Retro Battle // Operative vs Glitch Titan
+
+<p align="center">
+  <img src="assets/cyber-boss-battle.svg" alt="CRTOOY Arcade Boss Battle" width="100%" />
+</p>
+
+---
+
 ### 🪐 3D Planetary Tech Ecosystem // Gravitational Orbits
 
 <p align="center">
@@ -123,6 +155,14 @@ Focused on architecting deterministic developer tooling, researching defensive n
 
 ---
 
+### 🎹 Procedural Audio Launchpad // 8-Pad Synth Matrix
+
+<p align="center">
+  <img src="assets/cyber-soundboard.svg" alt="CRTOOY 8-Pad Audio Launchpad" width="100%" />
+</p>
+
+---
+
 ### 🛡️ SecOps & Network Diagnostics Lab
 
 <p align="center">
@@ -207,7 +247,7 @@ Focused on architecting deterministic developer tooling, researching defensive n
 
 ```text
 ========================================================================================
-                      CRTOOY KERNEL ARCHITECTURE BLUEPRINT v4.5
+                      CRTOOY KERNEL ARCHITECTURE BLUEPRINT v5.0
 ========================================================================================
 
   [ USER INTERFACES ]

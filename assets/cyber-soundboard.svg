@@ -1,0 +1,108 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 170" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+
+      /* Pad Pulsing LED Glows */
+      @keyframes padGlowA {
+        0%, 100% { fill: #0d1527; stroke: #00d2d3; filter: drop-shadow(0 0 2px #00d2d3); }
+        50% { fill: #0f62fe; stroke: #ffffff; filter: drop-shadow(0 0 8px #00d2d3); }
+      }
+      @keyframes padGlowB {
+        0%, 100% { fill: #0d1527; stroke: #4589ff; }
+        50% { fill: #00d2d3; stroke: #ffffff; filter: drop-shadow(0 0 8px #4589ff); }
+      }
+      @keyframes padGlowC {
+        0%, 100% { fill: #0d1527; stroke: #42be65; }
+        50% { fill: #42be65; stroke: #ffffff; filter: drop-shadow(0 0 8px #42be65); }
+      }
+      @keyframes padGlowD {
+        0%, 100% { fill: #0d1527; stroke: #a855f7; }
+        50% { fill: #a855f7; stroke: #ffffff; filter: drop-shadow(0 0 8px #a855f7); }
+      }
+
+      .pad-1 { animation: padGlowA 1.6s ease-in-out infinite; }
+      .pad-2 { animation: padGlowB 1.8s ease-in-out infinite 0.3s; }
+      .pad-3 { animation: padGlowC 1.4s ease-in-out infinite 0.6s; }
+      .pad-4 { animation: padGlowD 2.0s ease-in-out infinite 0.9s; }
+      .pad-5 { animation: padGlowA 1.5s ease-in-out infinite 0.4s; }
+      .pad-6 { animation: padGlowB 1.9s ease-in-out infinite 0.8s; }
+      .pad-7 { animation: padGlowC 1.7s ease-in-out infinite 0.2s; }
+      .pad-8 { animation: padGlowD 2.1s ease-in-out infinite 0.5s; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .pad-1, .pad-2, .pad-3, .pad-4, .pad-5, .pad-6, .pad-7, .pad-8 { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="170" rx="10" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Strip -->
+  <rect width="800" height="28" rx="10" fill="#0d1527" />
+  <rect x="0" y="18" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="28" x2="800" y2="28" stroke="#1c283f" stroke-width="1" />
+
+  <text x="24" y="18" fill="#00d2d3" font-size="10.5" font-weight="700" class="font-mono">🎛️ PROCEDURAL AUDIO LAUNCHPAD // 8-PAD SYNTH MATRIX</text>
+  <text x="776" y="18" text-anchor="end" fill="#42be65" font-size="9.5" font-weight="700" class="font-mono">AUDIO API: 96kHz ACTIVE</text>
+
+  <!-- 8 LAUNCHPAD PADS (4 Columns x 2 Rows) -->
+  <!-- ROW 1 -->
+  <!-- Pad 1 (SUB-BASS) -->
+  <g transform="translate(24, 40)">
+    <rect width="170" height="50" rx="6" class="pad-1" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">01 // SUB-BASS</text>
+    <text x="12" y="36" fill="#00d2d3" font-size="8.5" class="font-mono">55Hz Sine Wave (0.8s)</text>
+  </g>
+
+  <!-- Pad 2 (CRT SCAN) -->
+  <g transform="translate(214, 40)">
+    <rect width="170" height="50" rx="6" class="pad-2" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">02 // CRT SCAN</text>
+    <text x="12" y="36" fill="#4589ff" font-size="8.5" class="font-mono">15.7kHz Sweep Hum</text>
+  </g>
+
+  <!-- Pad 3 (LASER BLAST) -->
+  <g transform="translate(404, 40)">
+    <rect width="170" height="50" rx="6" class="pad-3" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">03 // LASER BEAM</text>
+    <text x="12" y="36" fill="#42be65" font-size="8.5" class="font-mono">2.4kHz Exponential Drop</text>
+  </g>
+
+  <!-- Pad 4 (WARP DRIVE) -->
+  <g transform="translate(594, 40)">
+    <rect width="180" height="50" rx="6" class="pad-4" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">04 // WARP DRIVE</text>
+    <text x="12" y="36" fill="#a855f7" font-size="8.5" class="font-mono">Chirp Osc + High Resonance</text>
+  </g>
+
+  <!-- ROW 2 -->
+  <!-- Pad 5 (8-BIT CHIP) -->
+  <g transform="translate(24, 100)">
+    <rect width="170" height="50" rx="6" class="pad-5" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">05 // 8-BIT PULSE</text>
+    <text x="12" y="36" fill="#00d2d3" font-size="8.5" class="font-mono">880Hz Square PWM Arp</text>
+  </g>
+
+  <!-- Pad 6 (KERNEL BEEP) -->
+  <g transform="translate(214, 100)">
+    <rect width="170" height="50" rx="6" class="pad-6" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">06 // KERNEL BEEP</text>
+    <text x="12" y="36" fill="#4589ff" font-size="8.5" class="font-mono">1.2kHz Pure Bell Tone</text>
+  </g>
+
+  <!-- Pad 7 (STATIC NOISE) -->
+  <g transform="translate(404, 100)">
+    <rect width="170" height="50" rx="6" class="pad-7" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">07 // RADIO STATIC</text>
+    <text x="12" y="36" fill="#42be65" font-size="8.5" class="font-mono">Filtered White Noise Burst</text>
+  </g>
+
+  <!-- Pad 8 (VICTORY CHORD) -->
+  <g transform="translate(594, 100)">
+    <rect width="180" height="50" rx="6" class="pad-8" stroke-width="1.2" />
+    <text x="12" y="20" fill="#ffffff" font-size="9.5" font-weight="700" class="font-mono">08 // VICTORY CHORD</text>
+    <text x="12" y="36" fill="#a855f7" font-size="8.5" class="font-mono">Major 7th Harmonic Triad</text>
+  </g>
+</svg>

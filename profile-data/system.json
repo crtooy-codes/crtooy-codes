@@ -1,6 +1,6 @@
 ﻿{
   "system": "CRTOOY Profile Nexus",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "profileState": "ONLINE",
   "buildState": "PASSING",
   "matrix": {
@@ -10,8 +10,13 @@
     "securityLab": "DEFENSIVE_CHROOT",
     "graphics3D": "THREEJS_WEBGL",
     "audioDSP": "WEB_AUDIO_PROCEDURAL_SYNTH",
+    "launchpad": "8_PAD_SYNTH_MATRIX",
     "quantumCore": "ISOMETRIC_CHASSIS_3D",
     "planetaryOrbit": "GRAVITATIONAL_TECH_ORBIT",
+    "globalRelay": "SATELLITE_GEO_LINK",
+    "matrixRain": "QUANTUM_DECRYPTION_ACTIVE",
+    "rpgSkillTree": "S_TIER_HYPERVISOR_ARCHITECT",
+    "bossBattle": "GLITCH_TITAN_COMBAT",
     "cyberID": "VERIFIED_OPERATOR_PASSPORT",
     "runtimeDebugger": "AUTOMATED_BUG_DEFUSER",
     "openSource": "CONTINUOUS_DEPLOY"

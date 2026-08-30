@@ -1,0 +1,155 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+
+      /* Digital Matrix Rain Falls (Different Column Speeds) */
+      @keyframes rainFallA {
+        0% { transform: translateY(-160px); opacity: 0; }
+        10% { opacity: 0.8; }
+        90% { opacity: 0.8; }
+        100% { transform: translateY(220px); opacity: 0; }
+      }
+      @keyframes rainFallB {
+        0% { transform: translateY(-180px); opacity: 0; }
+        15% { opacity: 0.7; }
+        85% { opacity: 0.7; }
+        100% { transform: translateY(220px); opacity: 0; }
+      }
+      @keyframes rainFallC {
+        0% { transform: translateY(-150px); opacity: 0; }
+        10% { opacity: 0.9; }
+        90% { opacity: 0.9; }
+        100% { transform: translateY(220px); opacity: 0; }
+      }
+
+      /* Decryption Text Reveal */
+      @keyframes textDecryptionGlow {
+        0%, 100% { filter: drop-shadow(0 0 2px #00d2d3); }
+        50% { filter: drop-shadow(0 0 10px #42be65); }
+      }
+
+      .col-1 { animation: rainFallA 3.8s linear infinite 0.2s; }
+      .col-2 { animation: rainFallB 4.6s linear infinite 0.7s; }
+      .col-3 { animation: rainFallC 3.4s linear infinite 1.2s; }
+      .col-4 { animation: rainFallA 4.2s linear infinite 0.5s; }
+      .col-5 { animation: rainFallB 3.6s linear infinite 1.5s; }
+      .col-6 { animation: rainFallC 4.8s linear infinite 0.9s; }
+      .col-7 { animation: rainFallA 3.9s linear infinite 1.8s; }
+      .col-8 { animation: rainFallB 4.4s linear infinite 0.3s; }
+
+      .decrypt-glow { animation: textDecryptionGlow 3s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8 { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="rain-trail" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.1" />
+      <stop offset="70%" stop-color="#42be65" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="1" />
+    </linearGradient>
+
+    <radialGradient id="matrix-shadow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#080c14" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0.95" />
+    </radialGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="200" rx="12" fill="#04060a" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- BACKGROUND: DIGITAL CODE WATERFALL COLUMNS -->
+  <!-- Col 1 (X: 30) -->
+  <g class="col-1" transform="translate(30, 0)">
+    <text x="0" y="0" fill="#42be65" font-size="11" class="font-mono" opacity="0.4">1 0 1 0 1 1 0</text>
+    <text x="0" y="20" fill="#42be65" font-size="11" class="font-mono" opacity="0.6">0 x 7 F A 2</text>
+    <text x="0" y="40" fill="#00d2d3" font-size="11" class="font-mono" opacity="0.8">T Y P E S C R</text>
+    <text x="0" y="60" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">1</text>
+  </g>
+
+  <!-- Col 2 (X: 120) -->
+  <g class="col-2" transform="translate(120, 0)">
+    <text x="0" y="0" fill="#42be65" font-size="11" class="font-mono" opacity="0.4">I B M _ C O R E</text>
+    <text x="0" y="20" fill="#00d2d3" font-size="11" class="font-mono" opacity="0.7">0 1 1 0 1 0 0</text>
+    <text x="0" y="40" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">Ω</text>
+  </g>
+
+  <!-- Col 3 (X: 220) -->
+  <g class="col-3" transform="translate(220, 0)">
+    <text x="0" y="0" fill="#42be65" font-size="11" class="font-mono" opacity="0.5">R E A C T 1 8</text>
+    <text x="0" y="20" fill="#42be65" font-size="11" class="font-mono" opacity="0.8">K E R N E L</text>
+    <text x="0" y="40" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">λ</text>
+  </g>
+
+  <!-- Col 4 (X: 350) -->
+  <g class="col-4" transform="translate(350, 0)">
+    <text x="0" y="0" fill="#00d2d3" font-size="11" class="font-mono" opacity="0.5">A I _ A G E N T</text>
+    <text x="0" y="20" fill="#42be65" font-size="11" class="font-mono" opacity="0.8">W E B G L 3 D</text>
+    <text x="0" y="40" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">Δ</text>
+  </g>
+
+  <!-- Col 5 (X: 470) -->
+  <g class="col-5" transform="translate(470, 0)">
+    <text x="0" y="0" fill="#42be65" font-size="11" class="font-mono" opacity="0.4">K O T L I N</text>
+    <text x="0" y="20" fill="#00d2d3" font-size="11" class="font-mono" opacity="0.7">S E C O P S</text>
+    <text x="0" y="40" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">π</text>
+  </g>
+
+  <!-- Col 6 (X: 580) -->
+  <g class="col-6" transform="translate(580, 0)">
+    <text x="0" y="0" fill="#42be65" font-size="11" class="font-mono" opacity="0.6">N O D E 2 2</text>
+    <text x="0" y="20" fill="#00d2d3" font-size="11" class="font-mono" opacity="0.8">D S P _ 9 6 K</text>
+    <text x="0" y="40" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">∑</text>
+  </g>
+
+  <!-- Col 7 (X: 680) -->
+  <g class="col-7" transform="translate(680, 0)">
+    <text x="0" y="0" fill="#42be65" font-size="11" class="font-mono" opacity="0.4">C R T O O Y</text>
+    <text x="0" y="20" fill="#00d2d3" font-size="11" class="font-mono" opacity="0.7">0 x F F 0 0</text>
+    <text x="0" y="40" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">0</text>
+  </g>
+
+  <!-- Col 8 (X: 750) -->
+  <g class="col-8" transform="translate(750, 0)">
+    <text x="0" y="0" fill="#42be65" font-size="11" class="font-mono" opacity="0.5">S H A N N O N</text>
+    <text x="0" y="20" fill="#42be65" font-size="11" class="font-mono" opacity="0.8">E N T R O P Y</text>
+    <text x="0" y="40" fill="#ffffff" font-size="12" font-weight="900" class="font-mono">1</text>
+  </g>
+
+  <!-- FOREGROUND: CENTRAL DECRYPTION TERMINAL WINDOW -->
+  <g transform="translate(60, 24)">
+    <rect width="680" height="152" rx="10" fill="url(#matrix-shadow)" stroke="#00d2d3" stroke-width="1.2" class="decrypt-glow" />
+    
+    <!-- Top Header -->
+    <rect width="680" height="26" rx="10" fill="#0d1527" />
+    <rect x="0" y="16" width="680" height="10" fill="#0d1527" />
+    <line x1="0" y1="26" x2="680" y2="26" stroke="#1c283f" stroke-width="1" />
+    
+    <circle cx="18" cy="13" r="3.5" fill="#42be65" />
+    <text x="30" y="16.5" fill="#00d2d3" font-size="10" font-weight="700" class="font-mono">QUANTUM DECRYPTION // LIVE SYSTEM PHILOSOPHY</text>
+    <text x="660" y="16.5" text-anchor="end" fill="#42be65" font-size="9" font-weight="700" class="font-mono">DECRYPTED 100%</text>
+
+    <!-- Decrypted Quote Content -->
+    <g transform="translate(24, 46)">
+      <text x="0" y="16" fill="#64748b" font-size="9.5" class="font-mono">&gt; INITIALIZING NEURAL TRANSLATION...</text>
+      
+      <!-- Core Decrypted Headline -->
+      <text x="0" y="42" fill="#ffffff" font-size="13" font-weight="900" class="font-mono" letter-spacing="1">
+        &quot;THE FUTURE IS BUILT BY THOSE WHO CODE WITH RELENTLESS DISCIPLINE.&quot;
+      </text>
+
+      <!-- Subtitle Identity -->
+      <text x="0" y="66" fill="#00d2d3" font-size="10.5" font-weight="700" class="font-mono">
+        — GABRIEL SILVA <tspan fill="#64748b">|</tspan> <tspan fill="#4589ff">Apprentice @ IBM Brasil</tspan> <tspan fill="#64748b">|</tspan> <tspan fill="#42be65">Creator of CRTOOY OS</tspan>
+      </text>
+
+      <!-- Progress Meter -->
+      <g transform="translate(0, 84)">
+        <rect width="630" height="5" rx="2.5" fill="#162238" />
+        <rect width="630" height="5" rx="2.5" fill="#42be65" />
+      </g>
+    </g>
+  </g>
+</svg>

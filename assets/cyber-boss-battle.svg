@@ -1,0 +1,149 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+
+      /* Laser Blast Stream */
+      @keyframes laserStream {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -120; }
+      }
+
+      /* Boss Damage Recoil Shake */
+      @keyframes bossShake {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        25% { transform: translateY(-4px) rotate(-1deg); }
+        75% { transform: translateY(4px) rotate(1deg); }
+      }
+
+      /* Damage Numbers Float Up */
+      @keyframes damageFloat1 {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-30px); opacity: 0; }
+      }
+      @keyframes damageFloat2 {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-35px); opacity: 0; }
+      }
+
+      /* Operative Jump and Shoot */
+      @keyframes operativeJump {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
+
+      /* Impact Sparks */
+      @keyframes sparkBurst {
+        0%, 100% { r: 2; opacity: 0.3; }
+        50% { r: 6; opacity: 1; filter: drop-shadow(0 0 6px #00d2d3); }
+      }
+
+      .laser-blast { stroke-dasharray: 18 6; animation: laserStream 0.6s linear infinite; }
+      .boss-monster { animation: bossShake 0.4s ease-in-out infinite; }
+      .crit-1 { animation: damageFloat1 1.2s ease-out infinite; }
+      .crit-2 { animation: damageFloat2 1.4s ease-out infinite 0.6s; }
+      .hero-jump { animation: operativeJump 1.6s ease-in-out infinite; }
+      .spark-hit { animation: sparkBurst 0.6s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .laser-blast, .boss-monster, .crit-1, .crit-2, .hero-jump, .spark-hit { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="laser-cannon-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f62fe" />
+      <stop offset="40%" stop-color="#00d2d3" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+
+    <radialGradient id="boss-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff3366" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="180" rx="10" fill="#06090e" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Strip -->
+  <rect width="800" height="26" rx="10" fill="#0d1527" />
+  <rect x="0" y="16" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="26" x2="800" y2="26" stroke="#1c283f" stroke-width="1" />
+
+  <text x="24" y="17" fill="#00d2d3" font-size="10" font-weight="700" class="font-mono">🕹️ ARCADE COMBAT // OPERATIVE vs GLITCH TITAN [LEGACY CODE]</text>
+  <text x="776" y="17" text-anchor="end" fill="#42be65" font-size="9.5" font-weight="700" class="font-mono">SCORE: 999,990 PTS [HIGH SCORE]</text>
+
+  <!-- Floor Grid -->
+  <line x1="20" y1="145" x2="780" y2="145" stroke="#1c283f" stroke-width="1.8" />
+  <line x1="20" y1="145" x2="780" y2="145" stroke="#00d2d3" stroke-width="0.8" stroke-dasharray="8 6" opacity="0.6" />
+
+  <!-- LEFT: THE MINI CYBER HERO WITH DUAL BLASTER (X: 80, Y: 90) -->
+  <g class="hero-jump" transform="translate(60, 75)">
+    <!-- Operative Body -->
+    <rect x="10" y="20" width="18" height="24" rx="3.5" fill="#0d1527" stroke="#0f62fe" stroke-width="1.2" />
+    <line x1="19" y1="22" x2="19" y2="40" stroke="#00d2d3" stroke-width="1.8" />
+
+    <!-- Head and Visor -->
+    <circle cx="19" cy="10" r="8" fill="#0d1527" stroke="#1c283f" stroke-width="1.2" />
+    <rect x="15" y="8" width="9" height="4" rx="2" fill="#00d2d3" />
+    
+    <!-- Legs -->
+    <rect x="11" y="44" width="5" height="16" rx="1.5" fill="#0f62fe" />
+    <rect x="22" y="44" width="5" height="16" rx="1.5" fill="#0052cc" />
+
+    <!-- Laser Blaster Rifle -->
+    <line x1="28" y1="28" x2="55" y2="28" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round" />
+    <rect x="35" y="25" width="10" height="6" rx="1" fill="#1e293b" stroke="#00d2d3" stroke-width="0.8" />
+    <circle cx="55" cy="28" r="3" fill="#00d2d3" />
+
+    <text x="19" y="-6" text-anchor="middle" fill="#00d2d3" font-size="8" font-weight="700" class="font-mono">PLAYER 1</text>
+  </g>
+
+  <!-- CENTER: PULSING DUAL LASER CANNON BLAST -->
+  <g transform="translate(120, 103)">
+    <line x1="0" y1="0" x2="430" y2="0" stroke="url(#laser-cannon-grad)" stroke-width="3" class="laser-blast" />
+    <line x1="0" y1="4" x2="430" y2="4" stroke="#00d2d3" stroke-width="1.5" class="laser-blast" />
+  </g>
+
+  <!-- RIGHT: THE GIANT GLITCH BOSS MECHA (X: 570, Y: 40) -->
+  <g class="boss-monster" transform="translate(560, 40)">
+    <!-- Boss Core Glow -->
+    <circle cx="90" cy="60" r="65" fill="url(#boss-glow)" />
+
+    <!-- Boss Chassis Polygon Body -->
+    <polygon points="50,20 130,20 150,60 130,100 50,100 30,60" fill="#180b18" stroke="#ff3366" stroke-width="2" />
+    
+    <!-- Boss Glowing Glitch Eye Core -->
+    <rect x="70" y="45" width="40" height="20" rx="3" fill="#ff3366" />
+    <text x="90" y="59" text-anchor="middle" fill="#ffffff" font-size="10" font-weight="900" class="font-mono">&gt; ERROR &lt;</text>
+
+    <!-- Boss Spikes and Conduits -->
+    <line x1="50" y1="20" x2="30" y2="5" stroke="#ff3366" stroke-width="2" />
+    <line x1="130" y1="20" x2="150" y2="5" stroke="#ff3366" stroke-width="2" />
+    <line x1="30" y1="60" x2="10" y2="60" stroke="#ff3366" stroke-width="2" />
+
+    <!-- Boss Health Bar on Top -->
+    <g transform="translate(20, -10)">
+      <rect width="140" height="8" rx="2" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <rect width="40" height="8" rx="2" fill="#ff3366" />
+      <text x="70" y="-3" text-anchor="middle" fill="#ff3366" font-size="8" font-weight="700" class="font-mono">BOSS HP: 28% [CRITICAL]</text>
+    </g>
+
+    <!-- Floating Damage Numbers (CRIT HITS) -->
+    <g class="crit-1" transform="translate(0, 30)">
+      <text x="0" y="0" fill="#00d2d3" font-size="11" font-weight="900" class="font-mono">-9,999 [STRICT TS CRIT!]</text>
+    </g>
+    <g class="crit-2" transform="translate(40, 10)">
+      <text x="0" y="0" fill="#42be65" font-size="10" font-weight="900" class="font-mono">-5,000 [ZERO LEAK!]</text>
+    </g>
+
+    <!-- Laser Hit Sparks -->
+    <circle cx="30" cy="63" r="4" fill="#ffffff" class="spark-hit" />
+    <circle cx="35" cy="60" r="2.5" fill="#00d2d3" class="spark-hit" />
+  </g>
+
+  <!-- Bottom Line -->
+  <line x1="24" y1="160" x2="776" y2="160" stroke="#1c283f" stroke-width="1" />
+  <text x="28" y="172" fill="#64748b" font-size="8" class="font-mono">COMBAT SUMMARY: DETERMINISTIC CODE BASES OVERCOMING SPAGHETTI ARCHITECTURE</text>
+  <text x="772" y="172" text-anchor="end" fill="#00d2d3" font-size="8" font-weight="700" class="font-mono">VICTORY: INEVITABLE</text>
+</svg>

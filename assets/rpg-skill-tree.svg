@@ -1,0 +1,138 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      @keyframes radarHexPulse {
+        0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 4px #00d2d3); }
+        50% { opacity: 0.9; filter: drop-shadow(0 0 12px #0f62fe); }
+      }
+
+      @keyframes perkGlowFlash {
+        0%, 100% { fill: #42be65; }
+        50% { fill: #00d2d3; }
+      }
+
+      .radar-poly { animation: radarHexPulse 3s ease-in-out infinite; }
+      .perk-glow { animation: perkGlowFlash 2.5s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .radar-poly, .perk-glow { animation: none; }
+      }
+    </style>
+
+    <radialGradient id="hex-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.35" />
+      <stop offset="70%" stop-color="#0f62fe" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="poly-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#0f62fe" stop-opacity="0.4" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="260" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Strip -->
+  <rect width="800" height="32" rx="12" fill="#0d1527" />
+  <rect x="0" y="22" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#1c283f" stroke-width="1" />
+
+  <g transform="translate(24, 21)">
+    <circle cx="6" cy="0" r="4" fill="#a855f7" />
+    <text x="18" y="4" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">⚔️ RPG CHARACTER ATTRIBUTES // S-TIER SYSTEMS ARCHITECT</text>
+  </g>
+  <text x="776" y="21" text-anchor="end" fill="#42be65" font-size="10" font-weight="700" class="font-mono">CLASS: S-RANK HYPERVISOR ENGINEER</text>
+
+  <!-- LEFT: HEXAGONAL STAT RADAR GRAPH (Center: 145, 140) -->
+  <g>
+    <!-- Background Radial Glow -->
+    <circle cx="145" cy="140" r="85" fill="url(#hex-glow)" />
+
+    <!-- Concentric Hexagon Grid Rings (R = 75, 50, 25) -->
+    <!-- R = 75 (100% Mark) -->
+    <polygon points="145,65 210,102 210,178 145,215 80,178 80,102" fill="none" stroke="#1c283f" stroke-width="1.2" />
+    <!-- R = 50 (66% Mark) -->
+    <polygon points="145,90 188,115 188,165 145,190 102,165 102,115" fill="none" stroke="#1c283f" stroke-width="0.8" stroke-dasharray="3 3" />
+    <!-- R = 25 (33% Mark) -->
+    <polygon points="145,115 167,128 167,152 145,165 123,152 123,128" fill="none" stroke="#1c283f" stroke-width="0.8" />
+
+    <!-- Hexagonal Axes Lines from Center -->
+    <line x1="145" y1="140" x2="145" y2="65" stroke="#1c283f" stroke-width="1" />
+    <line x1="145" y1="140" x2="210" y2="102" stroke="#1c283f" stroke-width="1" />
+    <line x1="145" y1="140" x2="210" y2="178" stroke="#1c283f" stroke-width="1" />
+    <line x1="145" y1="140" x2="145" y2="215" stroke="#1c283f" stroke-width="1" />
+    <line x1="145" y1="140" x2="80" y2="178" stroke="#1c283f" stroke-width="1" />
+    <line x1="145" y1="140" x2="80" y2="102" stroke="#1c283f" stroke-width="1" />
+
+    <!-- STAT POLYGON (Architecture: 98, TypeScript: 99, SecOps: 92, 3D: 90, Audio: 95, AI: 94) -->
+    <polygon points="145,67 208,104 204,175 145,208 86,174 84,105" fill="url(#poly-grad)" stroke="#00d2d3" stroke-width="2" class="radar-poly" />
+
+    <!-- Stat Vertex Nodes -->
+    <circle cx="145" cy="67" r="3.5" fill="#ffffff" />
+    <circle cx="208" cy="104" r="3.5" fill="#ffffff" />
+    <circle cx="204" cy="175" r="3.5" fill="#ffffff" />
+    <circle cx="145" cy="208" r="3.5" fill="#ffffff" />
+    <circle cx="86" cy="174" r="3.5" fill="#ffffff" />
+    <circle cx="84" cy="105" r="3.5" fill="#ffffff" />
+
+    <!-- Axis Labels -->
+    <text x="145" y="58" text-anchor="middle" fill="#00d2d3" font-size="8.5" font-weight="700" class="font-mono">ARCH: 98</text>
+    <text x="218" y="104" fill="#4589ff" font-size="8.5" font-weight="700" class="font-mono">TS: 99</text>
+    <text x="218" y="180" fill="#42be65" font-size="8.5" font-weight="700" class="font-mono">SECOPS: 92</text>
+    <text x="145" y="226" text-anchor="middle" fill="#ff7eb6" font-size="8.5" font-weight="700" class="font-mono">3D: 90</text>
+    <text x="72" y="180" text-anchor="end" fill="#fddc69" font-size="8.5" font-weight="700" class="font-mono">AUDIO: 95</text>
+    <text x="72" y="104" text-anchor="end" fill="#a855f7" font-size="8.5" font-weight="700" class="font-mono">AI: 94</text>
+  </g>
+
+  <!-- VERTICAL SEPARATOR -->
+  <line x1="280" y1="32" x2="280" y2="260" stroke="#1c283f" stroke-width="1" />
+
+  <!-- RIGHT: RPG INVENTORY and PASSIVE PERKS -->
+  <g transform="translate(300, 46)">
+    
+    <!-- PASSIVE PERKS BLOCK -->
+    <g transform="translate(0, 0)">
+      <rect width="475" height="92" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="14" y="18" fill="#64748b" font-size="9" font-weight="700" class="font-mono">UNLOCKED PASSIVE ABILITIES and PERKS</text>
+
+      <!-- Perk 1 -->
+      <g transform="translate(14, 28)">
+        <circle cx="6" cy="6" r="3.5" class="perk-glow" />
+        <text x="16" y="9" fill="#f8fafc" font-size="10" font-weight="700" class="font-mono">RELENTLESS ENGINEERING (PASSIVE)</text>
+        <text x="16" y="22" fill="#94a3b8" font-size="9" class="font-mono">+200% Focus &#8226; Zero Memory Leaks &#8226; Strict typing eliminates all runtime bugs</text>
+      </g>
+
+      <!-- Perk 2 -->
+      <g transform="translate(14, 58)">
+        <circle cx="6" cy="6" r="3.5" fill="#00d2d3" />
+        <text x="16" y="9" fill="#f8fafc" font-size="10" font-weight="700" class="font-mono">QUANTUM RESILIENCE (PASSIVE)</text>
+        <text x="16" y="22" fill="#94a3b8" font-size="9" class="font-mono">Automated CI/CD Quality Gate passing on every git push &#8226; 100% Deterministic</text>
+      </g>
+    </g>
+
+    <!-- EQUIPPED ARTIFACTS BLOCK -->
+    <g transform="translate(0, 100)">
+      <rect width="475" height="92" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+      <text x="14" y="18" fill="#64748b" font-size="9" font-weight="700" class="font-mono">LEGENDARY EQUIPPED ARTIFACTS</text>
+
+      <!-- Item 1 -->
+      <g transform="translate(14, 28)">
+        <rect width="215" height="48" rx="4" fill="#070b12" stroke="#0f62fe" stroke-width="1" />
+        <text x="10" y="16" fill="#00d2d3" font-size="9.5" font-weight="700" class="font-mono">⚔️ CRTOOY KERNEL v5</text>
+        <text x="10" y="32" fill="#cbd5e1" font-size="8.5" class="font-mono">Interactive Web OS and CLI Engine</text>
+      </g>
+
+      <!-- Item 2 -->
+      <g transform="translate(245, 28)">
+        <rect width="215" height="48" rx="4" fill="#070b12" stroke="#42be65" stroke-width="1" />
+        <text x="10" y="16" fill="#42be65" font-size="9.5" font-weight="700" class="font-mono">🛡️ IBM BRASIL CREST</text>
+        <text x="10" y="32" fill="#cbd5e1" font-size="8.5" class="font-mono">Systems, Security and AI Apprentice</text>
+      </g>
+    </g>
+  </g>
+</svg>

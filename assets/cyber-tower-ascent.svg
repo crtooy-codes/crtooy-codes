@@ -1,0 +1,187 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Data Lift / Elevator Movement */
+      @keyframes elevatorLift {
+        0%, 15% { transform: translateY(0); }
+        35%, 50% { transform: translateY(-60px); }
+        70%, 85% { transform: translateY(-120px); }
+        100% { transform: translateY(0); }
+      }
+
+      /* Character Patrol on Level 3 Skybridge */
+      @keyframes bridgePatrol {
+        0%, 100% { transform: translateX(0px); }
+        50% { transform: translateX(110px); }
+      }
+
+      /* Drone Flight on Apex Level */
+      @keyframes droneFloat {
+        0%, 100% { transform: translateY(0px) rotate(2deg); }
+        50% { transform: translateY(-8px) rotate(-2deg); }
+      }
+
+      /* Holographic Beam Pulse */
+      @keyframes holoBeam {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.85; filter: drop-shadow(0 0 8px #00d2d3); }
+      }
+
+      /* Flag Wave */
+      @keyframes flagFlutter {
+        0%, 100% { transform: skewY(0deg); }
+        50% { transform: skewY(-8deg); }
+      }
+
+      .elevator-pod { animation: elevatorLift 12s ease-in-out infinite; }
+      .patrol-agent { animation: bridgePatrol 6s ease-in-out infinite; }
+      .drone-flight { animation: droneFloat 3.5s ease-in-out infinite; }
+      .holo-pulse { animation: holoBeam 2.8s ease-in-out infinite; }
+      .flag-wave { transform-origin: 710px 50px; animation: flagFlutter 1.8s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .elevator-pod, .patrol-agent, .drone-flight, .holo-pulse, .flag-wave { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="tower-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f62fe" />
+      <stop offset="50%" stop-color="#00d2d3" />
+      <stop offset="100%" stop-color="#42be65" />
+    </linearGradient>
+
+    <linearGradient id="lift-shaft" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#0f62fe" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="280" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Strip -->
+  <rect width="800" height="32" rx="12" fill="#0d1527" />
+  <rect x="0" y="22" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#1c283f" stroke-width="1" />
+
+  <g transform="translate(24, 21)">
+    <circle cx="6" cy="0" r="4" fill="#00d2d3" />
+    <text x="18" y="4" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">🗺️ ARCHITECTURAL ASCENT // THE ENGINEERING JOURNEY MAP</text>
+  </g>
+  <text x="776" y="21" text-anchor="end" fill="#42be65" font-size="10" font-weight="700" class="font-mono">LIVE TOWER RECON // 4 TIERS</text>
+
+  <!-- ==================== TOWER PLATFORMS ==================== -->
+
+  <!-- LEVEL 1: FOUNDATIONS (Bottom Floor, Y: 235) -->
+  <g transform="translate(40, 235)">
+    <line x1="0" y1="0" x2="720" y2="0" stroke="#1c283f" stroke-width="2" />
+    <line x1="0" y1="0" x2="220" y2="0" stroke="#00d2d3" stroke-width="2" />
+    <text x="10" y="-8" fill="#64748b" font-size="9" font-weight="700" class="font-mono">LVL 1: STRICT CODE FOUNDATIONS and ALGORITHMS</text>
+    
+    <!-- Entry Gateway -->
+    <rect x="10" y="-30" width="30" height="30" rx="3" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <text x="25" y="-12" text-anchor="middle" fill="#00d2d3" font-size="7.5" font-weight="700" class="font-mono">IN</text>
+
+    <!-- Mini Character Walking In on Level 1 -->
+    <g transform="translate(60, -28)">
+      <!-- Torso and Head -->
+      <rect x="2" y="6" width="10" height="12" rx="2" fill="#0d1527" stroke="#00d2d3" stroke-width="0.8" />
+      <circle cx="7" cy="3" r="4" fill="#00d2d3" />
+      <rect x="5" y="2" width="5" height="2" rx="1" fill="#ffffff" />
+      <!-- Legs -->
+      <line x1="4" y1="18" x2="2" y2="28" stroke="#0f62fe" stroke-width="1.8" />
+      <line x1="10" y1="18" x2="12" y2="28" stroke="#0f62fe" stroke-width="1.8" />
+      <text x="20" y="14" fill="#cbd5e1" font-size="8" class="font-mono">Starting Journey...</text>
+    </g>
+  </g>
+
+  <!-- VERTICAL ELEVATOR SHAFT (X: 250, between Y: 60 and Y: 235) -->
+  <g transform="translate(240, 55)">
+    <line x1="0" y1="0" x2="0" y2="180" stroke="#1c283f" stroke-width="1.5" />
+    <line x1="30" y1="0" x2="30" y2="180" stroke="#1c283f" stroke-width="1.5" />
+    <line x1="15" y1="0" x2="15" y2="180" stroke="#00d2d3" stroke-width="1" stroke-dasharray="4 4" opacity="0.5" />
+
+    <!-- Animated Elevator Pod -->
+    <g class="elevator-pod" transform="translate(0, 150)">
+      <rect width="30" height="24" rx="4" fill="#0d1929" stroke="#00d2d3" stroke-width="1.2" />
+      <!-- Glass Window and Character Inside Lift -->
+      <rect x="4" y="4" width="22" height="16" rx="2" fill="#080c14" />
+      <circle cx="15" cy="11" r="3.5" fill="#00d2d3" />
+      <rect x="13" y="10" width="4" height="1.5" rx="0.5" fill="#ffffff" />
+      <circle cx="15" cy="22" r="1.5" fill="#42be65" />
+    </g>
+  </g>
+
+  <!-- LEVEL 2: IBM BRASIL APPRENTICE HUB (Y: 175) -->
+  <g transform="translate(285, 175)">
+    <line x1="0" y1="0" x2="475" y2="0" stroke="#1c283f" stroke-width="2" />
+    <line x1="0" y1="0" x2="180" y2="0" stroke="#0f62fe" stroke-width="2" />
+    <text x="10" y="-8" fill="#0f62fe" font-size="9" font-weight="700" class="font-mono">LVL 2: IBM BRASIL // APPRENTICE HUB</text>
+    
+    <!-- Server Node Console -->
+    <rect x="190" y="-26" width="50" height="26" rx="3" fill="#0d1527" stroke="#0f62fe" stroke-width="1" />
+    <circle cx="200" cy="-13" r="2" fill="#42be65" />
+    <circle cx="208" cy="-13" r="2" fill="#00d2d3" />
+    <text x="226" y="-9" fill="#cbd5e1" font-size="7.5" font-weight="700" class="font-mono">IBM</text>
+  </g>
+
+  <!-- LEVEL 3: TACTICAL SKYBRIDGE (CRTOOY and OPENLPS) (Y: 115) -->
+  <g transform="translate(100, 115)">
+    <line x1="0" y1="0" x2="660" y2="0" stroke="#1c283f" stroke-width="2" />
+    <line x1="180" y1="0" x2="420" y2="0" stroke="#4589ff" stroke-width="2" />
+    <text x="190" y="-8" fill="#4589ff" font-size="9" font-weight="700" class="font-mono">LVL 3: CRTOOY OS and OPENLPS SECOPS LAB</text>
+    
+    <!-- Character Actively Walking/Patrolling along Skybridge -->
+    <g class="patrol-agent" transform="translate(200, -28)">
+      <rect x="2" y="6" width="11" height="13" rx="2" fill="#0d1527" stroke="#4589ff" stroke-width="0.8" />
+      <circle cx="7.5" cy="3" r="4.2" fill="#00d2d3" />
+      <rect x="5.5" y="2" width="5" height="2" rx="1" fill="#ffffff" />
+      <!-- Legs walking -->
+      <line x1="4" y1="19" x2="1" y2="28" stroke="#0f62fe" stroke-width="1.8" />
+      <line x1="11" y1="19" x2="14" y2="28" stroke="#0052cc" stroke-width="1.8" />
+      <!-- Mini Holo-Screen in hand -->
+      <polygon points="13,8 21,4 23,6 15,10" fill="#00d2d3" opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- LEVEL 4: APEX QUANTUM and AI SUMMIT (Top Floor, Y: 55) -->
+  <g transform="translate(420, 55)">
+    <line x1="0" y1="0" x2="340" y2="0" stroke="#1c283f" stroke-width="2" />
+    <line x1="100" y1="0" x2="340" y2="0" stroke="#42be65" stroke-width="2" />
+    <text x="110" y="-8" fill="#42be65" font-size="9" font-weight="700" class="font-mono">LVL 4: APPLIED AI and NEXT-GEN RUNTIMES [SUMMIT]</text>
+
+    <!-- Character Standing at the Summit with Waving Flag -->
+    <g transform="translate(260, -32)">
+      <!-- Operative Character -->
+      <rect x="2" y="8" width="12" height="15" rx="2" fill="#0d1527" stroke="#42be65" stroke-width="1" />
+      <circle cx="8" cy="4" r="4.5" fill="#00d2d3" />
+      <rect x="6" y="3" width="5.5" height="2" rx="1" fill="#ffffff" />
+      <!-- Legs -->
+      <line x1="5" y1="23" x2="5" y2="32" stroke="#0f62fe" stroke-width="2" />
+      <line x1="11" y1="23" x2="11" y2="32" stroke="#0f62fe" stroke-width="2" />
+      
+      <!-- Flag Pole and Animated Cyber Flag -->
+      <line x1="20" y1="-8" x2="20" y2="32" stroke="#cbd5e1" stroke-width="1.5" />
+      <polygon points="21,-8 45,-2 40,8 21,5" fill="#00d2d3" class="flag-wave" />
+      <text x="24" y="2" fill="#080c14" font-size="6" font-weight="900" class="font-mono">DEV</text>
+    </g>
+
+    <!-- Floating AI Companion Drone -->
+    <g class="drone-flight" transform="translate(190, -30)">
+      <ellipse cx="14" cy="8" rx="12" ry="5" fill="#0d1527" stroke="#00d2d3" stroke-width="1" />
+      <circle cx="14" cy="8" r="3" fill="#42be65" />
+      <line x1="2" y1="8" x2="0" y2="14" stroke="#1c283f" stroke-width="1" />
+      <line x1="26" y1="8" x2="28" y2="14" stroke="#1c283f" stroke-width="1" />
+      <circle cx="14" cy="18" r="2" fill="#00d2d3" class="holo-pulse" />
+    </g>
+  </g>
+
+  <!-- Bottom Strip -->
+  <line x1="24" y1="262" x2="776" y2="262" stroke="#1c283f" stroke-width="1" />
+  <text x="28" y="275" fill="#64748b" font-size="8.5" class="font-mono">TRAJECTORY ROADMAP // GABRIEL SILVA • FROM FOUNDATIONS TO APPLIED AI SYSTEMS</text>
+  <text x="772" y="275" text-anchor="end" fill="#00d2d3" font-size="8.5" font-weight="700" class="font-mono">STATUS: ASCENDING CONTINUOUSLY</text>
+</svg>

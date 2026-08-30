@@ -1,0 +1,144 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 70" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+
+      /* Full-Width Walk Translation Across Entire Page (800px) */
+      @keyframes walkAcrossScreen {
+        0% { transform: translateX(-40px); }
+        100% { transform: translateX(840px); }
+      }
+
+      /* Natural Humanoid Walking Kinematics (0.8s Step Frequency) */
+      @keyframes bodyBounce {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-3px); }
+      }
+
+      @keyframes legLeftSwing {
+        0%, 100% { transform: rotate(26deg); }
+        50% { transform: rotate(-26deg); }
+      }
+
+      @keyframes legRightSwing {
+        0%, 100% { transform: rotate(-26deg); }
+        50% { transform: rotate(26deg); }
+      }
+
+      @keyframes armLeftSwing {
+        0%, 100% { transform: rotate(-30deg); }
+        50% { transform: rotate(30deg); }
+      }
+
+      @keyframes armRightSwing {
+        0%, 100% { transform: rotate(30deg); }
+        50% { transform: rotate(-30deg); }
+      }
+
+      @keyframes footGlowRipple {
+        0%, 100% { opacity: 0.3; transform: scaleX(0.8); }
+        50% { opacity: 0.9; transform: scaleX(1.4); }
+      }
+
+      @keyframes lineLaserSweep {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -100; }
+      }
+
+      .walker-group { animation: walkAcrossScreen 9s linear infinite; }
+      .body-bob { animation: bodyBounce 0.4s ease-in-out infinite; }
+      .leg-l { transform-origin: 15px 36px; animation: legLeftSwing 0.8s ease-in-out infinite; }
+      .leg-r { transform-origin: 19px 36px; animation: legRightSwing 0.8s ease-in-out infinite; }
+      .arm-l { transform-origin: 12px 22px; animation: armLeftSwing 0.8s ease-in-out infinite; }
+      .arm-r { transform-origin: 22px 22px; animation: armRightSwing 0.8s ease-in-out infinite; }
+      .laser-track { stroke-dasharray: 8 6; animation: lineLaserSweep 2s linear infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .walker-group, .body-bob, .leg-l, .leg-r, .arm-l, .arm-r, .laser-track { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="walk-line-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.2" />
+      <stop offset="30%" stop-color="#00d2d3" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#4589ff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f62fe" stop-opacity="0.2" />
+    </linearGradient>
+
+    <radialGradient id="foot-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d2d3" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00d2d3" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background Base Track Container -->
+  <rect width="800" height="70" rx="6" fill="#080c14" stroke="#1c283f" stroke-width="1" />
+
+  <!-- The Neon Walking Rail Line -->
+  <line x1="10" y1="52" x2="790" y2="52" stroke="#162238" stroke-width="2" />
+  <line x1="10" y1="52" x2="790" y2="52" stroke="url(#walk-line-grad)" stroke-width="1.6" class="laser-track" />
+
+  <!-- Subtle Navigation Rail Data Nodes along the track -->
+  <circle cx="100" cy="52" r="2.5" fill="#1c283f" />
+  <circle cx="250" cy="52" r="2.5" fill="#1c283f" />
+  <circle cx="400" cy="52" r="2.5" fill="#1c283f" />
+  <circle cx="550" cy="52" r="2.5" fill="#1c283f" />
+  <circle cx="700" cy="52" r="2.5" fill="#1c283f" />
+
+  <!-- Track Labels -->
+  <text x="24" y="20" fill="#64748b" font-size="8.5" font-weight="700" class="font-mono" letter-spacing="1">EXPEDITION RAIL // TRAVERSING PROFILE SUBSYSTEMS</text>
+  <text x="776" y="20" text-anchor="end" fill="#00d2d3" font-size="8" font-weight="600" class="font-mono">VELOCITY: 1.2 m/s</text>
+
+  <!-- THE WALKING CHARACTER COMPONENT -->
+  <g class="walker-group">
+    <!-- Footprint Light Glow under character -->
+    <ellipse cx="17" cy="53" rx="14" ry="3" fill="url(#foot-glow)" />
+
+    <!-- Walking Character Body Group with vertical bounce -->
+    <g class="body-bob">
+      <!-- Left Leg (Behind) -->
+      <g class="leg-l">
+        <rect x="13" y="34" width="4.5" height="15" rx="2" fill="#0f62fe" />
+        <rect x="12" y="45" width="8" height="4.5" rx="1.5" fill="#00d2d3" />
+      </g>
+
+      <!-- Left Arm (Behind) -->
+      <g class="arm-l">
+        <rect x="7" y="19" width="4.5" height="13" rx="2" fill="#0f62fe" />
+        <circle cx="9" cy="31" r="2" fill="#00d2d3" />
+      </g>
+
+      <!-- Backpack / Techwear Rig -->
+      <rect x="5" y="18" width="7" height="15" rx="2" fill="#1e293b" stroke="#00d2d3" stroke-width="0.7" />
+      <circle cx="8" cy="22" r="1.5" fill="#42be65" />
+
+      <!-- Torso (Techwear Hoodie) -->
+      <rect x="10" y="16" width="16" height="19" rx="3.5" fill="#0d1527" stroke="#1c283f" stroke-width="1.2" />
+      <line x1="18" y1="18" x2="18" y2="33" stroke="#00d2d3" stroke-width="1.4" />
+
+      <!-- Right Leg (In Front) -->
+      <g class="leg-r">
+        <rect x="18" y="34" width="4.5" height="15" rx="2" fill="#0052cc" />
+        <rect x="17" y="45" width="8" height="4.5" rx="1.5" fill="#00d2d3" />
+      </g>
+
+      <!-- Head and Glowing Cyber Visor -->
+      <g transform="translate(9, 1)">
+        <circle cx="9" cy="8" r="8" fill="#0d1527" stroke="#1c283f" stroke-width="1.2" />
+        <ellipse cx="11" cy="9" rx="5.5" ry="5" fill="#080c14" />
+        <!-- Cyan Visor -->
+        <rect x="7" y="6" width="10" height="4" rx="2" fill="#00d2d3" />
+        <rect x="8" y="7" width="3" height="1.5" rx="0.7" fill="#ffffff" />
+        <!-- Head Antenna -->
+        <line x1="5" y1="5" x2="5" y2="1" stroke="#4589ff" stroke-width="1.2" />
+        <circle cx="5" cy="0" r="1.2" fill="#42be65" />
+      </g>
+
+      <!-- Right Arm (In Front) -->
+      <g class="arm-r">
+        <rect x="20" y="19" width="4.5" height="13" rx="2" fill="#0f62fe" />
+        <circle cx="22" cy="31" r="2" fill="#00d2d3" />
+      </g>
+    </g>
+  </g>
+</svg>

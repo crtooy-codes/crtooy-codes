@@ -1,0 +1,154 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 140" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Campfire Neon Flame Pulse */
+      @keyframes fireFlicker {
+        0%, 100% { transform: scale(1) translateY(0); opacity: 0.9; }
+        50% { transform: scale(1.15) translateY(-2px); opacity: 1; filter: drop-shadow(0 0 8px #ff9400); }
+      }
+
+      /* Floating Cyber Embers */
+      @keyframes emberFloatA {
+        0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+        100% { transform: translateY(-35px) translateX(-10px); opacity: 0; }
+      }
+      @keyframes emberFloatB {
+        0% { transform: translateY(0) translateX(0); opacity: 0.8; }
+        100% { transform: translateY(-40px) translateX(8px); opacity: 0; }
+      }
+
+      /* Coffee Steam */
+      @keyframes steamRise {
+        0% { transform: translateY(0); opacity: 0.6; }
+        100% { transform: translateY(-12px); opacity: 0; }
+      }
+
+      /* Shooting Star across sky */
+      @keyframes meteorTrail {
+        0% { transform: translate(650px, 10px); opacity: 0; }
+        10% { opacity: 1; }
+        30% { transform: translate(450px, 60px); opacity: 0; }
+        100% { transform: translate(450px, 60px); opacity: 0; }
+      }
+
+      .fire-core { transform-origin: 320px 105px; animation: fireFlicker 1.4s ease-in-out infinite; }
+      .ember-a { animation: emberFloatA 2s linear infinite; }
+      .ember-b { animation: emberFloatB 2.4s linear infinite 0.8s; }
+      .coffee-steam { animation: steamRise 1.8s ease-in-out infinite; }
+      .meteor { animation: meteorTrail 7s linear infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .fire-core, .ember-a, .ember-b, .coffee-steam, .meteor { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="fire-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff3366" />
+      <stop offset="50%" stop-color="#ff9400" />
+      <stop offset="100%" stop-color="#00d2d3" />
+    </linearGradient>
+
+    <radialGradient id="sky-glow" cx="50%" cy="10%" r="70%">
+      <stop offset="0%" stop-color="#0f62fe" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#080c14" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="140" rx="10" fill="#080c14" stroke="#1c283f" stroke-width="1.2" />
+  <rect width="800" height="140" rx="10" fill="url(#sky-glow)" />
+
+  <!-- Starry Sky Dots -->
+  <circle cx="80" cy="25" r="1" fill="#cbd5e1" opacity="0.6" />
+  <circle cx="150" cy="40" r="1.2" fill="#00d2d3" opacity="0.7" />
+  <circle cx="280" cy="20" r="0.8" fill="#ffffff" opacity="0.8" />
+  <circle cx="480" cy="28" r="1.5" fill="#4589ff" opacity="0.7" />
+  <circle cx="620" cy="18" r="1" fill="#cbd5e1" opacity="0.6" />
+  <circle cx="720" cy="35" r="1.2" fill="#00d2d3" opacity="0.8" />
+
+  <!-- Shooting Star Meteor -->
+  <g class="meteor">
+    <line x1="0" y1="0" x2="35" y2="-12" stroke="#00d2d3" stroke-width="1.2" stroke-linecap="round" />
+    <circle cx="0" cy="0" r="2" fill="#ffffff" />
+  </g>
+
+  <!-- Ground Line -->
+  <line x1="20" y1="115" x2="780" y2="115" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- LEFT: HOLOGRAPHIC CAMPFIRE (X: 320, Y: 115) -->
+  <g transform="translate(0, 0)">
+    <!-- Campfire Base Stones / Circuit Nodes -->
+    <ellipse cx="320" cy="115" rx="20" ry="5" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    
+    <!-- Animated Fire Flame -->
+    <g class="fire-core">
+      <polygon points="314,115 326,115 320,88" fill="url(#fire-grad)" />
+      <polygon points="317,115 323,115 320,95" fill="#ffffff" />
+    </g>
+
+    <!-- Floating Neon Embers (Code Tokens) -->
+    <g class="ember-a" transform="translate(320, 95)">
+      <circle cx="0" cy="0" r="1.5" fill="#00d2d3" />
+    </g>
+    <g class="ember-b" transform="translate(324, 98)">
+      <circle cx="0" cy="0" r="1.2" fill="#ff9400" />
+    </g>
+
+    <text x="320" y="129" text-anchor="middle" fill="#64748b" font-size="7.5" class="font-mono">COGNITIVE CAMPFIRE</text>
+  </g>
+
+  <!-- CHARACTER SITTING BY THE FIRE (X: 240, Y: 85) -->
+  <g transform="translate(230, 75)">
+    <!-- Server Crate as Chair -->
+    <rect x="0" y="24" width="26" height="16" rx="2" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <circle cx="8" cy="32" r="1.5" fill="#42be65" />
+    <circle cx="16" cy="32" r="1.5" fill="#00d2d3" />
+
+    <!-- Character Body (Sitting) -->
+    <rect x="6" y="8" width="14" height="18" rx="3" fill="#0d1527" stroke="#0f62fe" stroke-width="1" />
+    <line x1="13" y1="10" x2="13" y2="24" stroke="#00d2d3" stroke-width="1.2" />
+
+    <!-- Head and Visor -->
+    <circle cx="13" cy="2" r="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    <rect x="10" y="1" width="7" height="3" rx="1.5" fill="#00d2d3" />
+    
+    <!-- Legs (Bent sitting posture) -->
+    <line x1="16" y1="24" x2="30" y2="24" stroke="#0f62fe" stroke-width="2.5" />
+    <line x1="30" y1="24" x2="30" y2="40" stroke="#0f62fe" stroke-width="2.5" />
+    <rect x="28" y="38" width="6" height="3" rx="1" fill="#00d2d3" />
+
+    <!-- Mini Glowing Laptop on Lap -->
+    <polygon points="20,20 28,12 36,16 28,24" fill="#05080e" stroke="#00d2d3" stroke-width="0.8" />
+    <polygon points="22,18 27,14 33,17 28,22" fill="#00d2d3" opacity="0.7" />
+
+    <!-- Coffee Mug beside character -->
+    <g transform="translate(-10, 26)">
+      <rect width="6" height="8" rx="1" fill="#4589ff" />
+      <line x1="3" y1="-2" x2="3" y2="-6" stroke="#cbd5e1" stroke-width="0.8" class="coffee-steam" />
+    </g>
+  </g>
+
+  <!-- CYBER CAT MASCOT SLEEPING NEXT TO FIRE (X: 360, Y: 106) -->
+  <g transform="translate(355, 104)">
+    <ellipse cx="12" cy="7" rx="9" ry="5" fill="#0d1527" stroke="#00d2d3" stroke-width="0.8" />
+    <polygon points="6,3 9,0 11,3" fill="#00d2d3" />
+    <polygon points="13,3 15,0 17,3" fill="#00d2d3" />
+    <line x1="20" y1="6" x2="26" y2="3" stroke="#00d2d3" stroke-width="0.8" />
+    <text x="12" y="10" text-anchor="middle" fill="#00d2d3" font-size="6" class="font-mono">zZ</text>
+  </g>
+
+  <!-- RIGHT: GUESTBOOK and CONNECTION CALLOUT (X: 430, Y: 30) -->
+  <g transform="translate(420, 24)">
+    <rect width="350" height="82" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    
+    <text x="16" y="24" fill="#f8fafc" font-size="11" font-weight="700" class="font-sans">Thanks for stopping by! ☕</text>
+    <text x="16" y="44" fill="#94a3b8" font-size="9.5" class="font-sans">Always open for collaborations, engineering discussions, or systems research.</text>
+    
+    <text x="16" y="66" fill="#00d2d3" font-size="9.5" font-weight="700" class="font-mono">
+      👉 CONNECT ON LINKEDIN &#8226; EXPLORE REPOSITORIES &#8226; RUN NPX CRTOOY
+    </text>
+  </g>
+</svg>

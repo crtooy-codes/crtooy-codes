@@ -9,6 +9,18 @@
   <a href="https://github.com/crtooy-codes"><img src="https://img.shields.io/badge/⚡_GitHub-@crtooy--codes-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" /></a>
 </p>
 
+<p align="center">
+  <img src="assets/walking-divider.svg" alt="Character Traversing Profile" width="100%" />
+</p>
+
+---
+
+### 🗺️ Architectural Ascent // The Engineering Journey Map
+
+<p align="center">
+  <img src="assets/cyber-tower-ascent.svg" alt="CRTOOY Architectural Ascent" width="100%" />
+</p>
+
 ---
 
 ### 🎮 Live Cyber Infiltrator & Autonomous Bot
@@ -45,6 +57,10 @@
     </td>
   </tr>
 </table>
+
+<p align="center">
+  <img src="assets/walking-divider.svg" alt="Character Traversing Profile" width="100%" />
+</p>
 
 ---
 
@@ -252,6 +268,14 @@ $ npx crtooy --version       # Show kernel compilation metadata
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/crtooy-codes/crtooy-codes/output/github-contribution-grid-snake.svg" />
     <img alt="GitHub Contribution Snake" src="https://raw.githubusercontent.com/crtooy-codes/crtooy-codes/output/github-contribution-grid-snake.svg" width="100%" />
   </picture>
+</p>
+
+---
+
+### ☕ Cognitive Campfire Station & Rest Stop
+
+<p align="center">
+  <img src="assets/campfire-station.svg" alt="CRTOOY Campfire Rest Station" width="100%" />
 </p>
 
 ---

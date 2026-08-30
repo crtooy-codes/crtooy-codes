@@ -1,0 +1,224 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="100%" height="100%">
+  <defs>
+    <style>
+      .font-mono { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+      .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+
+      /* Waveform Animation Paths */
+      @keyframes sineScroll {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -200; }
+      }
+
+      @keyframes dialNeedleA {
+        0%, 100% { transform: rotate(-45deg); }
+        50% { transform: rotate(65deg); }
+      }
+      @keyframes dialNeedleB {
+        0%, 100% { transform: rotate(10deg); }
+        50% { transform: rotate(-60deg); }
+      }
+      @keyframes dialNeedleC {
+        0%, 100% { transform: rotate(-20deg); }
+        50% { transform: rotate(45deg); }
+      }
+
+      /* 16-Band Equalizer Keyframes */
+      @keyframes eq1 { 0%, 100% { height: 8px; y: 44px; } 50% { height: 32px; y: 20px; } }
+      @keyframes eq2 { 0%, 100% { height: 24px; y: 28px; } 50% { height: 10px; y: 42px; } }
+      @keyframes eq3 { 0%, 100% { height: 38px; y: 14px; } 50% { height: 16px; y: 36px; } }
+      @keyframes eq4 { 0%, 100% { height: 14px; y: 38px; } 50% { height: 46px; y: 6px; } }
+      @keyframes eq5 { 0%, 100% { height: 48px; y: 4px; } 50% { height: 20px; y: 32px; } }
+      @keyframes eq6 { 0%, 100% { height: 30px; y: 22px; } 50% { height: 44px; y: 8px; } }
+      @keyframes eq7 { 0%, 100% { height: 42px; y: 10px; } 50% { height: 12px; y: 40px; } }
+      @keyframes eq8 { 0%, 100% { height: 20px; y: 32px; } 50% { height: 48px; y: 4px; } }
+      @keyframes eq9 { 0%, 100% { height: 44px; y: 8px; } 50% { height: 18px; y: 34px; } }
+      @keyframes eq10 { 0%, 100% { height: 26px; y: 26px; } 50% { height: 40px; y: 12px; } }
+      @keyframes eq11 { 0%, 100% { height: 36px; y: 16px; } 50% { height: 14px; y: 38px; } }
+      @keyframes eq12 { 0%, 100% { height: 18px; y: 34px; } 50% { height: 38px; y: 14px; } }
+      @keyframes eq13 { 0%, 100% { height: 32px; y: 20px; } 50% { height: 10px; y: 42px; } }
+      @keyframes eq14 { 0%, 100% { height: 16px; y: 36px; } 50% { height: 28px; y: 24px; } }
+      @keyframes eq15 { 0%, 100% { height: 22px; y: 30px; } 50% { height: 8px; y: 44px; } }
+      @keyframes eq16 { 0%, 100% { height: 12px; y: 40px; } 50% { height: 20px; y: 32px; } }
+
+      .sine-wave { stroke-dasharray: 10 4; animation: sineScroll 2.2s linear infinite; }
+      .needle-1 { transform-origin: 22px 22px; animation: dialNeedleA 3.5s ease-in-out infinite; }
+      .needle-2 { transform-origin: 22px 22px; animation: dialNeedleB 4.2s ease-in-out infinite; }
+      .needle-3 { transform-origin: 22px 22px; animation: dialNeedleC 3.8s ease-in-out infinite; }
+
+      .b1 { animation: eq1 1.2s ease-in-out infinite; }
+      .b2 { animation: eq2 0.9s ease-in-out infinite; }
+      .b3 { animation: eq3 1.5s ease-in-out infinite; }
+      .b4 { animation: eq4 1.1s ease-in-out infinite; }
+      .b5 { animation: eq5 1.3s ease-in-out infinite; }
+      .b6 { animation: eq6 1.0s ease-in-out infinite; }
+      .b7 { animation: eq7 1.4s ease-in-out infinite; }
+      .b8 { animation: eq8 1.1s ease-in-out infinite; }
+      .b9 { animation: eq9 1.6s ease-in-out infinite; }
+      .b10 { animation: eq10 1.2s ease-in-out infinite; }
+      .b11 { animation: eq11 0.95s ease-in-out infinite; }
+      .b12 { animation: eq12 1.35s ease-in-out infinite; }
+      .b13 { animation: eq13 1.05s ease-in-out infinite; }
+      .b14 { animation: eq14 1.45s ease-in-out infinite; }
+      .b15 { animation: eq15 1.15s ease-in-out infinite; }
+      .b16 { animation: eq16 1.25s ease-in-out infinite; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .sine-wave, .needle-1, .needle-2, .needle-3 { animation: none; }
+        .b1,.b2,.b3,.b4,.b5,.b6,.b7,.b8,.b9,.b10,.b11,.b12,.b13,.b14,.b15,.b16 { animation: none; }
+      }
+    </style>
+
+    <linearGradient id="eq-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#00d2d3" />
+      <stop offset="50%" stop-color="#4589ff" />
+      <stop offset="100%" stop-color="#0f62fe" />
+    </linearGradient>
+
+    <linearGradient id="sine-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#42be65" />
+      <stop offset="50%" stop-color="#00d2d3" />
+      <stop offset="100%" stop-color="#4589ff" />
+    </linearGradient>
+  </defs>
+
+  <!-- Container Box -->
+  <rect width="800" height="240" rx="12" fill="#080c14" stroke="#1c283f" stroke-width="1.5" />
+
+  <!-- Top Title Strip -->
+  <rect width="800" height="32" rx="12" fill="#0d1527" />
+  <rect x="0" y="22" width="800" height="10" fill="#0d1527" />
+  <line x1="0" y1="32" x2="800" y2="32" stroke="#1c283f" stroke-width="1" />
+
+  <g transform="translate(24, 21)">
+    <circle cx="6" cy="0" r="4" fill="#42be65" />
+    <text x="18" y="4" fill="#00d2d3" font-size="11" font-weight="700" class="font-mono" letter-spacing="1">🎛️ PROCEDURAL WEB AUDIO DSP &amp; SOUND ENGINE</text>
+  </g>
+  <text x="776" y="21" text-anchor="end" fill="#42be65" font-size="10" font-weight="700" class="font-mono">CONTEXT: 96,000 Hz // 1.3ms LATENCY</text>
+
+  <!-- LEFT: OSCILLATOR WAVEFORMS (X: 24, Y: 46) -->
+  <g transform="translate(24, 46)">
+    <!-- Oscillator Screen Box -->
+    <rect width="320" height="154" rx="8" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    
+    <text x="14" y="18" fill="#64748b" font-size="9.5" font-weight="700" class="font-mono">OSCILLATOR 1: PROCEDURAL SYNTHESIS</text>
+    <text x="306" y="18" text-anchor="end" fill="#42be65" font-size="9" font-weight="700" class="font-mono">ACTIVE</text>
+
+    <!-- Oscilloscope Grid Background -->
+    <line x1="14" y1="46" x2="306" y2="46" stroke="#162238" stroke-width="0.8" />
+    <line x1="14" y1="78" x2="306" y2="78" stroke="#162238" stroke-width="1" />
+    <line x1="14" y1="110" x2="306" y2="110" stroke="#162238" stroke-width="0.8" />
+
+    <line x1="87" y1="28" x2="87" y2="128" stroke="#162238" stroke-width="0.8" stroke-dasharray="2 2" />
+    <line x1="160" y1="28" x2="160" y2="128" stroke="#162238" stroke-width="0.8" />
+    <line x1="233" y1="28" x2="233" y2="128" stroke="#162238" stroke-width="0.8" stroke-dasharray="2 2" />
+
+    <!-- Animated Sine & Complex Harmonic Wave -->
+    <path d="M 14 78 Q 30 40, 50 78 T 86 78 T 122 78 T 158 78 T 194 78 T 230 78 T 266 78 T 306 78"
+          fill="none" stroke="url(#sine-grad)" stroke-width="2.2" class="sine-wave" />
+
+    <!-- Wave Type Selector Indicators -->
+    <g transform="translate(14, 134)">
+      <rect width="66" height="15" rx="3" fill="#0f62fe" fill-opacity="0.2" stroke="#0f62fe" stroke-width="0.8" />
+      <text x="33" y="11" text-anchor="middle" fill="#70d6ff" font-size="8" font-weight="700" class="font-mono">SINE 440Hz</text>
+
+      <rect x="72" y="0" width="66" height="15" rx="3" fill="#162238" stroke="#1c283f" stroke-width="0.8" />
+      <text x="105" y="11" text-anchor="middle" fill="#94a3b8" font-size="8" class="font-mono">SQUARE</text>
+
+      <rect x="144" y="0" width="70" height="15" rx="3" fill="#162238" stroke="#1c283f" stroke-width="0.8" />
+      <text x="179" y="11" text-anchor="middle" fill="#94a3b8" font-size="8" class="font-mono">SAWTOOTH</text>
+
+      <rect x="220" y="0" width="72" height="15" rx="3" fill="#162238" stroke="#1c283f" stroke-width="0.8" />
+      <text x="256" y="11" text-anchor="middle" fill="#94a3b8" font-size="8" class="font-mono">WHITE NOISE</text>
+    </g>
+  </g>
+
+  <!-- VERTICAL DIVIDER -->
+  <line x1="365" y1="44" x2="365" y2="208" stroke="#1c283f" stroke-width="1" stroke-dasharray="3 3" />
+
+  <!-- RIGHT: 16-BAND SPECTRUM EQUALIZER & ROTARY ENCODERS -->
+  <g transform="translate(385, 46)">
+    <!-- 16-BAND EQUALIZER SCREEN -->
+    <rect width="390" height="88" rx="8" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+    
+    <text x="14" y="16" fill="#64748b" font-size="9" font-weight="700" class="font-mono">16-BAND REAL-TIME FREQUENCY SPECTRUM (20Hz - 20kHz)</text>
+
+    <!-- Equalizer Spectrum Bars (16 Bars) -->
+    <g transform="translate(14, 22)">
+      <rect x="0" y="44" width="18" height="8" rx="2" fill="url(#eq-grad)" class="b1" />
+      <rect x="23" y="28" width="18" height="24" rx="2" fill="url(#eq-grad)" class="b2" />
+      <rect x="46" y="14" width="18" height="38" rx="2" fill="url(#eq-grad)" class="b3" />
+      <rect x="69" y="38" width="18" height="14" rx="2" fill="url(#eq-grad)" class="b4" />
+      <rect x="92" y="4" width="18" height="48" rx="2" fill="url(#eq-grad)" class="b5" />
+      <rect x="115" y="22" width="18" height="30" rx="2" fill="url(#eq-grad)" class="b6" />
+      <rect x="138" y="10" width="18" height="42" rx="2" fill="url(#eq-grad)" class="b7" />
+      <rect x="161" y="32" width="18" height="20" rx="2" fill="url(#eq-grad)" class="b8" />
+      <rect x="184" y="8" width="18" height="44" rx="2" fill="url(#eq-grad)" class="b9" />
+      <rect x="207" y="26" width="18" height="26" rx="2" fill="url(#eq-grad)" class="b10" />
+      <rect x="230" y="16" width="18" height="36" rx="2" fill="url(#eq-grad)" class="b11" />
+      <rect x="253" y="34" width="18" height="18" rx="2" fill="url(#eq-grad)" class="b12" />
+      <rect x="276" y="20" width="18" height="32" rx="2" fill="url(#eq-grad)" class="b13" />
+      <rect x="299" y="36" width="18" height="16" rx="2" fill="url(#eq-grad)" class="b14" />
+      <rect x="322" y="30" width="18" height="22" rx="2" fill="url(#eq-grad)" class="b15" />
+      <rect x="345" y="40" width="18" height="12" rx="2" fill="url(#eq-grad)" class="b16" />
+    </g>
+
+    <!-- ROTARY DSP ENCODERS (3 Dials) -->
+    <g transform="translate(0, 98)">
+      <!-- DIAL 1: CUTOFF -->
+      <g transform="translate(0, 0)">
+        <rect width="124" height="56" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+        
+        <!-- Dial Outer Circle -->
+        <circle cx="28" cy="28" r="18" fill="#162238" stroke="#00d2d3" stroke-width="1.2" />
+        <circle cx="28" cy="28" r="4" fill="#00d2d3" />
+        
+        <!-- Dial Needle -->
+        <g transform="translate(6, 6)">
+          <line x1="22" y1="22" x2="22" y2="7" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" class="needle-1" />
+        </g>
+
+        <text x="54" y="22" fill="#cbd5e1" font-size="9" font-weight="700" class="font-mono">CUTOFF</text>
+        <text x="54" y="36" fill="#00d2d3" font-size="10" font-weight="700" class="font-mono">2,400 Hz</text>
+        <text x="54" y="48" fill="#64748b" font-size="8" class="font-mono">LOWPASS 24dB</text>
+      </g>
+
+      <!-- DIAL 2: RESONANCE -->
+      <g transform="translate(132, 0)">
+        <rect width="124" height="56" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+        
+        <circle cx="28" cy="28" r="18" fill="#162238" stroke="#4589ff" stroke-width="1.2" />
+        <circle cx="28" cy="28" r="4" fill="#4589ff" />
+        
+        <g transform="translate(6, 6)">
+          <line x1="22" y1="22" x2="22" y2="7" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" class="needle-2" />
+        </g>
+
+        <text x="54" y="22" fill="#cbd5e1" font-size="9" font-weight="700" class="font-mono">RESONANCE</text>
+        <text x="54" y="36" fill="#4589ff" font-size="10" font-weight="700" class="font-mono">Q = 8.50</text>
+        <text x="54" y="48" fill="#64748b" font-size="8" class="font-mono">PEAK BOOST</text>
+      </g>
+
+      <!-- DIAL 3: REVERB -->
+      <g transform="translate(264, 0)">
+        <rect width="126" height="56" rx="6" fill="#0d1527" stroke="#1c283f" stroke-width="1" />
+        
+        <circle cx="28" cy="28" r="18" fill="#162238" stroke="#42be65" stroke-width="1.2" />
+        <circle cx="28" cy="28" r="4" fill="#42be65" />
+        
+        <g transform="translate(6, 6)">
+          <line x1="22" y1="22" x2="22" y2="7" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" class="needle-3" />
+        </g>
+
+        <text x="54" y="22" fill="#cbd5e1" font-size="9" font-weight="700" class="font-mono">CONVOLVER</text>
+        <text x="54" y="36" fill="#42be65" font-size="10" font-weight="700" class="font-mono">SPACE LAB</text>
+        <text x="54" y="48" fill="#64748b" font-size="8" class="font-mono">IMPULSE DECAY</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Bottom Strip -->
+  <line x1="24" y1="214" x2="776" y2="214" stroke="#1c283f" stroke-width="1" />
+  <text x="28" y="229" fill="#64748b" font-size="9" class="font-mono">AUDIO ENGINE IMPLEMENTATION: CRTOOY OS &#8226; BODYCAM-FPS &#8226; ZERO EXTERNAL SAMPLES</text>
+  <text x="772" y="229" text-anchor="end" fill="#00d2d3" font-size="9" font-weight="700" class="font-mono">100% PURE CODE SYNTHESIS</text>
+</svg>

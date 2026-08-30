@@ -11,6 +11,14 @@
 
 ---
 
+### 👁️ Neural-Link HUD & Biometric Verification
+
+<p align="center">
+  <img src="assets/neural-visor.svg" alt="CRTOOY Neural Visor and Biometric HUD" width="100%" />
+</p>
+
+---
+
 ### 🚀 Flagship Build
 
 <table>
@@ -51,6 +59,22 @@ Focused on architecting deterministic developer tooling, researching defensive n
 
 <p align="center">
   <img src="assets/tech-matrix.svg" alt="CRTOOY Capabilities Matrix" width="100%" />
+</p>
+
+---
+
+### ⚛️ 3D Quantum Chassis & Isometric Tensor Core
+
+<p align="center">
+  <img src="assets/cyber-chassis-3d.svg" alt="CRTOOY 3D Quantum Chassis" width="100%" />
+</p>
+
+---
+
+### 🎛️ Procedural Web Audio DSP & Sound Lab
+
+<p align="center">
+  <img src="assets/audio-synth-hud.svg" alt="CRTOOY Web Audio DSP Synthesizer" width="100%" />
 </p>
 
 ---
@@ -116,6 +140,99 @@ Focused on architecting deterministic developer tooling, researching defensive n
 <p align="center">
   <img src="assets/telemetry-widget.svg" alt="CRTOOY Telemetry Widget" width="100%" />
 </p>
+
+---
+
+### 📂 Classified Cyberdeck Archives & Technical Blueprints
+
+<details>
+<summary><b>[ 🔓 ACCESS ARCHIVE: /system/kernel/blueprint.sys ] — System Architecture Diagram</b></summary>
+
+```text
+========================================================================================
+                      CRTOOY KERNEL ARCHITECTURE BLUEPRINT v4.0
+========================================================================================
+
+  [ USER INTERFACES ]
+   +---------------------------------------+---------------------------------------+
+   |   Web OS Desktop Console (PWA)        |   Terminal CLI Runtime (npx crtooy)   |
+   +---------------------------------------+---------------------------------------+
+                      |                                        |
+                      +-------------------+--------------------+
+                                          |
+  [ DISPATCH & EVENT BUS ]                v
+   +-------------------------------------------------------------------------------+
+   |                      Deterministic Command Dispatcher                         |
+   |           [ Audio Engine ]   [ 3D WebGL ]   [ SecOps Lab ]   [ AI Agent ]     |
+   +-------------------------------------------------------------------------------+
+                      |                   |              |               |
+  [ CORE RUNTIMES ]   v                   v              v               v
+   +----------------------+  +------------------+  +-----------+  +----------------+
+   |  Web Audio DSP API   |  | Three.js Shaders |  |  Chroot   |  | Local / Cloud  |
+   |  Procedural Synth    |  | WebGL Physics    |  |  Security |  | LLM Runtimes   |
+   +----------------------+  +------------------+  +-----------+  +----------------+
+                                          |
+  [ INFRASTRUCTURE LAYER ]                v
+   +-------------------------------------------------------------------------------+
+   |   Strict TypeScript 5.7  •  Node.js 22 ESM  •  Kotlin  •  Zero-Leak Memory    |
+   +-------------------------------------------------------------------------------+
+========================================================================================
+```
+</details>
+
+<details>
+<summary><b>[ 🎛️ ACCESS CODE: /audio/procedural-dsp.ts ] — Procedural Sound Synthesis Recipe</b></summary>
+
+```typescript
+// Pure code-driven procedural audio without external .mp3 or .wav assets
+export function createProceduralBeep(ctx: AudioContext, frequency: number, duration: number): void {
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  const filter = ctx.createBiquadFilter();
+
+  osc.type = 'sine';
+  osc.frequency.setValueAtTime(frequency, ctx.currentTime);
+
+  filter.type = 'lowpass';
+  filter.frequency.setValueAtTime(2400, ctx.currentTime);
+
+  gain.gain.setValueAtTime(0.3, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + duration);
+
+  osc.connect(filter);
+  filter.connect(gain);
+  gain.connect(ctx.destination);
+
+  osc.start();
+  osc.stop(ctx.currentTime + duration);
+}
+```
+</details>
+
+<details>
+<summary><b>[ 🛡️ ACCESS FORMULA: /secops/shannon-entropy.md ] — Cryptographic Randomness Math</b></summary>
+
+```text
+Shannon Entropy Formula:
+  H(X) = - SUM [ P(x_i) * log2(P(x_i)) ]
+
+Interpretation in OpenLPS Security:
+  • H(X) ~ 0.0 -> Low entropy, predictable plain text / weak key.
+  • H(X) ~ 7.8 -> High entropy, true cryptographic randomness / high-grade encryption.
+```
+</details>
+
+<details>
+<summary><b>[ 🕹️ ACCESS EASTER EGG: /easter-egg/bootloader.sh ] — Hidden Console Commands</b></summary>
+
+```bash
+# Curious about the full developer suite? Try running these inside the terminal:
+$ npx crtooy                 # Launch interactive developer console
+$ npx crtooy secops          # Run defensive HTTP & Shannon diagnostics
+$ npx crtooy matrix          # Stream capabilities and benchmark logs
+$ npx crtooy --version       # Show kernel compilation metadata
+```
+</details>
 
 ---
 
